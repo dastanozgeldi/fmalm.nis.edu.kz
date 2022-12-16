@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-item {
+  @apply px-2 border-r-[1px];
+}
+
+footer h2 {
+  @apply text-xl my-4;
+}
+
+footer p {
+  @apply text-sm;
+}
