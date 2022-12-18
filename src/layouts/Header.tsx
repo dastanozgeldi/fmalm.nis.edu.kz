@@ -69,7 +69,10 @@ const Menu = () => (
     <MenuItem
       title="Ученикам"
       links={[
-        { label: "Расписание уроков", href: "#" },
+        {
+          label: "Расписание уроков",
+          href: "https://fmalmnis.edupage.org/timetable/",
+        },
         { label: "Олимпийский центр", href: "#" },
         { label: "Руководство для учащихся и родителей", href: "#" },
         { label: "Объявления о конкурсах", href: "#" },
@@ -114,8 +117,11 @@ const Menu = () => (
     <MenuItem
       title="Новости"
       links={[
-        { label: "Объявление", href: "#" },
-        { label: "Сми о нас", href: "#" },
+        { label: "Объявления", href: "#" },
+        {
+          label: "СМИ о нас",
+          href: "https://www.google.com/search?q=%D0%BD%D0%B8%D1%88+%D1%84%D0%BC%D0%BD+%D0%B0%D0%BB%D0%BC%D0%B0%D1%82%D1%8B+-site:nis.edu.kz&source=lmns&tbm=nws&bih=720&biw=1440&hl=en&sa=X&ved=2ahUKEwjy0dLLm4P8AhXGGHcKHWNBAeUQ_AUoA3oECAEQAw",
+        },
       ]}
     />
   </div>
