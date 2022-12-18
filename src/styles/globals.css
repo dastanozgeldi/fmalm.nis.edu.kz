@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav-item {
-  @apply px-2 border-r-[1px];
+  @apply px-2 border-r-[1px] border-gray-300;
 }
 
 footer h2 {

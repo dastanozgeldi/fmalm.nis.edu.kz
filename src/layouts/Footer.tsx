@@ -20,13 +20,13 @@ const Footer = () => {
             <h2>Подпишитесь</h2>
             {/* social media */}
             <div className="flex gap-2">
-              <a href="">
+              <a href="https://www.facebook.com/fmalm.nis.edu.kz">
                 <FaFacebook className="w-7 h-7" />
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/nis_pm_almaty/">
                 <FaInstagram className="w-7 h-7" />
               </a>
-              <a href="">
+              <a href="https://www.youtube.com/channel/UC0FhZfxcAlsWdvU-Bgzgi8A?app=desktop">
                 <FaYoutube className="w-7 h-7" />
               </a>
             </div>
