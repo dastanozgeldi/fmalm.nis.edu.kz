@@ -34,27 +34,26 @@ const Menu = () => (
     <MenuItem
       title="О нас"
       links={[
-        { label: "О школе", href: "#" },
+        { label: "О школе", href: "/about/school" },
         { label: "Нормативные документы", href: "#" },
-        { label: "Отчеты", href: "#" },
+        { label: "Отчеты", href: "/about/review" },
         { label: "Попечительский совет", href: "#" },
         { label: "Наша команда", href: "#" },
         { label: "Педагогический состав", href: "#" },
-        { label: "Контакты", href: "#" },
-        { label: "Вакансии", href: "#" },
+        { label: "Вакансии", href: "/about/vacancies" },
       ]}
     />
     {/* Школьная Жизнь */}
     <MenuItem
       title="Школьная жизнь"
       links={[
-        { label: "NIS Engineering", href: "#" },
+        { label: "NIS Engineering", href: "/life/nis-engineering" },
         { label: "Кружковые занятия", href: "#" },
         { label: "Профориентационная работа", href: "#" },
-        { label: "Библиотека", href: "#" },
+        { label: "Библиотека", href: "/life/library" },
         { label: "Служба питания", href: "#" },
-        { label: "Психологическая служба", href: "#" },
-        { label: "Медицинская служба", href: "#" },
+        { label: "Психологическая служба", href: "/life/psychologists" },
+        { label: "Медицинская служба", href: "/life/medical-center" },
       ]}
     />
     {/* Претендентам */}
@@ -134,8 +133,8 @@ const Header = () => {
           <div className="text-white flex items-center gap-4">
             <FaPhone className="w-8 h-8" />
             <div className="flex flex-col">
-              <a className="text-xl" href="tel:77132411737">
-                +7 7132 41-17-37
+              <a className="text-xl" href="tel:87273310104">
+                8 (727) 331-01-04
               </a>
               <a className="text-gray-400" href="mailto:info@fmalm.nis.edu.kz">
                 info@fmalm.nis.edu.kz
