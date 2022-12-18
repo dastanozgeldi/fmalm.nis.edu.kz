@@ -1,21 +1,24 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Image from "next/image";
+import slide1 from "../../../public/slides/1.jpeg";
+import slide2 from "../../../public/slides/2.jpeg";
+import slide3 from "../../../public/slides/3.jpeg";
 
 const Slider = () => {
   return (
-    <Carousel className="border" interval={1000} autoPlay infiniteLoop>
-      <div>
-        <img src="slide1.jpg" alt="..." />
-      </div>
-      <div>
-        <img src="slide2.jpg" alt="..." />
-      </div>
-      <div>
-        <img src="slide3.jpg" alt="..." />
-      </div>
-      <div>
-        <img src="slide4.jpg" alt="..." />
-      </div>
+    <Carousel
+      className="border relative p-0 m-0"
+      interval={1000}
+      autoPlay
+      infiniteLoop
+      showIndicators={false}
+      showStatus={false}
+      showThumbs={false}
+    >
+      <Image className="h-[600px] object-cover" src={slide1} alt="..." />
+      <Image className="h-[600px] object-cover" src={slide2} alt="..." />
+      <Image className="h-[600px] object-cover" src={slide3} alt="..." />
     </Carousel>
   );
 };
