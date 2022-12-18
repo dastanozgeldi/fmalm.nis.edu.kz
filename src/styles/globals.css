@@ -13,3 +13,15 @@ footer h2 {
 footer p {
   @apply text-sm;
 }
+
+#article h1 {
+  @apply text-2xl font-semibold;
+}
+
+#article h2 {
+  @apply text-xl;
+}
+
+#article p {
+  @apply my-2;
+}

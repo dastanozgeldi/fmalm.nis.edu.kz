@@ -4,41 +4,49 @@ import { fetchAPI } from "../../lib/api";
 import NextImage from "../../components/common/Image";
 import { getStrapiMedia } from "../../lib/media";
 import Page from "../../layouts/Page";
-import Image from "next/image";
+import { FaClock, FaUser } from "react-icons/fa";
 
 const Article = ({ article }: any) => {
   const imageUrl = getStrapiMedia(article.attributes.image);
 
   return (
     <Page title={article.attributes.title}>
-      <Image alt="Banner Image" width={300} height={100} src={imageUrl} />
-      <div className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin">
-        <h1>{article.attributes.title}</h1>
-      </div>
-      <div className="uk-section">
-        <div className="uk-container uk-container-small">
-          <ReactMarkdown skipHtml>{article.attributes.content}</ReactMarkdown>
-          <hr className="uk-divider-small" />
-          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
+      <div
+        id="article"
+        className="relative max-w-[60ch] mx-auto border p-8 m-4 space-y-4"
+      >
+        {/* Details */}
+        <div className="">
+          <h1 className="text-2xl">{article.attributes.title}</h1>
+          <div className="flex space-x-4 my-2">
+            <p className="text-gray-500 flex items-center gap-2">
+              <FaClock />
+              <Moment format="MMM Do YYYY">
+                {article.attributes.published_at}
+              </Moment>
+            </p>
+            <p className="text-gray-500 flex items-center gap-2">
+              <FaUser />
+              Өзгелді Дастан
+            </p>
+          </div>
+        </div>
+        <img
+          className="object-cover w-[60ch] h-[36ch]"
+          alt="Banner Image"
+          src={imageUrl}
+        />
+        <div className="">
+          <div className="">
+            <ReactMarkdown skipHtml>{article.attributes.content}</ReactMarkdown>
             <div>
               {article.attributes.author.picture && (
                 <NextImage image={article.attributes.author.picture} />
               )}
             </div>
-            <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
-                By {article.attributes.author.name}
-              </p>
-              <p className="uk-text-meta uk-margin-remove-top">
-                <Moment format="MMM Do YYYY">
-                  {article.attributes.published_at}
-                </Moment>
-              </p>
-            </div>
           </div>
         </div>
       </div>
-      ƒ
     </Page>
   );
 };
