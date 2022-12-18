@@ -14,10 +14,10 @@ type MenuItemProps = {
 const MenuItem = ({ title, links }: MenuItemProps) => {
   return (
     <div>
-      <button className="flex items-center gap-2 peer px-5 py-2 bg-primary hover:bg-[rgb(104,158,26)] text-white">
+      <button className="w-64 lg:w-max flex items-center justify-between gap-2 peer px-5 py-2 bg-primary hover:bg-[rgb(104,158,26)] text-white">
         {title} <FaAngleDown />
       </button>
-      <div className="absolute z-50 hidden peer-hover:flex hover:flex w-[200px] flex-col bg-white drop-shadow-lg">
+      <div className="w-64 lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
         {links.map(({ label, href }) => (
           <a key={label} className="px-5 py-3 hover:bg-gray-200" href={href}>
             {label}
@@ -29,7 +29,7 @@ const MenuItem = ({ title, links }: MenuItemProps) => {
 };
 
 const Menu = () => (
-  <div className="flex items-center justify-center mt-4">
+  <div className="flex flex-col lg:flex-row items-center justify-center mt-4">
     {/* О нас */}
     <MenuItem
       title="О нас"
