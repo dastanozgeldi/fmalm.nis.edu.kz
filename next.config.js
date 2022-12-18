@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "fmalmnis-backend-production.up.railway.app"],
   },
   i18n: {
     defaultLocale: "en",
