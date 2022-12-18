@@ -6,7 +6,7 @@ const Nav = () => {
       <p className="font-semibold text-white bg-primary py-2 px-4">Новости</p>
       <div className="bg-secondary flex items-center justify-between w-full py-2 px-4">
         <p className="font-semibold text-white">Lorem ipsum dolor sit amet</p>
-        <div className="flex items-center text-white">
+        <div className="hidden lg:flex items-center text-white">
           <a className="nav-item" href="">
             Мероприятия
           </a>

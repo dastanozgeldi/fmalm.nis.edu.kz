@@ -58,7 +58,7 @@ const Footer = () => {
         <p className="text-gray-300">
           © НИШ ФМН г. Алматы. 2023. Все права защищены.
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-row items-center gap-2">
           <a href="">О нас</a>
           <a href="">Школьная жизнь</a>
           <a href="">Претендентам</a>
