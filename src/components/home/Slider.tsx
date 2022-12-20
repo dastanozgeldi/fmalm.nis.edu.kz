@@ -5,7 +5,7 @@ import slide1 from "../../../public/slides/1.jpeg";
 import slide2 from "../../../public/slides/2.jpeg";
 import slide3 from "../../../public/slides/3.jpeg";
 
-const Slider = () => {
+export const Slider = () => {
   return (
     <Carousel
       className="border relative p-0 m-0"
@@ -22,5 +22,3 @@ const Slider = () => {
     </Carousel>
   );
 };
-
-export default Slider;

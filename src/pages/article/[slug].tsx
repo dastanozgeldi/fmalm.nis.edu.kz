@@ -3,7 +3,7 @@ import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import NextImage from "../../components/common/Image";
 import { getStrapiMedia } from "../../lib/media";
-import Page from "../../layouts/Page";
+import { Page } from "../../layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
 
 const Article = ({ article }: any) => {

@@ -1,7 +1,7 @@
 import Articles from "../components/home/Articles";
 import { Motto } from "../components/home/Motto";
-import Slider from "../components/home/Slider";
-import Page from "../layouts/Page";
+import { Slider } from "../components/home/Slider";
+import { Page } from "../layouts/Page";
 import { fetchAPI } from "../lib/api";
 
 export default function Home({ articles }: any) {

@@ -6,9 +6,13 @@ import qs from "qs";
  * @returns {string} Full Strapi URL
  */
 export function getStrapiURL(path = "") {
-  return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
-  }${path}`;
+  if (
+    process.env.NODE_ENV === "production" &&
+    process.env.NEXT_PUBLIC_STRAPI_API_URL
+  ) {
+    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${path}`;
+  }
+  return `http://localhost:1337${path}`;
 }
 
 /**

@@ -6,7 +6,7 @@ type PageProps = {
   title: string;
 };
 
-const Page: FC<PageProps> = ({ children, title }) => {
+export const Page: FC<PageProps> = ({ children, title }) => {
   const t = `${title} | NIS PhM Almaty`;
   return (
     <>
@@ -17,5 +17,3 @@ const Page: FC<PageProps> = ({ children, title }) => {
     </>
   );
 };
-
-export default Page;
