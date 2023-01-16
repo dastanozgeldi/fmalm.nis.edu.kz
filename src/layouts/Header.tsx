@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaAngleDown, FaHome, FaPhone } from "react-icons/fa";
 import logo from "../../public/logo.png";
+import { fetchAPI } from "../lib/api";
 
 type MenuItemProps = {
   title: string;
@@ -34,13 +35,9 @@ const Menu = () => (
     <MenuItem
       title="О нас"
       links={[
-        { label: "О школе", href: "/about/school" },
-        { label: "Нормативные документы", href: "#" },
-        { label: "Отчеты", href: "/about/review" },
-        { label: "Попечительский совет", href: "#" },
-        { label: "Наша команда", href: "#" },
-        { label: "Педагогический состав", href: "#" },
-        { label: "Вакансии", href: "/about/vacancies" },
+        { label: "О школе", href: "/about-us/about-school" },
+        { label: "Отчеты", href: "/about-us/review" },
+        { label: "Вакансии", href: "/about-us/vacancies" },
       ]}
     />
     {/* Школьная Жизнь */}
@@ -48,10 +45,7 @@ const Menu = () => (
       title="Школьная жизнь"
       links={[
         { label: "NIS Engineering", href: "/life/nis-engineering" },
-        { label: "Кружковые занятия", href: "#" },
-        { label: "Профориентационная работа", href: "#" },
         { label: "Библиотека", href: "/life/library" },
-        { label: "Служба питания", href: "#" },
         { label: "Психологическая служба", href: "/life/psychologists" },
         { label: "Медицинская служба", href: "/life/medical-center" },
       ]}
@@ -60,9 +54,11 @@ const Menu = () => (
     <MenuItem
       title="Претендентам"
       links={[
-        { label: "Конкурсный отбор", href: "#" },
-        { label: "Виртуальная школа", href: "#" },
-        { label: "Каникулярная школа", href: "#" },
+        {
+          label: "Конкурсный отбор",
+          href: "https://www.instagram.com/p/Cl5eaE7tR48/",
+        },
+        { label: "Виртуальная школа", href: "https://vs.nis.edu.kz/" },
       ]}
     />
     {/* Ученикам */}
@@ -73,44 +69,6 @@ const Menu = () => (
           label: "Расписание уроков",
           href: "https://fmalmnis.edupage.org/timetable/",
         },
-        { label: "Олимпийский центр", href: "#" },
-        { label: "Руководство для учащихся и родителей", href: "#" },
-        { label: "Объявления о конкурсах", href: "#" },
-      ]}
-    />
-    {/* Учителям */}
-    <MenuItem
-      title="Учителям"
-      links={[
-        { label: "Трансляция опыта", href: "#" },
-        { label: "Виртуальный методический кабинет", href: "#" },
-        { label: "Профессиональное развитие", href: "#" },
-      ]}
-    />
-    {/* Родителям */}
-    <MenuItem
-      title="Родителям"
-      links={[
-        { label: "Задать вопрос директору", href: "#" },
-        { label: "Родительский комитет", href: "#" },
-        {
-          label: "Образовательная программа АОО «НИШ» — NIS-Program",
-          href: "#",
-        },
-        {
-          label: "График проведения суммативного оценивания за раздел",
-          href: "#",
-        },
-        { label: "Оценивание достижений учащихся", href: "#" },
-      ]}
-    />
-    {/* Выпускникам */}
-    <MenuItem
-      title="Выпускникам"
-      links={[
-        { label: "Наши выпускники", href: "#" },
-        { label: "Ассоциация выпускников", href: "#" },
-        { label: "Форум выпускников", href: "#" },
       ]}
     />
     {/* Новости */}

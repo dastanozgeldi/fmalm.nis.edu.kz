@@ -5,7 +5,7 @@ import { getStrapiMedia } from "../../lib/media";
 import { Page } from "../../layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
 
-const Article = ({ article }: any) => {
+const AboutUs = ({ article }: any) => {
   const imageUrl = getStrapiMedia(article.attributes.image);
   const { title, published_at, author, content } = article.attributes;
 
@@ -41,7 +41,7 @@ const Article = ({ article }: any) => {
 };
 
 export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["slug"] });
+  const articlesRes = await fetchAPI("/about-uses", { fields: ["slug"] });
 
   return {
     paths: articlesRes.data.map((article: any) => ({
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const articlesRes = await fetchAPI("/articles", {
+  const articlesRes = await fetchAPI("/about-uses", {
     filters: {
       slug: params.slug,
     },
@@ -67,4 +67,4 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
-export default Article;
+export default AboutUs;

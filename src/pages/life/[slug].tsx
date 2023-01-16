@@ -1,12 +1,10 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
-import { getStrapiMedia } from "../../lib/media";
 import { Page } from "../../layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
 
-const Article = ({ article }: any) => {
-  const imageUrl = getStrapiMedia(article.attributes.image);
+const SchoolLife = ({ article }: any) => {
   const { title, published_at, author, content } = article.attributes;
 
   return (
@@ -29,11 +27,6 @@ const Article = ({ article }: any) => {
             </p>
           </div>
         </div>
-        <img
-          className="object-cover w-[60ch] h-[36ch]"
-          alt="Banner Image"
-          src={imageUrl}
-        />
         <ReactMarkdown skipHtml>{content}</ReactMarkdown>
       </div>
     </Page>
@@ -41,7 +34,7 @@ const Article = ({ article }: any) => {
 };
 
 export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["slug"] });
+  const articlesRes = await fetchAPI("/school-lives", { fields: ["slug"] });
 
   return {
     paths: articlesRes.data.map((article: any) => ({
@@ -54,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const articlesRes = await fetchAPI("/articles", {
+  const articlesRes = await fetchAPI("/school-lives", {
     filters: {
       slug: params.slug,
     },
@@ -67,4 +60,4 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
-export default Article;
+export default SchoolLife;
