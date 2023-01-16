@@ -1,9 +1,8 @@
 import { Inter } from "@next/font/google";
 import Head from "next/head";
 import type { FC, PropsWithChildren } from "react";
-import Footer from "./Footer";
-import Header from "./Header";
-import Nav from "./Nav";
+import { Footer } from "./Footer";
+import { Nav } from "./Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +17,6 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       </Head>
       <main className={inter.className}>
         <Nav />
-        <Header />
         {children}
         <Footer />
       </main>

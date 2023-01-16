@@ -25,7 +25,7 @@ const AboutUs = ({ article }: any) => {
             </p>
             <p className="text-gray-500 flex items-center gap-2">
               <FaUser />
-              {author.data.attributes.name}
+              {author.data?.attributes.name || "Unknown"}
             </p>
           </div>
         </div>

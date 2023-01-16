@@ -16,9 +16,9 @@ export const Slider = () => {
       showStatus={false}
       showThumbs={false}
     >
-      <Image className="h-[600px] object-cover" src={slide1} alt="..." />
-      <Image className="h-[600px] object-cover" src={slide2} alt="..." />
-      <Image className="h-[600px] object-cover" src={slide3} alt="..." />
+      <Image className="h-[800px] object-cover" src={slide1} alt="..." />
+      <Image className="h-[800px] object-cover" src={slide2} alt="..." />
+      <Image className="h-[800px] object-cover" src={slide3} alt="..." />
     </Carousel>
   );
 };
