@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "fmalmnis-backend-production.up.railway.app"],
+    domains: ["localhost", "fmalmnis.up.railway.app"],
   },
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "kk"],
+    locales: ["kk", "en", "ru"],
+    defaultLocale: "kk",
   },
 };
 

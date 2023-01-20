@@ -1,0 +1,23 @@
+{
+  "Common": {
+    "articles": "Latest articles",
+    "show_more": "Show More"
+  },
+  "Footer": {
+    "address": "Zhamakayev st. 145, Almaty, Kazakhstan",
+    "useful_links": "Useful links",
+    "timetable": "School timetable",
+    "sms": "SMS",
+    "virtualSchool": "Virtual school"
+  },
+  "Menu": {
+    "about_us": "About Us",
+    "school_life": "School Life",
+    "for_applicants": "For Applicants",
+    "for_students": "For Students",
+    "news": "News"
+  },
+  "Articles": {
+    "all": "All Articles"
+  }
+}
