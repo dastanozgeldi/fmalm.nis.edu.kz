@@ -64,7 +64,7 @@ export const Footer = () => {
                 href="https://fmalmnis.edupage.org/timetable"
                 className="flex items-center gap-2"
               >
-                <FaLaptop /> {t("virtualSchool")}
+                <FaLaptop /> {t("virtual_school")}
               </a>
             </div>
           </div>
@@ -82,10 +82,10 @@ export const Footer = () => {
       </div>
       {/* bottom */}
       <div className="bg-[#111] p-4 text-sm text-gray-300 flex flex-col items-center justify-center space-y-2">
-        <p className="text-gray-300">
-          © НИШ ФМН г. Алматы. 2023. Все права защищены.
-        </p>
+        <p className="text-gray-300">{t("copyright")}</p>
       </div>
     </footer>
   );
 };
+
+Footer.messages = ["Footer"];

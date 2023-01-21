@@ -3,6 +3,8 @@ import Moment from "react-moment";
 import { fetchAPI } from "@/lib/api";
 import { Page } from "@/layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
+import { pick } from "lodash";
+import { GetStaticPropsContext } from "next";
 
 const SchoolLife = ({ article }: any) => {
   const { title, published_at, author, content } = article.attributes;
@@ -46,16 +48,22 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({
+  locale,
+  params,
+}: GetStaticPropsContext) {
   const articlesRes = await fetchAPI("/school-lives", {
     filters: {
-      slug: params.slug,
+      slug: params?.slug,
     },
     populate: "*",
   });
 
   return {
     props: { article: articlesRes.data[0] },
+    messages: pick((await import(`@/messages/${locale}.json`)).default, [
+      ...Page.messages,
+    ]),
     revalidate: 1,
   };
 }

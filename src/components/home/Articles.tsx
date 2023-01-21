@@ -13,7 +13,7 @@ export const Articles = ({
   articles,
   showMore = false,
 }: ArticlesProps) => {
-  const t = useTranslations("Common");
+  const t = useTranslations("Articles");
 
   return (
     <section className="p-8">

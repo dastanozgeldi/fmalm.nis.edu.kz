@@ -3,6 +3,19 @@ import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
 import { fetchAPI } from "@/lib/api";
+import { pick } from "lodash";
+
+export const ArticlesPage = ({ articles }: any) => {
+  const t = useTranslations("Articles");
+
+  return (
+    <Page title={t("title")}>
+      <Articles articles={articles}>{t("articles")}</Articles>
+    </Page>
+  );
+};
+
+ArticlesPage.messages = ["Articles", ...Page.messages];
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   // Run API calls in parallel
@@ -13,20 +26,13 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
       articles: articlesRes.data,
-      messages: (await import(`../messages/${locale}.json`)).default,
+      messages: pick(
+        (await import(`@/messages/${locale}.json`)).default,
+        ArticlesPage.messages
+      ),
     },
     revalidate: 1,
   };
 }
-
-const ArticlesPage = ({ articles }: any) => {
-  const t = useTranslations();
-
-  return (
-    <Page title={t("Pages.articles")}>
-      <Articles articles={articles}>{t("Articles.all")}</Articles>
-    </Page>
-  );
-};
 
 export default ArticlesPage;

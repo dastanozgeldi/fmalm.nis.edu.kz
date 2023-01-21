@@ -1,3 +1,4 @@
+import pick from "lodash/pick";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
@@ -5,18 +6,20 @@ import { Page } from "@/layouts/Page";
 import { fetchAPI } from "@/lib/api";
 import { Hero } from "@/components/home/Hero";
 
-export default function Home({ articles }: any) {
-  const t = useTranslations();
+export default function Index({ articles }: any) {
+  const t = useTranslations("Index");
 
   return (
-    <Page title={t("Pages.index")}>
+    <Page title={t("title")}>
       <Hero />
-      <Articles showMore articles={articles.slice(0, 3)}>
-        {t("Articles.all")}
+      <Articles showMore={true} articles={articles.slice(0, 3)}>
+        {t("articles")}
       </Articles>
     </Page>
   );
 }
+
+Index.messages = ["Index", ...Page.messages];
 
 export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
   const [articlesRes] = await Promise.all([
@@ -26,7 +29,10 @@ export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
   return {
     props: {
       articles: articlesRes.data,
-      messages: (await import(`../messages/${locale}.json`)).default,
+      messages: pick(
+        (await import(`@/messages/${locale}.json`)).default,
+        Index.messages
+      ),
     },
   };
 };

@@ -29,72 +29,30 @@ const MenuItem = ({ title, links }: MenuItemProps) => (
 
 const Menu = () => {
   const [categories, setCategories] = useState<any>();
+  const { locale } = useRouter();
 
   useEffect(() => {
     async function fetchCategories() {
       const [categoriesRes] = await Promise.all([
-        fetchAPI("/categories", { populate: "*" }),
+        fetchAPI("/categories", { locale }, { populate: "*" }),
       ]);
       console.dir(categoriesRes);
       setCategories(categoriesRes.data);
     }
 
     fetchCategories();
-  }, []);
+  }, [locale]);
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center mt-4">
       {categories &&
-        categories.map((c) => (
+        categories.map((c: any) => (
           <MenuItem
             key={c.attributes.name}
             title={c.attributes.name}
             links={[]}
           />
         ))}
-      {/* Претендентам */}
-      <MenuItem
-        title="Претендентам"
-        links={[
-          {
-            label: "Конкурсный отбор",
-            href: "https://www.instagram.com/p/Cl5eaE7tR48/",
-          },
-          { label: "Виртуальная школа", href: "https://vs.nis.edu.kz/" },
-        ]}
-      />
-      {/* Ученикам */}
-      <MenuItem
-        title="Ученикам"
-        links={[
-          {
-            label: "Расписание уроков",
-            href: "https://fmalmnis.edupage.org/timetable/",
-          },
-        ]}
-      />
-      {/* Учителям */}
-      <MenuItem
-        title="Учителям"
-        links={[
-          { label: "Объявления", href: "/articles" },
-          {
-            label: "СМИ о нас",
-            href: "https://www.google.com/search?q=%D0%BD%D0%B8%D1%88+%D1%84%D0%BC%D0%BD+%D0%B0%D0%BB%D0%BC%D0%B0%D1%82%D1%8B+-site:nis.edu.kz&source=lmns&tbm=nws&bih=720&biw=1440&hl=en&sa=X&ved=2ahUKEwjy0dLLm4P8AhXGGHcKHWNBAeUQ_AUoA3oECAEQAw",
-          },
-        ]}
-      />
-      {/* Родителям */}
-      <MenuItem
-        title="Родителям"
-        links={[
-          { label: "Объявления", href: "/articles" },
-          {
-            label: "СМИ о нас",
-            href: "https://www.google.com/search?q=%D0%BD%D0%B8%D1%88+%D1%84%D0%BC%D0%BD+%D0%B0%D0%BB%D0%BC%D0%B0%D1%82%D1%8B+-site:nis.edu.kz&source=lmns&tbm=nws&bih=720&biw=1440&hl=en&sa=X&ved=2ahUKEwjy0dLLm4P8AhXGGHcKHWNBAeUQ_AUoA3oECAEQAw",
-          },
-        ]}
-      />
     </div>
   );
 };
@@ -142,3 +100,5 @@ export const Nav = () => {
     </nav>
   );
 };
+
+Nav.messages = ["Nav"];

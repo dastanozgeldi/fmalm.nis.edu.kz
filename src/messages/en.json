@@ -1,12 +1,14 @@
 {
-  "Layout": {
+  "Page": {
     "school_name": "NIS PM Almaty"
   },
-  "Pages": {
-    "index": "Home",
-    "articles": "Articles"
+  "Index": {
+    "title": "Home",
+    "articles": "Latest Articles"
   },
-  "Common": {
+  "Articles": {
+    "title": "Articles",
+    "all": "All Articles",
     "articles": "Latest articles",
     "show_more": "Show More"
   },
@@ -15,16 +17,7 @@
     "useful_links": "Useful links",
     "timetable": "School timetable",
     "sms": "SMS",
-    "virtualSchool": "Virtual school"
-  },
-  "Menu": {
-    "about_us": "About Us",
-    "school_life": "School Life",
-    "for_applicants": "For Applicants",
-    "for_students": "For Students",
-    "news": "News"
-  },
-  "Articles": {
-    "all": "All Articles"
+    "virtual_school": "Virtual School",
+    "copyright": "© NIS PM Almaty. 2023. All rights reserved."
   }
 }
