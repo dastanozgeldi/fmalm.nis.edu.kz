@@ -1,4 +1,11 @@
 {
+  "Layout": {
+    "school_name": "НИШ ФМН Алматы"
+  },
+  "Pages": {
+    "index": "Главная",
+    "articles": "Объявления"
+  },
   "Common": {
     "articles": "Последние объявления",
     "show_more": "Показать больше"

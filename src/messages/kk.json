@@ -1,4 +1,11 @@
 {
+  "Layout": {
+    "school_name": "НЗМ ФМБ Алматы"
+  },
+  "Pages": {
+    "index": "Басты бет",
+    "articles": "Хабарламалар"
+  },
   "Common": {
     "articles": "Соңғы мақалалар",
     "show_more": "Көбірек"

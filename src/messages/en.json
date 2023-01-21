@@ -1,4 +1,11 @@
 {
+  "Layout": {
+    "school_name": "NIS PM Almaty"
+  },
+  "Pages": {
+    "index": "Home",
+    "articles": "Articles"
+  },
   "Common": {
     "articles": "Latest articles",
     "show_more": "Show More"
