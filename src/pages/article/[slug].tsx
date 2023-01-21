@@ -67,10 +67,13 @@ export async function getStaticProps({
   });
 
   return {
-    props: { article: articlesRes.data[0] },
-    messages: pick((await import(`@/messages/${locale}.json`)).default, [
-      ...Page.messages,
-    ]),
+    props: {
+      article: articlesRes.data[0],
+      messages: pick((await import(`@/messages/${locale}.json`)).default, [
+        ...Page.messages,
+      ]),
+    },
+
     revalidate: 1,
   };
 }

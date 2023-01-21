@@ -19,7 +19,7 @@ export default function Index({ articles }: any) {
   );
 }
 
-Index.messages = ["Index", ...Page.messages];
+Index.messages = ["Index", "Articles", ...Page.messages];
 
 export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
   const [articlesRes] = await Promise.all([
