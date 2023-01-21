@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaClock, FaUser } from "react-icons/fa";
 import Moment from "react-moment";
-import { getStrapiMedia } from "../../lib/media";
+import { getStrapiMedia } from "@/lib/media";
 
 export const ArticleItem = ({ article }: any) => {
   const { slug, image, title, description, published_at, author } =

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Head from "next/head";
 import { type FC } from "react";
 
@@ -7,11 +8,12 @@ type PageProps = {
 };
 
 export const Page: FC<PageProps> = ({ children, title }) => {
-  const t = `${title} | NIS PhM Almaty`;
+  const t = useTranslations("Layout");
+  const fullTitle = `${title} | ${t("school_name")}`;
   return (
     <>
       <Head>
-        <title>{t}</title>
+        <title>{fullTitle}</title>
       </Head>
       {children}
     </>

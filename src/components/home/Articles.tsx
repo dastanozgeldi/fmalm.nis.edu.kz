@@ -26,7 +26,8 @@ export const Articles = ({
         ))}
       </div>
       <div className="flex items-center justify-center">
-        {showMore && (
+        {/* if there are less than 3 articles, there is no point in navigating to "all articles" */}
+        {articles.length > 3 && showMore && (
           <Link
             href="/articles"
             className="p-3 text-xl rounded border-2 border-primary text-primary"

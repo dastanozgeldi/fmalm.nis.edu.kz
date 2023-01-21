@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { fetchAPI } from "../../lib/api";
-import { Page } from "../../layouts/Page";
+import { fetchAPI } from "@/lib/api";
+import { Page } from "@/layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
 
 const SchoolLife = ({ article }: any) => {

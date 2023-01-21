@@ -1,8 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { fetchAPI } from "../../lib/api";
-import { getStrapiMedia } from "../../lib/media";
-import { Page } from "../../layouts/Page";
+import { fetchAPI } from "@/lib/api";
+import { getStrapiMedia } from "@/lib/media";
+import { Page } from "@/layouts/Page";
 import { FaClock, FaUser } from "react-icons/fa";
 
 const AboutUs = ({ article }: any) => {

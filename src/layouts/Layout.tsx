@@ -17,7 +17,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       </Head>
       <main className={inter.className}>
         <Nav />
-        {children}
+        <main className="px-2">{children}</main>
         <Footer />
       </main>
     </>

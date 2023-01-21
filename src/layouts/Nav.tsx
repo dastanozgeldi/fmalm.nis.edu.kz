@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import { FaAngleDown } from "react-icons/fa";
-import { Logo } from "../components/common/Logo";
+import { Logo } from "@/components/common/Logo";
+import { fetchAPI } from "@/lib/api";
+import { useEffect, useState } from "react";
 
 type MenuItemProps = {
   title: string;
@@ -26,27 +28,30 @@ const MenuItem = ({ title, links }: MenuItemProps) => (
 );
 
 const Menu = () => {
+  const [categories, setCategories] = useState<any>();
+
+  useEffect(() => {
+    async function fetchCategories() {
+      const [categoriesRes] = await Promise.all([
+        fetchAPI("/categories", { populate: "*" }),
+      ]);
+      console.dir(categoriesRes);
+      setCategories(categoriesRes.data);
+    }
+
+    fetchCategories();
+  }, []);
+
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center mt-4">
-      {/* О нас */}
-      <MenuItem
-        title="О нас"
-        links={[
-          { label: "О школе", href: "/about-us/about-school" },
-          { label: "Отчеты", href: "/about-us/review" },
-          { label: "Вакансии", href: "/about-us/vacancies" },
-        ]}
-      />
-      {/* Школьная Жизнь */}
-      <MenuItem
-        title="Школьная жизнь"
-        links={[
-          { label: "NIS Engineering", href: "/life/nis-engineering" },
-          { label: "Библиотека", href: "/life/library" },
-          { label: "Психологическая служба", href: "/life/psychologists" },
-          { label: "Медицинская служба", href: "/life/medical-center" },
-        ]}
-      />
+      {categories &&
+        categories.map((c) => (
+          <MenuItem
+            key={c.attributes.name}
+            title={c.attributes.name}
+            links={[]}
+          />
+        ))}
       {/* Претендентам */}
       <MenuItem
         title="Претендентам"
@@ -114,19 +119,19 @@ export const Nav = () => {
         </div>
         <div className="flex items-center gap-4 text-xl">
           <button
-            className={locale === "kk" ? "text-primary" : ""}
+            className={locale === "kk" ? "text-primary" : "text-gray-500"}
             onClick={() => push({ pathname, query }, asPath, { locale: "kk" })}
           >
             qaz
           </button>
           <button
-            className={locale === "ru" ? "text-primary" : ""}
+            className={locale === "ru" ? "text-primary" : "text-gray-500"}
             onClick={() => push({ pathname, query }, asPath, { locale: "ru" })}
           >
             рус
           </button>
           <button
-            className={locale === "en" ? "text-primary" : ""}
+            className={locale === "en" ? "text-primary" : "text-gray-500"}
             onClick={() => push({ pathname, query }, asPath, { locale: "en" })}
           >
             eng

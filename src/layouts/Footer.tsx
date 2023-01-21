@@ -8,7 +8,7 @@ import {
   FaLaptop,
   FaYoutube,
 } from "react-icons/fa";
-import { Logo } from "../components/common/Logo";
+import { Logo } from "@/components/common/Logo";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -52,7 +52,7 @@ export const Footer = () => {
                 href="https://fmalmnis.edupage.org/timetable"
                 className="flex items-center gap-2"
               >
-                <FaBook /> СУШ
+                <FaBook /> {t("sms")}
               </a>
               <a
                 href="https://fmalmnis.edupage.org/timetable"

@@ -1,28 +1,26 @@
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
-import { Articles } from "../components/home/Articles";
-import { Motto } from "../components/home/Motto";
-import { Slider } from "../components/home/Slider";
-import { Page } from "../layouts/Page";
-import { fetchAPI } from "../lib/api";
+import { Articles } from "@/components/home/Articles";
+import { Page } from "@/layouts/Page";
+import { fetchAPI } from "@/lib/api";
+import { Hero } from "@/components/home/Hero";
 
 export default function Home({ articles }: any) {
-  const t = useTranslations("Articles");
+  const t = useTranslations();
 
   return (
-    <Page title="Home">
-      <Slider />
-      <Motto />
+    <Page title={t("Pages.index")}>
+      <Hero />
       <Articles showMore articles={articles.slice(0, 3)}>
-        {t("all")}
+        {t("Articles.all")}
       </Articles>
     </Page>
   );
 }
 
-export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
   const [articlesRes] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
+    fetchAPI("/articles", { locale }, { populate: "*" }),
   ]);
 
   return {
