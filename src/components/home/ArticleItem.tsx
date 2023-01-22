@@ -13,7 +13,7 @@ export const ArticleItem = ({ article }: any) => {
       <div className="border-2 rounded-lg max-w-[48ch]">
         {image.data && (
           <Image
-            className="object-cover"
+            className="w-[48ch] h-[24ch] object-cover"
             width={480}
             height={240}
             src={getStrapiMedia(image)}
