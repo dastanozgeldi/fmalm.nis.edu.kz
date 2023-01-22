@@ -27,7 +27,7 @@ export default function Index({ articles }: any) {
 
 Index.messages = ["Index", "Articles", ...Page.messages];
 
-export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
+export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
   const [articlesRes] = await Promise.all([
     fetchAPI("/articles", { populate: "*" }),
   ]);
