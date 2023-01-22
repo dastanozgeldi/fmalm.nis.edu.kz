@@ -1,13 +1,13 @@
 import { Inter } from "@next/font/google";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
+import { PropsWithChildren } from "react";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type PageProps = {
-  children: React.ReactNode;
+type PageProps = PropsWithChildren & {
   title: string;
 };
 

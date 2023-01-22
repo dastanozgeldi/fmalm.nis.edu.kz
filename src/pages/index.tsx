@@ -5,6 +5,8 @@ import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
 import { fetchAPI } from "@/lib/api";
 import { Hero } from "@/components/home/Hero";
+import { Info } from "@/components/home/Info";
+import { School } from "@/components/home/School";
 
 export default function Index({ articles }: any) {
   const t = useTranslations("Index");
@@ -12,6 +14,8 @@ export default function Index({ articles }: any) {
   return (
     <Page title={t("title")}>
       <Hero />
+      <Info />
+      <School />
       <Articles showMore={true} articles={articles.slice(0, 3)}>
         {t("articles")}
       </Articles>
@@ -23,7 +27,7 @@ Index.messages = ["Index", "Articles", ...Page.messages];
 
 export const getServerSideProps = async ({ locale }: GetStaticPropsContext) => {
   const [articlesRes] = await Promise.all([
-    fetchAPI("/articles", { locale }, { populate: "*" }),
+    fetchAPI("/articles", { populate: "*" }),
   ]);
 
   return {

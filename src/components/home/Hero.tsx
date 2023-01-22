@@ -4,9 +4,9 @@ import chuvak from "./chuvak.png";
 
 export const Hero = () => {
   return (
-    <section className="mx-auto gap-8 flex flex-col lg:flex-row items-center container">
+    <section className="mx-auto gap-8 space-y-4 flex flex-col lg:flex-row items-center container">
       {/* Important Information */}
-      <div className="space-y-2">
+      <div className="space-y-6">
         <h1 className="my-4 uppercase text-4xl font-bold underline underline-offset-8 decoration-primary decoration-[4px]">
           Байқау тестілеуі
         </h1>

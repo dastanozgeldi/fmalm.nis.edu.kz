@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaClock, FaUser } from "react-icons/fa";
 import Moment from "react-moment";
 import { getStrapiMedia } from "@/lib/media";
+import Image from "next/image";
 
 export const ArticleItem = ({ article }: any) => {
   const { slug, image, title, description, published_at, author } =
@@ -10,11 +11,13 @@ export const ArticleItem = ({ article }: any) => {
   return (
     <Link href={`/article/${slug}`} className="m-4">
       <div className="border-2 rounded-lg max-w-[48ch]">
-        {image && (
-          <img
-            className="w-[48ch] h-[24ch] object-cover"
+        {image.data && (
+          <Image
+            className="object-cover"
+            width={480}
+            height={240}
             src={getStrapiMedia(image)}
-            alt=""
+            alt="Banner Image"
           />
         )}
         <div className="p-2">
@@ -26,12 +29,10 @@ export const ArticleItem = ({ article }: any) => {
             <FaClock />
             <Moment format="MMM Do YYYY">{published_at}</Moment>
           </p>
-          {author && (
-            <p className="text-gray-500 flex items-center gap-2">
-              <FaUser />
-              {author.name}
-            </p>
-          )}
+          <p className="text-gray-500 flex items-center gap-2">
+            <FaUser />
+            {author.attributes && author.attributes.name}
+          </p>
         </div>
       </div>
     </Link>
