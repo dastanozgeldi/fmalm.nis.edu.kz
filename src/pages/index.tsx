@@ -13,12 +13,14 @@ export default function Index({ articles }: any) {
 
   return (
     <Page title={t("title")}>
-      <Hero />
-      <Info />
-      <School />
-      <Articles showMore={true} articles={articles.slice(0, 3)}>
-        {t("articles")}
-      </Articles>
+      <div className="space-y-6">
+        <Hero />
+        <Info />
+        <School />
+        <Articles showMore={true} articles={articles.slice(0, 3)}>
+          {t("articles")}
+        </Articles>
+      </div>
     </Page>
   );
 }

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Logo } from "@/components/common/Logo";
-import { Menu } from "@headlessui/react";
+import { Menu } from "./Menu";
 
 export const Nav = () => {
   const { pathname, query, asPath, push, locale } = useRouter();

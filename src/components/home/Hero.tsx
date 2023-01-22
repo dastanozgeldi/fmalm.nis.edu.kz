@@ -4,7 +4,15 @@ import chuvak from "./chuvak.png";
 
 export const Hero = () => {
   return (
-    <section className="mx-auto gap-8 space-y-4 flex flex-col lg:flex-row items-center container">
+    <section className="relative mx-auto gap-8 space-y-4 flex flex-col lg:flex-row items-center container">
+      {/* <video
+        autoPlay
+        loop
+        muted
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+      >
+        <source src="nis.mp4" type="video/mp4" />
+      </video> */}
       {/* Important Information */}
       <div className="space-y-6">
         <h1 className="my-4 uppercase text-4xl font-bold underline underline-offset-8 decoration-primary decoration-[4px]">
