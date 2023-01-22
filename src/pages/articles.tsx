@@ -20,7 +20,7 @@ ArticlesPage.messages = ["Articles", ...Page.messages];
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   // Run API calls in parallel
   const [articlesRes] = await Promise.all([
-    fetchAPI("/articles", { locale }, { populate: "*" }),
+    fetchAPI("/articles", { populate: "*" }),
   ]);
 
   return {

@@ -20,5 +20,10 @@
     "virtual_school": "Virtual School",
     "copyright": "© NIS PM Almaty. 2023. All rights reserved.",
     "ecosystem": "Ecosystem"
+  },
+  "404": {
+    "not_found": "Page not found",
+    "go_back": "Go Back",
+    "contact_school": "Contact School"
   }
 }
