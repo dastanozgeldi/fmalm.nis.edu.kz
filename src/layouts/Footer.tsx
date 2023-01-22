@@ -17,8 +17,7 @@ export const Footer = () => {
     <footer>
       {/* top */}
       <div className="p-4 text-gray-100 bg-[#111]">
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-8">
-          {/* Миссия школы */}
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
           <div className="w-full space-y-2 text-center flex flex-col items-center">
             <Logo />
             <p>{t("address")}</p>
@@ -37,45 +36,55 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="items-center w-full space-y-4">
-            <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
-              {t("useful_links")}
-            </h2>
-            <div className="space-y-2">
-              <a
-                href="https://fmalmnis.edupage.org/timetable"
-                className="flex items-center gap-2"
-              >
-                <FaCalendar /> {t("timetable")}
-              </a>
-              <a
-                href="https://fmalmnis.edupage.org/timetable"
-                className="flex items-center gap-2"
-              >
-                <FaBook /> {t("sms")}
-              </a>
-              <a
-                href="https://fmalmnis.edupage.org/timetable"
-                className="flex items-center gap-2"
-              >
-                <FaCircleNotch /> NIS Online
-              </a>
-              <a
-                href="https://fmalmnis.edupage.org/timetable"
-                className="flex items-center gap-2"
-              >
-                <FaLaptop /> {t("virtual_school")}
-              </a>
+          <div className="w-full space-y-4 flex justify-center">
+            <div>
+              <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
+                {t("useful_links")}
+              </h2>
+              <div className="space-y-2">
+                <a
+                  href="https://fmalmnis.edupage.org/timetable"
+                  className="max-w-max flex items-center gap-2"
+                >
+                  <FaCalendar /> {t("timetable")}
+                </a>
+                <a
+                  href="https://fmalmnis.edupage.org/timetable"
+                  className="max-w-max flex items-center gap-2"
+                >
+                  <FaBook /> {t("sms")}
+                </a>
+                <a
+                  href="https://fmalmnis.edupage.org/timetable"
+                  className="max-w-max flex items-center gap-2"
+                >
+                  <FaCircleNotch /> NIS Online
+                </a>
+                <a
+                  href="https://fmalmnis.edupage.org/timetable"
+                  className="max-w-max flex items-center gap-2"
+                >
+                  <FaLaptop /> {t("virtual_school")}
+                </a>
+              </div>
             </div>
           </div>
-          <div className="w-full">
-            <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
-              Категории
-            </h2>
-            <div className="space-y-2 flex flex-col">
-              <a href="">СМИ о нас</a>
-              <a href="">Новости школы</a>
-              <a href="">Объявления</a>
+          <div className="w-full space-y-4 flex justify-center">
+            <div>
+              <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
+                {t("ecosystem")}
+              </h2>
+              <div className="space-y-2 flex flex-col">
+                <a className="max-w-max" href="https://enis2.space/">
+                  eNIS2
+                </a>
+                <a
+                  className="max-w-max"
+                  href="https://play.google.com/store/apps/details?id=com.nissenger.nissengermobile"
+                >
+                  Nissenger
+                </a>
+              </div>
             </div>
           </div>
         </div>
