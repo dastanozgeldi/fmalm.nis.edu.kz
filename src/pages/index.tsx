@@ -3,7 +3,7 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
-import { fetchAPI } from "@/lib/api";
+import { getStrapiURL } from "@/lib/api";
 import { Hero } from "@/components/home/Hero";
 import { Info } from "@/components/home/Info";
 import { School } from "@/components/home/School";
@@ -28,9 +28,10 @@ export default function Index({ articles }: any) {
 Index.messages = ["Index", "Articles", ...Page.messages];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
-  const [articlesRes] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-  ]);
+  const res = await fetch(
+    getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+  );
+  const articlesRes = await res.json();
 
   return {
     props: {

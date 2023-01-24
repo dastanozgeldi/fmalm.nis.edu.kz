@@ -2,7 +2,7 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
-import { fetchAPI } from "@/lib/api";
+import { getStrapiURL } from "@/lib/api";
 import { pick } from "lodash";
 
 export const ArticlesPage = ({ articles }: any) => {
@@ -10,7 +10,7 @@ export const ArticlesPage = ({ articles }: any) => {
 
   return (
     <Page title={t("title")}>
-      <Articles articles={articles}>{t("articles")}</Articles>
+      <Articles articles={articles}>{t("all")}</Articles>
     </Page>
   );
 };
@@ -18,10 +18,10 @@ export const ArticlesPage = ({ articles }: any) => {
 ArticlesPage.messages = ["Articles", ...Page.messages];
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  // Run API calls in parallel
-  const [articlesRes] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-  ]);
+  const res = await fetch(
+    getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+  );
+  const articlesRes = await res.json();
 
   return {
     props: {
