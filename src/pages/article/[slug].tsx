@@ -3,13 +3,14 @@ import Moment from "react-moment";
 import { fetchAPI } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/layouts/Page";
-import { FaClock, FaUser } from "react-icons/fa";
+import { FaCalendar, FaUser } from "react-icons/fa";
 import { pick } from "lodash";
 import { GetStaticPropsContext } from "next";
+import Image from "next/image";
 
 const Article = ({ article }: any) => {
-  const imageUrl = getStrapiMedia(article.attributes.image);
-  const { title, published_at, author, content } = article.attributes;
+  const { title, published_at, author, content, image, topic } =
+    article.attributes;
 
   return (
     <Page title={title}>
@@ -19,23 +20,36 @@ const Article = ({ article }: any) => {
       >
         {/* Details */}
         <div className="">
-          <h1 className="text-2xl">{title}</h1>
-          <div className="flex space-x-4 my-2">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl">{title}</h1>
+            {topic?.data && (
+              <p className="text-sm p-2 text-white bg-secondary rounded-lg">
+                {topic.data.attributes.name}
+              </p>
+            )}
+          </div>
+          <div className="flex items-center justify-between space-x-4 my-2">
             <p className="text-gray-500 flex items-center gap-2">
-              <FaClock />
+              <FaCalendar />
               <Moment format="MMM Do YYYY">{published_at}</Moment>
             </p>
-            <p className="text-gray-500 flex items-center gap-2">
-              <FaUser />
-              {author.data.attributes.name}
-            </p>
+            {author?.data && (
+              <p className="text-gray-500 flex items-center gap-2">
+                <FaUser />
+                {author.data.attributes.name}
+              </p>
+            )}
           </div>
         </div>
-        <img
-          className="object-cover w-[60ch] h-[36ch]"
-          alt="Banner Image"
-          src={imageUrl}
-        />
+        {image?.data && (
+          <Image
+            className="object-cover w-[60ch] h-[36ch] rounded-t-lg"
+            width={400}
+            height={240}
+            src={getStrapiMedia(image)}
+            alt="Banner Image"
+          />
+        )}
         <ReactMarkdown skipHtml>{content}</ReactMarkdown>
       </div>
     </Page>
@@ -46,7 +60,7 @@ export async function getStaticPaths() {
   const articlesRes = await fetchAPI("/articles", { fields: ["slug"] });
 
   return {
-    paths: articlesRes.data.map((article: any) => ({
+    paths: articlesRes?.data?.map((article: any) => ({
       params: {
         slug: article.attributes.slug,
       },

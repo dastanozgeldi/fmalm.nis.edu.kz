@@ -11,12 +11,12 @@ export const ArticleItem = ({ article }: any) => {
   return (
     <Link href={`/article/${slug}`} className="m-4">
       <div className="relative border-2 rounded-lg w-[360px]">
-        {topic.data && (
+        {topic?.data && (
           <span className="text-sm absolute right-0 p-2 m-2 text-white bg-secondary rounded-lg">
             {topic.data.attributes.name}
           </span>
         )}
-        {image.data && (
+        {image?.data && (
           <Image
             className="w-[360px] h-[240px] object-cover rounded-t-lg"
             width={400}
@@ -34,10 +34,10 @@ export const ArticleItem = ({ article }: any) => {
             <FaCalendar />
             <Moment format="MMM Do YYYY">{published_at}</Moment>
           </p>
-          {author.data && (
+          {author?.data && (
             <p className="text-gray-500 flex items-center gap-2">
               <FaUser />
-              {author.data?.attributes.name}
+              {author.data.attributes.name}
             </p>
           )}
         </div>

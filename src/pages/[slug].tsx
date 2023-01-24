@@ -16,7 +16,7 @@ const GeneralPage = ({ article }: any) => {
         className="relative max-w-[60ch] mx-auto border p-8 m-4 space-y-4"
       >
         {/* Details */}
-        {image.data && (
+        {image?.data && (
           <Image
             width={600}
             height={600}
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   const articlesRes = await fetchAPI("/pages", { fields: ["slug"] });
 
   return {
-    paths: articlesRes.data.map((article: any) => ({
+    paths: articlesRes?.data?.map((article: any) => ({
       params: {
         slug: article.attributes.slug,
       },
