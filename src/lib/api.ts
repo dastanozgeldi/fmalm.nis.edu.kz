@@ -5,15 +5,8 @@ import qs from "qs";
  * @param {string} path Path of the URL
  * @returns {string} Full Strapi URL
  */
-export function getStrapiURL(path = "") {
-  if (
-    process.env.NODE_ENV === "production" &&
-    process.env.NEXT_PUBLIC_STRAPI_API_URL
-  ) {
-    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${path}`;
-  }
-  return `http://localhost:1337${path}`;
-}
+export const getStrapiURL = (path = "") =>
+  `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${path}`;
 
 /**
  * Helper to make GET requests to Strapi API endpoints
