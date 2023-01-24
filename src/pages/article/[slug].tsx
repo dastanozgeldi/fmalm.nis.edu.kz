@@ -1,11 +1,11 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
-import { fetchAPI } from "@/lib/api";
+import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/layouts/Page";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import { pick } from "lodash";
-import { GetStaticPropsContext } from "next";
+import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import Image from "next/image";
 
 const Article = ({ article }: any) => {
@@ -56,15 +56,45 @@ const Article = ({ article }: any) => {
   );
 };
 
-export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["slug"] });
+export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
+  // const paths = locales.map(async (locale) => {
+  //   const res = await fetch(
+  //     getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+  //   );
+  //   const articlesRes = await res.json();
+
+  //   // Error: A required parameter (slug) was not provided as a string in getStaticPaths for /article/[slug]
+
+  //   return articlesRes?.data?.map((article: any) => {
+  //     console.log(article.attributes.slug);
+  //     return {
+  //       params: {
+  //         slug: article.attributes.slug,
+  //       },
+  //       locale,
+  //     };
+  //   });
+  // });
+
+  let paths: any[] = [];
+  for (const locale of locales) {
+    const res = await fetch(
+      getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+    );
+    const articlesRes = await res.json();
+
+    articlesRes?.data?.forEach((article: any) => {
+      paths.push({
+        params: {
+          slug: article.attributes.slug,
+        },
+        locale,
+      });
+    });
+  }
 
   return {
-    paths: articlesRes?.data?.map((article: any) => ({
-      params: {
-        slug: article.attributes.slug,
-      },
-    })),
+    paths,
     fallback: false,
   };
 }
@@ -73,21 +103,23 @@ export async function getStaticProps({
   locale,
   params,
 }: GetStaticPropsContext) {
-  const articlesRes = await fetchAPI("/articles", {
-    filters: {
-      slug: params?.slug,
-    },
-    populate: "*",
-  });
+  console.log(params?.slug);
+  const res = await fetch(
+    getStrapiURL(
+      `/api/articles?locale=${locale}&filters[slug][$eq]=${params?.slug}`
+    )
+  );
+  const articleRes = await res.json();
+
+  console.log(articleRes.data);
 
   return {
     props: {
-      article: articlesRes.data[0],
+      article: articleRes.data[0],
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),
     },
-
     revalidate: 1,
   };
 }
