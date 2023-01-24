@@ -1,18 +1,18 @@
 import ReactMarkdown from "react-markdown";
-import { fetchAPI } from "@/lib/api";
+import { fetchAPI, getStrapiURL } from "@/lib/api";
 import { Page } from "@/layouts/Page";
 import { pick } from "lodash";
-import { GetStaticPropsContext } from "next";
+import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
 
-const GeneralPage = ({ article }: any) => {
-  const { title, image, content } = article.attributes;
+const GeneralPage = ({ page }: any) => {
+  const { title, image, content } = page.attributes;
 
   return (
     <Page title={title}>
       <div
-        id="article"
+        id="page"
         className="relative max-w-[60ch] mx-auto border p-8 m-4 space-y-4"
       >
         {/* Details */}
@@ -31,15 +31,26 @@ const GeneralPage = ({ article }: any) => {
   );
 };
 
-export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/pages", { fields: ["slug"] });
+export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
+  let paths: any[] = [];
+  for (const locale of locales) {
+    const res = await fetch(
+      getStrapiURL(`/api/pages?locale=${locale}&populate=*`)
+    );
+    const pagesRes = await res.json();
+
+    pagesRes?.data?.forEach((page: any) => {
+      paths.push({
+        params: {
+          slug: page.attributes.slug,
+        },
+        locale,
+      });
+    });
+  }
 
   return {
-    paths: articlesRes?.data?.map((article: any) => ({
-      params: {
-        slug: article.attributes.slug,
-      },
-    })),
+    paths,
     fallback: false,
   };
 }
@@ -48,16 +59,16 @@ export async function getStaticProps({
   locale,
   params,
 }: GetStaticPropsContext) {
-  const articlesRes = await fetchAPI("/pages", {
-    filters: {
-      slug: params?.slug,
-    },
-    populate: "*",
-  });
+  const res = await fetch(
+    getStrapiURL(
+      `/api/pages?locale=${locale}&filters[slug][$eq]=${params?.slug}`
+    )
+  );
+  const pageRes = await res.json();
 
   return {
     props: {
-      article: articlesRes.data[0],
+      page: pageRes.data[0],
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),
