@@ -103,15 +103,12 @@ export async function getStaticProps({
   locale,
   params,
 }: GetStaticPropsContext) {
-  console.log(params?.slug);
   const res = await fetch(
     getStrapiURL(
       `/api/articles?locale=${locale}&filters[slug][$eq]=${params?.slug}`
     )
   );
   const articleRes = await res.json();
-
-  console.log(articleRes.data);
 
   return {
     props: {
