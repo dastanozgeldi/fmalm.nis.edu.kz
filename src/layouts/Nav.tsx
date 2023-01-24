@@ -1,47 +1,69 @@
 import { useRouter } from "next/router";
 import { Logo } from "@/components/common/Logo";
 import { Menu } from "./Menu";
+import { IoCall, IoMail } from "react-icons/io5";
 
-export const Nav = () => {
-  const { pathname, query, asPath, push, locale } = useRouter();
+interface Languages {
+  kk: string;
+  ru: string;
+  en: string;
+}
+
+const LANGUAGES = {
+  kk: "🇰🇿",
+  en: "🇺🇸",
+  ru: "🇷🇺",
+};
+
+const MenuIcons = () => {
+  const { pathname, query, asPath, push, locale, locales } = useRouter();
 
   return (
-    <nav className="px-8 py-4">
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <Logo />
-        <div className="flex flex-col md:flex-row items-center space-x-8">
-          <a className="text-xl text-gray-500" href="tel:87273310104">
-            +7 (727) 331-01-04
-          </a>
-          <a
-            className="text-xl text-gray-500"
-            href="mailto:info@fmalm.nis.edu.kz"
+    <div className="flex items-center space-x-6">
+      <div className="flex items-center gap-3">
+        <a className="text-gray-500" href="tel:87273310104">
+          <IoCall className="h-5 w-5" />
+        </a>
+        <a className="text-gray-500" href="mailto:info@fmalm.nis.edu.kz">
+          <IoMail className="h-5 w-5" />
+        </a>
+      </div>
+      <div className="flex">
+        {locales?.map((l) => (
+          <button
+            key={l}
+            className={`${
+              locale === l ? "bg-gray-200 rounded-lg" : "text-gray-500"
+            } text-2xl space-x-4 px-2 py-1`}
+            onClick={() => push({ pathname, query }, asPath, { locale: l })}
           >
-            info@fmalm.nis.edu.kz
-          </a>
+            {LANGUAGES[l as keyof Languages]}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const Nav = () => {
+  return (
+    <nav className="p-4">
+      <div className="space-x-4">
+        {/* Mobile */}
+        <div className="lg:hidden w-full space-y-2">
+          <div className="flex items-center justify-between">
+            <Logo />
+            <MenuIcons />
+          </div>
+          <Menu />
         </div>
-        <div className="flex items-center gap-4 text-xl">
-          <button
-            className={locale === "kk" ? "text-primary" : "text-gray-500"}
-            onClick={() => push({ pathname, query }, asPath, { locale: "kk" })}
-          >
-            qaz
-          </button>
-          <button
-            className={locale === "ru" ? "text-primary" : "text-gray-500"}
-            onClick={() => push({ pathname, query }, asPath, { locale: "ru" })}
-          >
-            рус
-          </button>
-          <button
-            className={locale === "en" ? "text-primary" : "text-gray-500"}
-            onClick={() => push({ pathname, query }, asPath, { locale: "en" })}
-          >
-            eng
-          </button>
+        {/* Desktop */}
+        <div className="hidden lg:flex md:items-center md:justify-between">
+          <Logo />
+          <Menu />
+          <MenuIcons />
         </div>
       </div>
-      <Menu />
     </nav>
   );
 };

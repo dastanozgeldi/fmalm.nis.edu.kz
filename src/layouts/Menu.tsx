@@ -1,4 +1,4 @@
-import { fetchAPI } from "@/lib/api";
+import { getStrapiURL } from "@/lib/api";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MenuItem } from "./MenuItem";
@@ -9,9 +9,10 @@ export const Menu = () => {
 
   useEffect(() => {
     async function fetchCategories() {
-      const [categoriesRes] = await Promise.all([
-        fetchAPI("/categories", { populate: ["pages"] }),
-      ]);
+      const res = await fetch(
+        getStrapiURL(`/api/categories?locale=${locale}&populate=*`)
+      );
+      const categoriesRes = await res.json();
       setCategories(categoriesRes.data);
     }
 
@@ -19,13 +20,13 @@ export const Menu = () => {
   }, [locale]);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center mt-4">
+    <div className="flex overflow-auto items-center justify-center">
       {categories &&
         categories.map((c: any) => (
           <MenuItem
             key={c.attributes.name}
             title={c.attributes.name}
-            pages={c.attributes.pages.data}
+            pages={c.attributes.pages?.data || []}
           />
         ))}
     </div>
