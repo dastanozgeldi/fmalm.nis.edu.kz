@@ -7,10 +7,10 @@ export const MenuItem = ({ title, pages }: any) => {
 
   return (
     <div>
-      <button className="uppercase w-64 lg:w-max flex items-center justify-between gap-2 peer px-5 py-2">
+      <button className="uppercase lg:w-max flex items-center justify-between gap-2 peer px-4 py-2">
         {title} <FaAngleDown />
       </button>
-      <div className="w-64 lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
+      <div className="w-full lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
         {pages.map((page: any) => (
           <Link
             key={page.attributes.id}

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MenuItem } from "./MenuItem";
 
-export const Menu = () => {
+export const MobileMenu = () => {
   const [categories, setCategories] = useState<any>();
   const { locale } = useRouter();
 
@@ -20,7 +20,7 @@ export const Menu = () => {
   }, [locale]);
 
   return (
-    <div className="flex overflow-x-auto items-center justify-center space-x-6">
+    <div className="w-full z-50 flex flex-col absolute right-0 top-20 rounded bg-white border-b-2 space-y-4">
       {categories &&
         categories.map((c: any) => (
           <MenuItem
