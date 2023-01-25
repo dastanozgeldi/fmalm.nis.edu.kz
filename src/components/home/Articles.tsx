@@ -39,3 +39,5 @@ export const Articles = ({
     </section>
   );
 };
+
+Articles.messages = ["Articles"];

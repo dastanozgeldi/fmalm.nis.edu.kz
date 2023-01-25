@@ -25,7 +25,12 @@ export default function Index({ articles }: any) {
   );
 }
 
-Index.messages = ["Index", "Articles", ...Page.messages];
+Index.messages = [
+  "Index",
+  ...School.messages,
+  ...Articles.messages,
+  ...Page.messages,
+];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
   const res = await fetch(

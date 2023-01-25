@@ -25,7 +25,7 @@ export const Page = ({ children, title }: PageProps) => {
       </Head>
       <div className={inter.className}>
         <Nav />
-        <main className="px-2">{children}</main>
+        {children}
         <Footer />
       </div>
     </>

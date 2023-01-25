@@ -1,33 +1,18 @@
 import { Disclosure } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 import { FaPlusCircle } from "react-icons/fa";
 
 export const School = () => {
+  const t = useTranslations("School");
+
   return (
-    <div className="container min-h-screen mx-auto flex flex-col md:flex-row gap-8">
+    <div className="container mx-auto flex flex-col md:flex-row gap-8 px-2">
       {/* Left Side */}
       <div className="space-y-6">
-        <h1 className="uppercase text-2xl font-bold underline underline-offset-8 decoration-primary decoration-[4px]">
-          Алматы қаласы Назарбаев атындағы физика-математика бағытындағы
-          зияткерлік мектебі
-        </h1>
-        <p>
-          Халықаралық Бакалавриат бағдарламаларын қолдана отырып, дарынды
-          студенттерге білім беру мүмкіндіктерін ұсынатын және зияткерлік
-          қоғамдастықты, мәдениетаралық түсінушілікті және өмір бойы оқуды
-          бағалай білуді дамыту міндеті болып табылатын халықаралық мектеп.
-        </p>
-        <p>
-          Қоғамдастық ретінде біз оқу бағдарламалары мен қосымша білім беру
-          курстары негізінде жоғары сапалы оқыту мен оқытуды; ұлттық және жеке
-          құндылықтарды тәрбиелеу арқылы оқушылардың әл-ауқаты мен
-          қауіпсіздігіне қамқорлық жасауды қамтамасыз етеміз.
-        </p>
-        <iframe
-          className="rounded-lg w-full h-[400px]"
-          src="https://www.youtube.com/embed/KXhPf5C_JEw"
-          title="YouTube video player"
-          allowFullScreen
-        ></iframe>
+        <h1 className="uppercase text-2xl font-bold">{t("name")}</h1>
+        <hr className="bg-primary h-1" />
+        <p>{t("first")}</p>
+        <p>{t("second")}</p>
       </div>
       <div className="space-y-6 md:max-w-[32ch]">
         <Disclosure>
@@ -128,3 +113,5 @@ export const School = () => {
     </div>
   );
 };
+
+School.messages = ["School"];
