@@ -3,6 +3,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Menu } from "./Menu";
 import { MenuIcons } from "./MenuIcons";
+import { MenuLocales } from "./MenuLocales";
 import { MobileMenu } from "./MobileMenu";
 
 export const Nav = () => {
@@ -17,6 +18,7 @@ export const Nav = () => {
             <Logo />
             <div className="flex items-center space-x-3">
               <MenuIcons />
+              <MenuLocales />
               {open && <MobileMenu />}
               <button
                 aria-label="Menu"
@@ -34,9 +36,10 @@ export const Nav = () => {
         {/* Desktop */}
         <div className="hidden lg:flex md:items-center md:justify-between">
           <Logo />
-          <Menu />
           <MenuIcons />
+          <MenuLocales />
         </div>
+        <Menu />
       </div>
     </nav>
   );
