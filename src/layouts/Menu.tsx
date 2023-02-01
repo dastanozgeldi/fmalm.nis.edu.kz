@@ -20,7 +20,7 @@ export const Menu = () => {
   }, [locale]);
 
   return (
-    <div className="flex overflow-x-auto items-center justify-center space-x-6">
+    <div className="hidden text-dark lg:flex lg:overflow-auto items-center justify-center space-x-6">
       {categories &&
         categories.map((c: any) => (
           <MenuItem

@@ -38,9 +38,7 @@ export const Footer = () => {
           </div>
           <div className="w-full space-y-4 flex justify-center">
             <div>
-              <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
-                {t("useful_links")}
-              </h2>
+              <h2 className="heading">{t("useful_links")}</h2>
               <div className="space-y-2">
                 <a
                   href="https://fmalmnis.edupage.org/timetable"
@@ -71,9 +69,7 @@ export const Footer = () => {
           </div>
           <div className="w-full space-y-4 flex justify-center">
             <div>
-              <h2 className="text-2xl font-bold underline underline-offset-8 decoration-primary">
-                {t("ecosystem")}
-              </h2>
+              <h2 className="heading">{t("ecosystem")}</h2>
               <div className="space-y-2 flex flex-col">
                 <a className="max-w-max" href="https://enis2.space/">
                   eNIS2

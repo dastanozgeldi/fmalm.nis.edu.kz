@@ -9,8 +9,7 @@ export const School = () => {
     <div className="container mx-auto flex flex-col md:flex-row gap-8 px-2">
       {/* Left Side */}
       <div className="space-y-6">
-        <h1 className="uppercase text-2xl font-bold">{t("name")}</h1>
-        <hr className="bg-primary h-1" />
+        <h1 className="heading text-2xl">{t("name")}</h1>
         <p>{t("first")}</p>
         <p>{t("second")}</p>
       </div>

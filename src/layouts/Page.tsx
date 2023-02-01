@@ -1,11 +1,11 @@
-import { Inter } from "@next/font/google";
+import { Montserrat } from "@next/font/google";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 type PageProps = PropsWithChildren & {
   title: string;
@@ -23,7 +23,7 @@ export const Page = ({ children, title }: PageProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={inter.className}>
+      <div className={montserrat.className}>
         <Nav />
         {children}
         <Footer />

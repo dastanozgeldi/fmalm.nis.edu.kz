@@ -17,9 +17,7 @@ export const Articles = ({
 
   return (
     <section className="p-8">
-      <h1 className="text-center text-4xl font-semibold my-4 underline decoration-primary decoration-4 underline-offset-[10px]">
-        {children}
-      </h1>
+      <h1 className="text-center text-4xl heading">{children}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-items-center">
         {articles.map((article: any) => (
           <ArticleItem key={article.id} article={article} />

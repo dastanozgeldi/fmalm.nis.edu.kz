@@ -18,9 +18,9 @@ export const ArticleItem = ({ article }: any) => {
         )}
         {image?.data && (
           <Image
-            className="w-[360px] h-[240px] object-cover rounded-t-lg"
-            width={400}
-            height={240}
+            className="w-[360px] h-[360px] object-cover rounded-t-lg"
+            width={360}
+            height={360}
             src={getStrapiMedia(image)}
             alt="Banner Image"
           />

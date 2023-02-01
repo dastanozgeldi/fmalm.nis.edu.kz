@@ -7,7 +7,7 @@ export const MenuItem = ({ title, pages }: any) => {
 
   return (
     <div>
-      <button className="uppercase lg:w-max flex items-center justify-between gap-2 peer px-4 py-2">
+      <button className="font-medium text-dark uppercase lg:w-max flex items-center justify-between gap-2 peer px-4 py-2">
         {title} <FaAngleDown />
       </button>
       <div className="w-full lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">

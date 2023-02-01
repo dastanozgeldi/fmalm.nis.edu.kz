@@ -18,7 +18,7 @@ export const Nav = () => {
         <div className="lg:hidden w-full space-y-2">
           <div className="flex items-center justify-between">
             <Logo />
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 sm:space-y-3">
               <MenuIcons address={t("address")} />
               <MenuLocales />
               {open && <MobileMenu />}
