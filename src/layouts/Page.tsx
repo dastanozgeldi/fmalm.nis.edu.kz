@@ -23,11 +23,12 @@ export const Page = ({ children, title }: PageProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={montserrat.className}>
+      {/* Put inside container */}
+      <main className={`${montserrat.className}} container mx-auto`}>
         <Nav />
         {children}
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 };
