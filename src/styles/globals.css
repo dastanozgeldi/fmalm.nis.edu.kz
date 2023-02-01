@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.button-primary {
+  @apply px-4 py-3 text-xl rounded-md bg-primary hover:bg-primary/80 hover:duration-500 text-white;
+}
+
 .nav-item {
   @apply px-2 border-r-[1px] border-gray-300;
 }

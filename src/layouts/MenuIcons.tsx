@@ -1,6 +1,6 @@
 import { IoCall, IoLocationSharp, IoMail } from "react-icons/io5";
 
-export const MenuIcons = () => (
+export const MenuIcons = ({ address }: { address: string }) => (
   <div className="flex items-center gap-3 lg:gap-10">
     <a
       className="flex items-center gap-2 text-gray-500 text-lg"
@@ -21,7 +21,7 @@ export const MenuIcons = () => (
       href="https://go.2gis.com/dvoxj"
     >
       <IoLocationSharp className="h-5 w-5" />
-      <span className="hidden lg:block">Жамакаева 145</span>
+      <span className="hidden lg:block">{address}</span>
     </a>
   </div>
 );
