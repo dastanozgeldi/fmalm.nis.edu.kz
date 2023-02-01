@@ -24,11 +24,11 @@ export const Page = ({ children, title }: PageProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Put inside container */}
-      <main className={`${montserrat.className}} container mx-auto`}>
+      <main className={montserrat.className}>
         <Nav />
         {children}
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 };
