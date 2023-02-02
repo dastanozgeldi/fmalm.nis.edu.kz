@@ -17,7 +17,7 @@ export default function Index({ articles }: any) {
         <Hero />
         <Info />
         <School />
-        <Articles showMore={true} articles={articles.slice(0, 3)}>
+        <Articles showMore={true} articles={articles}>
           {t("articles")}
         </Articles>
       </div>

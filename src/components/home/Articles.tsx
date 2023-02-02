@@ -19,7 +19,7 @@ export const Articles = ({
     <section className="p-8 space-y-8">
       <h1 className="text-center text-3xl heading">{children}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-items-center">
-        {articles.map((article: any) => (
+        {articles.slice(0, 3).map((article: any) => (
           <ArticleItem
             key={article.id}
             article={article}
@@ -29,7 +29,7 @@ export const Articles = ({
       </div>
       <div className="flex items-center justify-center">
         {/* if there are less than 3 articles, there is no point in navigating to "all articles" */}
-        {articles.length >= 3 && showMore && (
+        {articles.length > 3 && showMore && (
           <Link href="/articles" className="button-secondary">
             {t("show_more")}
           </Link>
