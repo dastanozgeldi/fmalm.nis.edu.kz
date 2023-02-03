@@ -6,7 +6,7 @@ import Image from "next/image";
 import { IoArrowForward } from "react-icons/io5";
 
 export const ArticleItem = ({ article, read_more }: any) => {
-  const { slug, image, title, description, published_at, author, topic } =
+  const { slug, image, title, description, createdAt, author, topic } =
     article.attributes;
 
   return (
@@ -28,7 +28,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
       <div className="pt-2 px-4 flex items-center justify-between space-x-4 my-2">
         <p className="text-sm text-gray-500 flex items-center gap-2">
           <FaCalendar />
-          <Moment format="MMM Do YYYY">{published_at}</Moment>
+          <Moment format="MMM Do YYYY">{createdAt}</Moment>
         </p>
         {author?.data && (
           <p className="text-sm text-gray-500 flex items-center gap-2">
