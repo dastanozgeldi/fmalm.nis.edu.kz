@@ -19,7 +19,7 @@ ArticlesPage.messages = ["Articles", ...Page.messages];
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const res = await fetch(
-    getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+    getStrapiURL(`/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`)
   );
   const articlesRes = await res.json();
 

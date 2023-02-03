@@ -15,8 +15,8 @@ export default function Index({ articles }: any) {
     <Page title={t("title")}>
       <div className="space-y-6">
         <Hero />
-        <Info />
         <School />
+        <Info />
         <Articles showMore={true} articles={articles}>
           {t("articles")}
         </Articles>
@@ -34,7 +34,9 @@ Index.messages = [
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
   const res = await fetch(
-    getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
+    getStrapiURL(
+      `/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`
+    )
   );
   const articlesRes = await res.json();
 
