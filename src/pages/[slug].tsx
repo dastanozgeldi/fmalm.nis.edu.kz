@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import { fetchAPI, getStrapiURL } from "@/lib/api";
+import { getStrapiURL } from "@/lib/api";
 import { Page } from "@/layouts/Page";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
@@ -13,7 +13,7 @@ const GeneralPage = ({ page }: any) => {
     <Page title={title}>
       <div
         id="page"
-        className="relative max-w-[60ch] mx-auto border p-8 m-4 space-y-4"
+        className="relative max-w-[60ch] mx-auto border rounded-md p-8 m-4 space-y-4"
       >
         {/* Details */}
         {image?.data && (

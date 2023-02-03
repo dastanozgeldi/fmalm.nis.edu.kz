@@ -16,7 +16,7 @@ const Article = ({ article }: any) => {
     <Page title={title}>
       <div
         id="article"
-        className="relative max-w-[60ch] mx-auto border p-8 m-4 space-y-4"
+        className="relative max-w-[60ch] mx-auto border rounded-md p-8 m-4 space-y-4"
       >
         {/* Details */}
         <div className="">
