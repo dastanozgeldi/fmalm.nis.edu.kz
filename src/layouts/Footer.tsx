@@ -14,9 +14,9 @@ export const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer>
+    <footer className="p-4 text-gray-100 bg-[#111]">
       {/* top */}
-      <div className="p-4 text-gray-100 bg-[#111]">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
           <div className="w-full space-y-2 text-center flex flex-col items-center">
             <Logo />
@@ -47,19 +47,19 @@ export const Footer = () => {
                   <FaCalendar /> {t("timetable")}
                 </a>
                 <a
-                  href="https://fmalmnis.edupage.org/timetable"
+                  href="https://sms.fmalm.nis.edu.kz/"
                   className="max-w-max flex items-center gap-2"
                 >
                   <FaBook /> {t("sms")}
                 </a>
                 <a
-                  href="https://fmalmnis.edupage.org/timetable"
+                  href="https://app.online.nis.edu.kz:8800/"
                   className="max-w-max flex items-center gap-2"
                 >
                   <FaCircleNotch /> NIS Online
                 </a>
                 <a
-                  href="https://fmalmnis.edupage.org/timetable"
+                  href="https://vs.nis.edu.kz/"
                   className="max-w-max flex items-center gap-2"
                 >
                   <FaLaptop /> {t("virtual_school")}
@@ -86,7 +86,7 @@ export const Footer = () => {
         </div>
       </div>
       {/* bottom */}
-      <div className="bg-[#111] p-4 text-sm text-gray-300 flex flex-col items-center justify-center space-y-2">
+      <div className="bg-[#111] p-4 mt-4 text-sm text-gray-300 flex flex-col items-center justify-center space-y-2">
         <p className="text-gray-300">{t("copyright")}</p>
       </div>
     </footer>

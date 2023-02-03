@@ -6,14 +6,19 @@ export const School = () => {
   const t = useTranslations("School");
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row gap-8 px-2">
+    <div className="container mx-auto flex flex-col md:flex-row gap-8">
       {/* Left Side */}
-      <div className="space-y-6">
+      <div className="space-y-6 md:w-2/3">
         <h1 className="heading text-2xl">{t("name")}</h1>
         <p>{t("first")}</p>
         <p>{t("second")}</p>
+        <img
+        className="rounded"
+          src="https://fmalm.nis.edu.kz/wp-content/uploads/2021/10/Mektep-FMN-scaled.jpg"
+          alt="School Image"
+        />
       </div>
-      <div className="space-y-6 md:max-w-[32ch]">
+      <div className="space-y-6 md:w-1/3">
         <Disclosure>
           {({ open }) => (
             <Disclosure.Button

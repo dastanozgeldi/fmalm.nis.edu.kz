@@ -3,7 +3,7 @@ import { FaPlusCircle } from "react-icons/fa";
 
 export const Info = () => {
   return (
-    <div className="container mx-auto flex flex-col justify-center md:flex-row md:justify-between min-h-screen bg-no-repeat bg-[url('/study.svg')] bg-contain bg-center">
+    <div className="flex flex-col items-center justify-center md:flex-row md:justify-between min-h-screen bg-no-repeat bg-[url('/study.svg')] bg-contain bg-center">
       {/* Left Side */}
       <div className="w-full max-w-md rounded-2xl p-2 space-y-4">
         <Disclosure>
