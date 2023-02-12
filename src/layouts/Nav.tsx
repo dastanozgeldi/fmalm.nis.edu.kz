@@ -4,7 +4,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Menu } from "./Menu";
 import { MenuIcons } from "./MenuIcons";
-import { MenuLocales } from "./MenuLocales";
+import { LocaleMenu } from "./LocaleMenu";
 import { MobileMenu } from "./MobileMenu";
 
 export const Nav = () => {
@@ -20,7 +20,7 @@ export const Nav = () => {
             <Logo />
             <div className="flex items-center space-x-3 sm:space-y-3">
               <MenuIcons address={t("address")} />
-              <MenuLocales />
+              <LocaleMenu />
               {open && <MobileMenu />}
               <button
                 aria-label="Menu"
@@ -39,7 +39,7 @@ export const Nav = () => {
         <div className="hidden lg:flex md:items-center md:justify-between">
           <Logo />
           <MenuIcons address={t("address")} />
-          <MenuLocales />
+          <LocaleMenu />
         </div>
         <Menu />
       </div>
