@@ -12,7 +12,7 @@ export const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="p-4">
+    <nav className="py-4">
       <div className="space-x-4">
         {/* Mobile */}
         <div className="lg:hidden w-full space-y-2">

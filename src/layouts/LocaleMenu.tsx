@@ -32,7 +32,7 @@ export const LocaleMenu = () => {
                 open && "bg-gray-100 rounded-lg"
               } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <IoGlobe className="w-6 h-6 text-gray-500" />
+              <IoGlobe className="w-5 h-5 text-gray-500" />
             </Menu.Button>
           </div>
           <Transition
