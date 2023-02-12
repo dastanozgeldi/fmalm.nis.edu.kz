@@ -1,6 +1,8 @@
 import { Disclosure } from "@headlessui/react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { FaPlusCircle } from "react-icons/fa";
+import school from "../../lib/images/school.jpg";
 
 export const School = () => {
   const t = useTranslations("School");
@@ -12,11 +14,7 @@ export const School = () => {
         <h1 className="heading text-2xl">{t("name")}</h1>
         <p>{t("first")}</p>
         <p>{t("second")}</p>
-        <img
-        className="rounded"
-          src="https://fmalm.nis.edu.kz/wp-content/uploads/2021/10/Mektep-FMN-scaled.jpg"
-          alt="School Image"
-        />
+        <Image className="rounded" src={school} alt="School Image" />
       </div>
       <div className="space-y-6 md:w-1/3">
         <Disclosure>
