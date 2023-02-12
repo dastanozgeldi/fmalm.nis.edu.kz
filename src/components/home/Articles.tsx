@@ -16,7 +16,7 @@ export const Articles = ({
   const t = useTranslations("Articles");
 
   return (
-    <section className="p-8 space-y-8">
+    <section className="space-y-8">
       <h1 className="text-center text-3xl heading">{children}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-items-center">
         {articles.slice(0, 3).map((article: any) => (

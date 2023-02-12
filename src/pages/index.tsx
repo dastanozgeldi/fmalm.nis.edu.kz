@@ -4,9 +4,10 @@ import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
 import { getStrapiURL } from "@/lib/api";
-import { Hero } from "@/components/home/Hero";
 import { Info } from "@/components/home/Info";
 import { School } from "@/components/home/School";
+import { Hero } from "@/components/home/Hero";
+import { BestChoice } from "@/components/home/BestChoice";
 
 export default function Index({ articles }: any) {
   const t = useTranslations("Index");
@@ -17,6 +18,7 @@ export default function Index({ articles }: any) {
         <Hero />
         <School />
         <Info />
+        <BestChoice />
         <Articles showMore={true} articles={articles}>
           {t("articles")}
         </Articles>

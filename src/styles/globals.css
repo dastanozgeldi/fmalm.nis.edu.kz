@@ -7,7 +7,7 @@
 }
 
 .heading {
-  @apply font-bold my-4 underline decoration-primary decoration-[3px] underline-offset-[10px];
+  @apply font-bold my-4 underline decoration-primary decoration-[2px] underline-offset-[10px];
 }
 
 .nav-item {
