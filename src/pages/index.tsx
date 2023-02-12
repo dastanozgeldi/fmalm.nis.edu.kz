@@ -32,6 +32,7 @@ Index.messages = [
   ...School.messages,
   ...Articles.messages,
   ...Page.messages,
+  ...BestChoice.messages,
 ];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
