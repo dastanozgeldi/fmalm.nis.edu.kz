@@ -8,6 +8,7 @@ import { Info } from "@/components/home/Info";
 import { School } from "@/components/home/School";
 import { Hero } from "@/components/home/Hero";
 import { BestChoice } from "@/components/home/BestChoice";
+import { UsefulLinks } from "@/components/home/UsefulLinks";
 
 export default function Index({ articles }: any) {
   const t = useTranslations("Index");
@@ -18,6 +19,7 @@ export default function Index({ articles }: any) {
         <Hero />
         <School />
         <Info />
+        <UsefulLinks />
         <BestChoice />
         <Articles showMore={true} articles={articles}>
           {t("articles")}
@@ -32,6 +34,7 @@ Index.messages = [
   ...School.messages,
   ...Articles.messages,
   ...Page.messages,
+  ...UsefulLinks.messages,
   ...BestChoice.messages,
 ];
 

@@ -10,7 +10,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
     article.attributes;
 
   return (
-    <div className="shadow-md rounded-lg w-[360px]">
+    <div className="border border-gray-200 rounded-lg w-[360px]">
       {image?.data && (
         <Image
           className="w-[360px] h-[225px] object-cover rounded-t-lg"
