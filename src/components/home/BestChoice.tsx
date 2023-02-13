@@ -12,7 +12,7 @@ export const BestChoice = () => {
       </div>
       <div className="relative lg:w-2/3 space-y-6 py-4">
         <div className="space-y-2">
-          <h1 className="text-2xl lg:text-5xl font-extrabold">{t("title")}</h1>
+          <h1 className="text-2xl lg:text-4xl font-extrabold">{t("title")}</h1>
           <p className="text-gray-500">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere
             maiores fugiat molestias, aliquid, voluptatem placeat nesciunt
