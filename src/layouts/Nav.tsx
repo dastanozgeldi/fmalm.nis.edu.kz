@@ -62,7 +62,7 @@ const Desktop = ({ t }: { t: any }) => {
 };
 
 export const Nav = () => {
-  const t = useTranslations("Nav");
+  const t = useTranslations("Menu");
 
   return (
     <nav className="space-y-3">
@@ -75,4 +75,4 @@ export const Nav = () => {
   );
 };
 
-Nav.messages = ["Nav"];
+Nav.messages = ["Menu"];

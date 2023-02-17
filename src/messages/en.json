@@ -3,46 +3,22 @@
     "title": "Home",
     "articles": "Latest Articles"
   },
+  "Menu": {
+    "address": "Zhamakayev st. 145",
+    "timetable": "School timetable",
+    "nis_online": "NIS Online",
+    "sms": "SMS",
+    "virtual_school": "Virtual School"
+  },
   "Hero": {
     "title": "NIS PM Almaty",
     "description": "An international school that provides educational opportunities for gifted students through International Baccalaureate programs and is committed to fostering intellectual community, intercultural understanding, and an appreciation of lifelong learning."
-  },
-  "School": {
-    "name": "NIS PM Almaty",
-    "first": "An international school that provides educational opportunities for gifted students through International Baccalaureate programs and is committed to fostering intellectual community, intercultural understanding, and an appreciation of lifelong learning.",
-    "second": "As a community, we provide high-quality teaching and learning based on curriculum and further education courses; care for the well-being and safety of students by instilling national and personal values."
-  },
-  "UsefulLinks": {
-    "title": "Useful Links",
-    "description": "For teachers, students and parents of NIS.",
-    "timetable": {
-      "title": "School timetable",
-      "description": "Class and break timetable"
-    },
-    "nis_online": {
-      "title": "NIS Online",
-      "description": "Information portal for students of Nazarbayev intellectual schools"
-    },
-    "sms": {
-      "title": "SMS",
-      "description": "School management system, student performance and other statistics"
-    },
-    "virtual_school": {
-      "title": "Virtual School",
-      "description": "Preparation of 6th grade students of general education schools to enter NIS 7th grade"
-    }
-  },
-  "BestChoice": {
-    "title": "Best choice for your child!"
   },
   "Articles": {
     "title": "Articles",
     "all": "All Articles",
     "read_more": "Read More",
     "show_more": "Show More"
-  },
-  "Nav": {
-    "address": "Zhamakayev st. 145"
   },
   "Footer": {
     "address": "Zhamakayev st. 145, Almaty, Kazakhstan",

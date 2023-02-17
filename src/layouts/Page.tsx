@@ -12,25 +12,24 @@ type PageProps = PropsWithChildren & {
 };
 
 export const Page = ({ children, title }: PageProps) => {
-  const t = useTranslations("School");
-  const fullTitle = `${title} | ${t("name")}`;
+  const t = useTranslations("Hero");
+  const fullTitle = `${title} | ${t("title")}`;
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={t("first")} />
         <meta name="author" content="Dastan Özgeldi" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta name="twitter:title" content={t("name")} />
+        <meta name="twitter:title" content={t("title")} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@dastanozgeldi" />
         <meta
           name="twitter:image"
           content="https://fmalmnis.vercel.app/card.png"
         />
-        <meta property="og:site_name" content={t("name")} />
-        <meta name="og:title" content={t("name")} />
+        <meta property="og:site_name" content={t("title")} />
+        <meta name="og:title" content={t("title")} />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -46,4 +45,4 @@ export const Page = ({ children, title }: PageProps) => {
   );
 };
 
-Page.messages = ["School", Nav.messages, Footer.messages];
+Page.messages = [Nav.messages, Footer.messages];
