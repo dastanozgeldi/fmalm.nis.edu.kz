@@ -39,10 +39,8 @@ export const Page = ({ children, title }: PageProps) => {
         <title>{fullTitle}</title>
       </Head>
       {/* Put inside container */}
-      <main className={`${montserrat.className} container mx-auto px-4`}>
-        <Nav />
-        {children}
-      </main>
+      <Nav />
+      <main className={montserrat.className}>{children}</main>
       <Footer />
     </>
   );

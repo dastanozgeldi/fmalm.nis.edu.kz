@@ -15,7 +15,7 @@ const LANGUAGES = {
   ru: "🇷🇺 Русский",
 };
 
-export const LocaleMenu = () => {
+export const MenuLocaleButton = () => {
   const { pathname, query, asPath, push, locale, locales } = useRouter();
 
   const setCookie = (locale: string) => {
@@ -29,10 +29,10 @@ export const LocaleMenu = () => {
           <div>
             <Menu.Button
               className={`${
-                open && "bg-gray-100 rounded-lg"
-              } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                open && "bg-gray-300 rounded-lg"
+              } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <IoGlobe className="w-5 h-5 text-gray-500" />
+              <IoGlobe className="w-5 h-5" />
             </Menu.Button>
           </div>
           <Transition
@@ -44,7 +44,7 @@ export const LocaleMenu = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Menu.Items className="absolute z-50 right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               {locales?.map((l) => (
                 <Menu.Item key={l}>
                   <button

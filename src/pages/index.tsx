@@ -4,11 +4,7 @@ import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
 import { getStrapiURL } from "@/lib/api";
-import { Info } from "@/components/home/Info";
-import { School } from "@/components/home/School";
 import { Hero } from "@/components/home/Hero";
-import { BestChoice } from "@/components/home/BestChoice";
-import { UsefulLinks } from "@/components/home/UsefulLinks";
 
 export default function Index({ articles }: any) {
   const t = useTranslations("Index");
@@ -17,10 +13,6 @@ export default function Index({ articles }: any) {
     <Page title={t("title")}>
       <div className="space-y-6">
         <Hero />
-        <School />
-        <Info />
-        <UsefulLinks />
-        <BestChoice />
         <Articles showMore={true} articles={articles}>
           {t("articles")}
         </Articles>
@@ -31,11 +23,9 @@ export default function Index({ articles }: any) {
 
 Index.messages = [
   "Index",
-  ...School.messages,
+  ...Hero.messages,
   ...Articles.messages,
   ...Page.messages,
-  ...UsefulLinks.messages,
-  ...BestChoice.messages,
 ];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
