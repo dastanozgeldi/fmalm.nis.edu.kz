@@ -46,7 +46,7 @@ const Desktop = ({ t }: { t: any }) => {
           <div className="flex items-center justify-end space-x-6">
             <MenuIcons address={t("address")} />
             {/* Search */}
-            <div className="text-white border-2 px-4 py-1 gap-2 rounded-md border-primary w-[216px] flex items-center justify-between">
+            <div className="border-2 px-4 py-1 gap-2 rounded-md border-primary w-[216px] flex items-center justify-between">
               <input
                 placeholder="Іздеу"
                 className="w-full outline-none bg-transparent"
