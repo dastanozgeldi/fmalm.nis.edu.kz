@@ -28,6 +28,7 @@ export const MenuLocaleButton = () => {
         <>
           <div>
             <Menu.Button
+              aria-label="Change Language"
               className={`${
                 open && "bg-gray-300 rounded-lg"
               } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
