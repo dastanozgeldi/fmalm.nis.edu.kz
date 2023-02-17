@@ -45,4 +45,4 @@ export const Page = ({ children, title }: PageProps) => {
   );
 };
 
-Page.messages = [Nav.messages, Footer.messages];
+Page.messages = ["Hero", Nav.messages, Footer.messages];
