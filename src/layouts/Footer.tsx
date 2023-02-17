@@ -31,7 +31,7 @@ export const Footer = () => {
               <a href="https://www.instagram.com/nis_pm_almaty/">
                 <FaInstagram className="w-7 h-7" />
               </a>
-              <a href="https://www.youtube.com/channel/UC0FhZfxcAlsWdvU-Bgzgi8A?app=desktop">
+              <a href="https://www.youtube.com/@nis_pm_almaty">
                 <FaYoutube className="w-7 h-7" />
               </a>
             </div>
