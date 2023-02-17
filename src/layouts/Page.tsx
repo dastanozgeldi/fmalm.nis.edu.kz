@@ -19,6 +19,7 @@ export const Page = ({ children, title }: PageProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={t("description")} />
         <meta name="author" content="Dastan Özgeldi" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="twitter:title" content={t("title")} />
@@ -37,7 +38,6 @@ export const Page = ({ children, title }: PageProps) => {
         />
         <title>{fullTitle}</title>
       </Head>
-      {/* Put inside container */}
       <Nav />
       <main className={montserrat.className}>{children}</main>
       <Footer />
