@@ -40,7 +40,7 @@ const Desktop = ({ t }: { t: any }) => {
   return (
     <>
       {/* Desktop */}
-      <div className="hidden lg:flex md:items-center md:justify-between px-4">
+      <div className="hidden lg:flex md:items-center md:justify-between">
         <Logo />
         <div className="flex flex-col space-y-3">
           <div className="flex items-center justify-end space-x-6">

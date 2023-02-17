@@ -25,8 +25,8 @@ export const Menu = () => {
     <div
       className={clsx(
         "w-full absolute right-0 top-12",
-        "z-40 flex flex-col rounded bg-white",
-        "lg:static lg:flex-row lg:items-center lg:space-x-2"
+        "z-40 flex flex-col gap-4 rounded bg-white",
+        "lg:static lg:flex-row lg:items-center lg:justify-end"
       )}
     >
       {categories &&
