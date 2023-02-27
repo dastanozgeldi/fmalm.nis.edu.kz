@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
 import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/layouts/Page";
@@ -31,7 +30,7 @@ const Article = ({ article }: any) => {
           <div className="flex items-center justify-between space-x-4 my-2">
             <p className="text-gray-500 flex items-center gap-2">
               <FaCalendar />
-              <Moment format="MMM Do YYYY">{published_at}</Moment>
+              {new Date(published_at).toLocaleDateString()}
             </p>
             {author?.data && (
               <p className="text-gray-500 flex items-center gap-2">

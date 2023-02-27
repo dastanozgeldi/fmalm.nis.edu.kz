@@ -1,16 +1,20 @@
 import Link from "next/link";
 import { FaCalendar, FaUser } from "react-icons/fa";
-import Moment from "react-moment";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
-import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import { IoArrowForward } from "react-icons/io5";
 
 export const ArticleItem = ({ article, read_more }: any) => {
   const { slug, image, title, description, createdAt, author, topic } =
     article.attributes;
 
   return (
-    <div className="border border-gray-200 rounded-lg w-[360px]">
+    <div className="relative hover:duration-500 border border-gray-200 rounded-lg w-[360px]">
+      {topic?.data && (
+        <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-secondary rounded-full">
+          #{topic.data.attributes.name}
+        </span>
+      )}
       {image?.data && (
         <Image
           className="w-[360px] h-[225px] object-cover rounded-t-lg"
@@ -23,7 +27,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
       <div className="pt-2 px-4 flex items-center justify-between space-x-4 my-2">
         <p className="text-sm text-gray-500 flex items-center gap-2">
           <FaCalendar />
-          <Moment format="MMM Do YYYY">{createdAt}</Moment>
+          {new Date(createdAt).toLocaleDateString()}
         </p>
         {author?.data && (
           <p className="text-sm text-gray-500 flex items-center gap-2">
@@ -36,19 +40,12 @@ export const ArticleItem = ({ article, read_more }: any) => {
         <h2 className="text-lg font-semibold">{title}</h2>
         <p className="text-md text-gray-500">{description.slice(0, 50)} ...</p>
       </div>
-      <div className="flex items-center justify-between py-3 px-4">
-        {topic?.data && (
-          <span className="text-sm py-2 px-4 text-white bg-secondary rounded-full">
-            #{topic.data.attributes.name}
-          </span>
-        )}
-        <Link
-          href={`/article/${slug}`}
-          className="hover:bg-gray-200 p-2 rounded-lg duration-300 text-sm flex items-center w-max gap-2"
-        >
-          {read_more} <IoArrowForwardCircleOutline className="w-6 h-6" />
-        </Link>
-      </div>
+      <Link
+        href={`/article/${slug}`}
+        className="py-3 px-4 hover:text-gray-400 rounded-lg duration-300 text-sm flex items-center w-max gap-2"
+      >
+        {read_more} <IoArrowForward className="w-4 h-4" />
+      </Link>
     </div>
   );
 };
