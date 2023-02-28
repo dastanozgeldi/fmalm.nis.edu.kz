@@ -14,6 +14,13 @@
     "title": "NIS PM Almaty",
     "description": "An international school that provides educational opportunities for gifted students through International Baccalaureate programs and is committed to fostering intellectual community, intercultural understanding, and an appreciation of lifelong learning."
   },
+  "Advantages": {
+    "our_advantages": "Our Advantages",
+    "cis_accreditation": "CIS Accreditation",
+    "compliance": "Compliance with international standards",
+    "multilingualism": "Multilingualism",
+    "additional_education": "Additional Education"
+  },
   "Articles": {
     "title": "Articles",
     "all": "All Articles",

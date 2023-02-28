@@ -9,7 +9,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
     article.attributes;
 
   return (
-    <div className="relative hover:duration-500 border border-gray-200 rounded-lg w-[360px]">
+    <div className="relative hover:duration-500 border border-gray-200 rounded-lg w-[300px]">
       {topic?.data && (
         <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-secondary rounded-full">
           #{topic.data.attributes.name}
@@ -17,7 +17,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
       )}
       {image?.data && (
         <Image
-          className="w-[360px] h-[225px] object-cover rounded-t-lg"
+          className="w-[300px] h-[225px] object-cover rounded-t-lg"
           width={360}
           height={225}
           src={getStrapiMedia(image)}

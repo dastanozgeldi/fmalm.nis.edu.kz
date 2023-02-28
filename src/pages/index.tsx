@@ -5,6 +5,7 @@ import { Articles } from "@/components/home/Articles";
 import { Page } from "@/layouts/Page";
 import { getStrapiURL } from "@/lib/api";
 import { Hero } from "@/components/home/Hero";
+import { Advantages } from "@/components/home/Advantages";
 
 export default function Index({ articles }: any) {
   const t = useTranslations("Index");
@@ -13,6 +14,7 @@ export default function Index({ articles }: any) {
     <Page title={t("title")}>
       <div className="space-y-6">
         <Hero />
+        <Advantages />
         <Articles showMore={true} articles={articles}>
           {t("articles")}
         </Articles>
@@ -24,6 +26,7 @@ export default function Index({ articles }: any) {
 Index.messages = [
   "Index",
   ...Hero.messages,
+  ...Advantages.messages,
   ...Articles.messages,
   ...Page.messages,
 ];

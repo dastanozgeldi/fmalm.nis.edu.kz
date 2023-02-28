@@ -17,10 +17,10 @@ export const Articles = ({
 
   return (
     <section className="space-y-8 py-8">
-      <h1 className="text-center text-3xl font-extrabold heading">
+      <h1 className="leading-10 text-center text-3xl font-extrabold heading">
         {children}
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 space-y-4 items-center justify-items-center">
         {articles.slice(0, 3).map((article: any) => (
           <ArticleItem
             key={article.id}
