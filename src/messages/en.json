@@ -21,6 +21,13 @@
     "multilingualism": "Multilingualism",
     "additional_education": "Additional Education"
   },
+  "Statistics": {
+    "title": "Statistics",
+    "students": "Students",
+    "schools": "NIS schools",
+    "teachers": "Teachers",
+    "alumni": "Alumni"
+  },
   "Articles": {
     "title": "Articles",
     "all": "All Articles",

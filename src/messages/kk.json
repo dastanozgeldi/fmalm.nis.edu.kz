@@ -21,6 +21,13 @@
     "multilingualism": "Көптілділік",
     "additional_education": "Қосымша білім беру"
   },
+  "Statistics": {
+    "title": "Статистика",
+    "students": "Оқушы",
+    "schools": "NIS мектептері",
+    "teachers": "Мұғалім",
+    "alumni": "Түлек"
+  },
   "Articles": {
     "title": "Хабарламалар",
     "all": "Барлық Хабарлама",

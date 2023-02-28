@@ -21,6 +21,13 @@
     "multilingualism": "Полиязычие",
     "additional_education": "Допольнительное образование"
   },
+  "Statistics": {
+    "title": "Статистика",
+    "students": "Учеников",
+    "schools": "Школ NIS",
+    "teachers": "Преподавателей",
+    "alumni": "Выпускников"
+  },
   "Articles": {
     "title": "Объявления",
     "all": "Все Объявления",
