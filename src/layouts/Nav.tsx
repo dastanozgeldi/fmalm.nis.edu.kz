@@ -42,14 +42,14 @@ const Desktop = ({ t }: { t: any }) => {
       {/* Desktop */}
       <div className="hidden lg:flex md:items-center md:justify-between">
         <Logo />
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-4 my-3">
           <div className="flex items-center justify-end space-x-6">
             <MenuIcons address={t("address")} />
             {/* Search */}
             <div className="border-2 px-4 py-1 gap-2 rounded-md border-primary w-[216px] flex items-center justify-between">
               <input
                 placeholder="Іздеу"
-                className="w-full outline-none bg-transparent"
+                className="w-full outline-none bg-transparent text-lg"
               />
               <FaSearch className="text-primary" />
             </div>

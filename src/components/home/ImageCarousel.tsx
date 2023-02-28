@@ -64,7 +64,7 @@ export const ImageCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="max-w-full h-[780px] w-full m-auto px-4 absolute group">
+      <div className="max-w-full h-[580px] w-full m-auto px-4 absolute group">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
           className="brightness-50 w-full h-full rounded-2xl bg-center bg-cover duration-500"

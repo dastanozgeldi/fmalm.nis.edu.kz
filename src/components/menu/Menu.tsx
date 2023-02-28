@@ -21,7 +21,6 @@ export const Menu = () => {
   }, [locale]);
 
   return (
-    // <div className="z-50 hidden text-dark lg:flex lg:overflow-auto items-center justify-end space-x-2">
     <div
       className={clsx(
         "w-full absolute right-0 top-12",
