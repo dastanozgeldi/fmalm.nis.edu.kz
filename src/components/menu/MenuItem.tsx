@@ -3,7 +3,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 export const MenuItem = ({ title, pages }: any) => (
   <div>
-    <button className="uppercase w-full text-lg text-dark lg:w-max flex items-center justify-between gap-2 peer p-2">
+    <button className="uppercase w-full lg:text-lg text-dark lg:w-max flex items-center justify-between gap-2 peer p-2">
       {title} <FaAngleDown className="w-4 h-4" />
     </button>
     <div className="w-full text-dark lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
