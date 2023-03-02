@@ -2,14 +2,13 @@ import Link from "next/link";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
-import { IoArrowForward } from "react-icons/io5";
 
-export const ArticleItem = ({ article, read_more }: any) => {
+export const ArticleItem = ({ article }: any) => {
   const { slug, image, title, description, createdAt, author, topic } =
     article.attributes;
 
   return (
-    <div className="relative hover:duration-500 border border-gray-200 rounded-lg w-[300px]">
+    <div className="relative hover:duration-500 border border-gray-200 rounded-lg min-w-[300px] max-w-[300px] min-h-[400px]">
       {topic?.data && (
         <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-secondary rounded-full">
           #{topic.data.attributes.name}
@@ -18,7 +17,7 @@ export const ArticleItem = ({ article, read_more }: any) => {
       {image?.data && (
         <Image
           className="w-[300px] h-[225px] object-cover rounded-t-lg"
-          width={360}
+          width={300}
           height={225}
           src={getStrapiMedia(image)}
           alt="Banner Image"
@@ -37,15 +36,14 @@ export const ArticleItem = ({ article, read_more }: any) => {
         )}
       </div>
       <div className="px-4">
-        <h2 className="text-lg font-semibold">{title}</h2>
+        <Link
+          href={`/article/${slug}`}
+          className="hover:opacity-60 hover:duration-300"
+        >
+          <h2 className="text-lg font-semibold">{title}</h2>
+        </Link>
         <p className="text-md text-gray-500">{description.slice(0, 50)} ...</p>
       </div>
-      <Link
-        href={`/article/${slug}`}
-        className="py-3 px-4 hover:text-gray-400 rounded-lg duration-300 text-sm flex items-center w-max gap-2"
-      >
-        {read_more} <IoArrowForward className="w-4 h-4" />
-      </Link>
     </div>
   );
 };
