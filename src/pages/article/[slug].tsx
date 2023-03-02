@@ -8,7 +8,7 @@ import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import Image from "next/image";
 
 const Article = ({ article }: any) => {
-  const { title, published_at, author, content, image, topic } =
+  const { title, createdAt, author, content, image, topic } =
     article.attributes;
 
   return (
@@ -18,7 +18,7 @@ const Article = ({ article }: any) => {
         className="relative max-w-[60ch] mx-auto border rounded-md p-8 m-4 space-y-4"
       >
         {/* Details */}
-        <div className="">
+        <div>
           <div className="flex items-center justify-between">
             <h1 className="text-2xl">{title}</h1>
             {topic?.data && (
@@ -30,7 +30,7 @@ const Article = ({ article }: any) => {
           <div className="flex items-center justify-between space-x-4 my-2">
             <p className="text-gray-500 flex items-center gap-2">
               <FaCalendar />
-              {new Date(published_at).toLocaleDateString()}
+              {new Date(createdAt).toLocaleDateString()}
             </p>
             {author?.data && (
               <p className="text-gray-500 flex items-center gap-2">
