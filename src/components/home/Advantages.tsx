@@ -7,7 +7,7 @@ export const Advantages = () => {
       <h1 className="leading-10 text-white text-center text-3xl font-extrabold underline decoration-primary decoration-[2px] underline-offset-[10px]">
         {t("our_advantages")}
       </h1>
-      <div className="mx-4 flex overflow-auto lg:grid lg:grid-cols-4 gap-4 space-y-4 items-center justify-items-center">
+      <div className="mx-4 flex overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
         <div className="relative">
           <img
             alt="Random Image for Illustration"
