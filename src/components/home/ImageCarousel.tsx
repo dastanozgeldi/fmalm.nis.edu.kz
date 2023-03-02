@@ -89,7 +89,7 @@ export const ImageCarousel = () => {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 right-4 flex">
+        <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg">
           <a
             href="https://instagram.com/nis_pm_almaty"
             className="hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
@@ -106,7 +106,7 @@ export const ImageCarousel = () => {
           </a>
           <a
             href="https://www.youtube.com/@nis_pm_almaty"
-            className="hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
+            className="rounded-br-2xl hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
           >
             Youtube
             <FaChevronRight className="w-3 h-3" />
