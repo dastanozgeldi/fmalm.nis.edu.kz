@@ -66,7 +66,7 @@ export const Nav = () => {
 
   return (
     <nav className="space-y-3">
-      <MenuUpperLinks />
+      <MenuUpperLinks t={t} />
       <div className="space-x-4 px-4 pb-4">
         <Mobile t={t} />
         <Desktop t={t} />
