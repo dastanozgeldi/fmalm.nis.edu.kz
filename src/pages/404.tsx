@@ -9,8 +9,8 @@ export default function Custom404() {
 
   return (
     <div className="space-y-4 min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl">
-        <span className="font-extrabold">404</span> - {t("not_found")}
+      <h1 className="text-2xl flex gap-2 items-center">
+        <span className="text-3xl font-extrabold">404</span> - {t("not_found")}
       </h1>
       <h2 className="text-2xl"></h2>
       <div className="flex gap-3">
