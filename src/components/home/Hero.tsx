@@ -4,51 +4,27 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa";
 import { RxDotFilled } from "react-icons/rx";
 
-export const Hero = () => {
+type HeroProps = {
+  images: {
+    attributes: {
+      url: string;
+    };
+  }[];
+};
+
+export const Hero = ({ images }: HeroProps) => {
   const t = useTranslations("Hero");
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slides = [
-    {
-      url: "https://i.imgur.com/DcWxz66.jpg",
-    },
-    {
-      url: "https://i.imgur.com/duQOR2O.jpg",
-    },
-    {
-      url: "https://i.imgur.com/noDMWxs.jpg",
-    },
-    {
-      url: "https://i.imgur.com/ZkzYKNU.jpg",
-    },
-    {
-      url: "https://i.imgur.com/5Qz6snh.jpg",
-    },
-    {
-      url: "https://i.imgur.com/0TudJAN.jpg",
-    },
-    {
-      url: "https://i.imgur.com/77XniZ3.jpg",
-    },
-    {
-      url: "https://i.imgur.com/GzE7l2A.jpg",
-    },
-    {
-      url: "https://i.imgur.com/uKOXqu6.jpg",
-    },
-    {
-      url: "https://i.imgur.com/XOFJa5P.jpg",
-    },
-  ];
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
+    const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -69,7 +45,9 @@ export const Hero = () => {
     <div className="relative">
       <div className="max-w-full h-[580px] w-full m-auto px-4 relative group">
         <div
-          style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+          style={{
+            backgroundImage: `url(${images[currentIndex].attributes.url})`,
+          }}
           className="brightness-50 w-full h-full rounded-2xl bg-center bg-cover duration-500"
         >
           {/* Left Arrow */}
@@ -81,10 +59,10 @@ export const Hero = () => {
             <BsChevronCompactRight onClick={nextSlide} size={24} />
           </div>
           <div className="flex bottom-4 justify-center py-2">
-            {slides.map((slide, slideIndex) => (
+            {images.map((image, imageIndex) => (
               <div
-                key={slideIndex}
-                onClick={() => goToSlide(slideIndex)}
+                key={imageIndex}
+                onClick={() => goToSlide(imageIndex)}
                 className="text-white text-2xl cursor-pointer"
               >
                 <RxDotFilled />

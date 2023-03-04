@@ -8,13 +8,13 @@ import { Hero } from "@/components/home/Hero";
 import { Advantages } from "@/components/home/Advantages";
 import { Statistics } from "@/components/home/Statistics";
 
-export default function Index({ articles }: any) {
+export default function Index({ articles, images }: any) {
   const t = useTranslations("Index");
 
   return (
     <Page title={t("title")}>
       <div className="space-y-6">
-        <Hero />
+        <Hero images={images} />
         <Advantages />
         <Statistics />
         <Articles showMore={true} articles={articles}>
@@ -42,9 +42,14 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
   );
   const articlesRes = await res.json();
 
+  const imagesRes = await (
+    await fetch(getStrapiURL("/api/carousel-images"))
+  ).json();
+
   return {
     props: {
       articles: articlesRes.data,
+      images: imagesRes.data,
       messages: pick(
         (await import(`@/messages/${locale}.json`)).default,
         Index.messages
