@@ -10,7 +10,7 @@ export const MenuItem = ({ title, pages }: any) => (
       {pages.map((page: any) => (
         <Link
           key={page.attributes.id}
-          className="px-5 py-3 hover:bg-gray-200"
+          className="px-5 py-3 bg-gray-50 hover:bg-gray-200"
           href={`/${page.attributes.slug}`}
         >
           {page.attributes.title}
