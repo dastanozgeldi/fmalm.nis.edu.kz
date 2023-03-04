@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .button-secondary {
   @apply px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 hover:duration-500 text-white;
 }

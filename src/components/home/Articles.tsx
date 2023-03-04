@@ -20,12 +20,9 @@ export const Articles = ({
       <h1 className="leading-10 text-center text-3xl font-extrabold heading">
         {children}
       </h1>
-      <div className="mx-4 flex overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
+      <div className="mx-4 flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
         {articles.slice(0, 4).map((article: any) => (
-          <ArticleItem
-            key={article.id}
-            article={article}
-          />
+          <ArticleItem key={article.id} article={article} />
         ))}
       </div>
       <div className="flex items-center justify-center">

@@ -9,7 +9,7 @@ export const Statistics = () => {
       <h1 className="leading-10 text-3xl font-extrabold text-center underline decoration-primary underline-offset-[10px] decoration-[2px]">
         {t("title")}
       </h1>
-      <div className="max-w-sm lg:max-w-full overflow-x-scroll mx-4 flex lg:items-center lg:justify-center gap-6 my-6">
+      <div className="overflow-x-scroll hide-scrollbar mx-4 flex lg:items-center lg:justify-center gap-6 my-6">
         <div className="space-y-6 flex flex-col items-center justify-center border-[6px] border-gray-200 rounded-full min-w-[250px] h-[250px]">
           <div className="flex flex-col items-center">
             <HiUserGroup size={48} />
