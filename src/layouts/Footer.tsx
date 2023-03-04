@@ -19,13 +19,15 @@ export const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
           <div className="w-[80%] lg:w-full flex items-center">
-            <div className="space-y-2">
+            <div className="space-y-4">
               <Logo />
-              <p>{t("address")}</p>
-              <p>8 (727) 331 0104</p>
-              <p>info@fmalm.nis.edu.kz</p>
+              <div>
+                <p>{t("address")}</p>
+                <p>8 (727) 331 0104</p>
+                <p>info@fmalm.nis.edu.kz</p>
+              </div>
               {/* Social Media */}
-              <div className="flex gap-2 py-4">
+              <div className="flex gap-2">
                 <a href="https://www.facebook.com/fmalm.nis.edu.kz">
                   <FaFacebook className="w-5 h-5" />
                 </a>
