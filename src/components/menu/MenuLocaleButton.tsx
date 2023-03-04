@@ -54,7 +54,7 @@ export const MenuLocaleButton = () => {
                     } space-x-4 px-2 py-1`}
                     onClick={() => {
                       setCookie(l);
-                      push({ pathname, query }, asPath, { locale: l });
+                      push({ pathname, query }, "/", { locale: l });
                     }}
                   >
                     {LANGUAGES[l as keyof Languages]}
