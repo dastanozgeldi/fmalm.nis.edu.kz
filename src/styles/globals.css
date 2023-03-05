@@ -11,26 +11,6 @@
   scrollbar-width: none;
 }
 
-.button-secondary {
-  @apply px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 hover:duration-500 text-white;
-}
-
-.heading {
-  @apply font-bold my-4 underline decoration-primary decoration-[2px] underline-offset-[10px];
-}
-
-.nav-item {
-  @apply px-2 border-r-[1px] border-gray-300;
-}
-
-footer h2 {
-  @apply text-xl my-4;
-}
-
-footer p {
-  @apply text-sm;
-}
-
 #article h1 {
   @apply text-2xl font-semibold;
 }

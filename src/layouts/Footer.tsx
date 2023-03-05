@@ -9,6 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Logo } from "@/components/common/Logo";
+import { styles } from "@/styles";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -18,7 +19,7 @@ export const Footer = () => {
       {/* top */}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
-          <div className="w-[80%] lg:w-full flex items-center">
+          <div className={styles.footerColumn}>
             <div className="space-y-4">
               <Logo />
               <div>
@@ -40,9 +41,9 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-[80%] lg:w-full space-y-4 flex lg:justify-center">
+          <div className={styles.footerColumn}>
             <div>
-              <h2 className="heading">{t("useful_links")}</h2>
+              <h2 className={styles.footerHeadText}>{t("useful_links")}</h2>
               <div className="space-y-2">
                 <a
                   href="https://fmalmnis.edupage.org/timetable"
@@ -71,9 +72,9 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-[80%] lg:w-full space-y-4 flex lg:justify-center">
+          <div className={styles.footerColumn}>
             <div>
-              <h2 className="heading">{t("ecosystem")}</h2>
+              <h2 className={styles.footerHeadText}>{t("ecosystem")}</h2>
               <div className="space-y-2 flex flex-col">
                 <a className="max-w-max" href="https://enis2.space/">
                   eNIS2

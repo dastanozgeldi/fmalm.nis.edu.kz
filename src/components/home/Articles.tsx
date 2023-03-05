@@ -1,3 +1,4 @@
+import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
@@ -17,9 +18,7 @@ export const Articles = ({
 
   return (
     <section className="space-y-8 py-8">
-      <h1 className="leading-10 text-center text-3xl font-extrabold heading">
-        {children}
-      </h1>
+      <h1 className={styles.sectionHeadText}>{children}</h1>
       <div className="mx-4 flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
         {articles.slice(0, 4).map((article: any) => (
           <ArticleItem key={article.id} article={article} />
@@ -28,7 +27,7 @@ export const Articles = ({
       <div className="flex items-center justify-center">
         {/* if there are less than 3 articles, there is no point in navigating to "all articles" */}
         {articles.length > 3 && showMore && (
-          <Link href="/articles" className="button-secondary">
+          <Link href="/articles" className={styles.secondaryButton}>
             {t("show_more")}
           </Link>
         )}

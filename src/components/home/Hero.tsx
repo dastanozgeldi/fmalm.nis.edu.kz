@@ -1,3 +1,4 @@
+import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
@@ -81,21 +82,21 @@ export const Hero = ({ images }: HeroProps) => {
         <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg">
           <a
             href="https://instagram.com/nis_pm_almaty"
-            className="hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
+            className={styles.heroSocialMedia}
           >
             Instagram
             <FaChevronRight className="w-3 h-3" />
           </a>
           <a
             href="https://www.facebook.com/fmalm.nis.edu.kz/"
-            className="hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
+            className={styles.heroSocialMedia}
           >
             Facebook
             <FaChevronRight className="w-3 h-3" />
           </a>
           <a
             href="https://www.youtube.com/@nis_pm_almaty"
-            className="rounded-br-2xl hover:bg-opacity-90 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
+            className={styles.heroSocialMedia}
           >
             Youtube
             <FaChevronRight className="w-3 h-3" />
