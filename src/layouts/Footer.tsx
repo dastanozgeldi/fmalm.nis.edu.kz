@@ -74,16 +74,22 @@ export const Footer = () => {
           </div>
           <div className={styles.footerColumn}>
             <div>
-              <h2 className={styles.footerHeadText}>{t("ecosystem")}</h2>
+              <h2 className={styles.footerHeadText}>{t("announcements")}</h2>
               <div className="space-y-2 flex flex-col">
-                <a className="max-w-max" href="https://enis2.space/">
-                  eNIS2
+                <a
+                  className="max-w-max"
+                  href="https://play.google.com/store/apps/details?id=com.nissenger.nissengermobile"
+                >
+                  Жаңалықтар
                 </a>
                 <a
                   className="max-w-max"
                   href="https://play.google.com/store/apps/details?id=com.nissenger.nissengermobile"
                 >
-                  Nissenger
+                  Жарыстар
+                </a>
+                <a className="max-w-max" href="https://enis2.space/">
+                  БАҚ біз жайлы
                 </a>
               </div>
             </div>

@@ -44,7 +44,7 @@ export const Hero = ({ images }: HeroProps) => {
 
   return (
     <div className="relative">
-      <div className="max-w-full h-[580px] w-full m-auto px-4 relative group">
+      <div className="max-w-full aspect-[9/14] md:aspect-[16/9] w-full m-auto px-4 relative group">
         <div
           style={{
             backgroundImage: `url(${images[currentIndex].attributes.url})`,

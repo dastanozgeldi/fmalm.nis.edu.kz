@@ -13,7 +13,7 @@ export default function Index({ articles, images }: any) {
 
   return (
     <Page title={t("title")}>
-      <div className="space-y-6">
+      <div>
         <Hero images={images} />
         <Advantages />
         <Statistics />

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 export const Advantages = () => {
   const t = useTranslations("Advantages");
   return (
-    <section className="lg:min-h-screen lg:flex lg:flex-col lg:items-center: lg:justify-center bg-[#111] space-y-8 py-8">
+    <section className="lg:flex lg:flex-col lg:items-center lg:justify-between bg-[#111] space-y-8 pt-8">
       <h1 className={clsx(styles.sectionHeadText, "text-white")}>
         {t("our_advantages")}
       </h1>
