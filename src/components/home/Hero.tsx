@@ -43,7 +43,7 @@ export const Hero = ({ images }: HeroProps) => {
   }, [currentIndex]);
 
   return (
-    <div className="relative">
+    <div className="relative pb-8">
       <div className="max-w-full aspect-[9/14] md:aspect-[16/9] w-full m-auto px-4 relative group">
         <div
           style={{
