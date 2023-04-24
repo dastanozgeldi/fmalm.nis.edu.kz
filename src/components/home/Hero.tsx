@@ -2,7 +2,7 @@ import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { FaChevronRight } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { RxDotFilled } from "react-icons/rx";
 
 type HeroProps = {
@@ -79,27 +79,27 @@ export const Hero = ({ images }: HeroProps) => {
             <p className="text-white text-lg lg:text-xl">{t("description")}</p>
           </div>
         </div>
-        <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg">
+        <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg divide-x-[1px]">
           <a
             href="https://instagram.com/nis_pm_almaty"
             className={styles.heroSocialMedia}
           >
+            <FaInstagram className="w-5 h-5" />
             Instagram
-            <FaChevronRight className="w-3 h-3" />
           </a>
           <a
             href="https://www.facebook.com/fmalm.nis.edu.kz/"
             className={styles.heroSocialMedia}
           >
+            <FaFacebook className="w-5 h-5" />
             Facebook
-            <FaChevronRight className="w-3 h-3" />
           </a>
           <a
             href="https://www.youtube.com/@nis_pm_almaty"
             className={styles.heroSocialMedia}
           >
+            <FaYoutube className="w-5 h-5" />
             Youtube
-            <FaChevronRight className="w-3 h-3" />
           </a>
         </div>
       </div>
