@@ -6,7 +6,7 @@ const styles = {
     "hover:bg-opacity-80 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white",
 
   sectionHeadText:
-    "leading-10 text-center text-3xl xl:my-6 xl:text-[3rem] font-extrabold underline decoration-primary decoration-[2px] underline-offset-[10px]",
+    "leading-10 text-center text-2xl xl:my-6 xl:text-[2rem] font-extrabold underline decoration-primary decoration-[2px] underline-offset-[10px]",
 
   advantageBanner:
     "object-cover object-center h-[400px] min-w-[300px] rounded-lg brightness-75 hover:brightness-[65%] hover:duration-300",
