@@ -5,7 +5,7 @@ import { Page } from "@/layouts/Page";
 import { getStrapiURL } from "@/lib/api";
 import { pick } from "lodash";
 
-export const ArticlesPage = ({ articles }: any) => {
+const ArticlesPage = ({ articles }: any) => {
   const t = useTranslations("Articles");
 
   return (
