@@ -1,16 +1,16 @@
 import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { PropsWithChildren } from "react";
 import { ArticleItem } from "./ArticleItem";
 
-type ArticlesProps = PropsWithChildren & {
+type ArticlesProps = {
+  title: string;
   articles: any;
   showMore?: boolean;
 };
 
 export const Articles = ({
-  children,
+  title,
   articles,
   showMore = false,
 }: ArticlesProps) => {
@@ -18,7 +18,7 @@ export const Articles = ({
 
   return (
     <section className="space-y-8 py-8">
-      <h1 className={styles.sectionHeadText}>{children}</h1>
+      <h1 className={styles.sectionHeadText}>{title}</h1>
       <div className="mx-4 flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
         {articles.slice(0, 4).map((article: any) => (
           <ArticleItem key={article.id} article={article} />

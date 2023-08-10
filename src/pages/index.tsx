@@ -3,23 +3,21 @@ import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
 import { Page } from "@/components/page";
-import { getStrapiURL } from "@/lib/api";
 import { Hero } from "@/components/home/Hero";
 import { Advantages } from "@/components/home/Advantages";
 import { Statistics } from "@/components/home/Statistics";
+import { getStrapiURL } from "@/lib/api";
 
-export default function Index({ articles, images }: any) {
+export default function Index({ articles }: any) {
   const t = useTranslations("Index");
 
   return (
     <Page title={t("title")}>
       <div>
-        <Hero images={images} />
+        <Hero />
         <Advantages />
         <Statistics />
-        <Articles showMore={true} articles={articles}>
-          {t("articles")}
-        </Articles>
+        <Articles title={t("articles")} showMore={true} articles={articles} />
       </div>
     </Page>
   );
@@ -35,21 +33,16 @@ Index.messages = [
 ];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
-  const res = await fetch(
+  const response = await fetch(
     getStrapiURL(
       `/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`
     )
   );
-  const articlesRes = await res.json();
-
-  const imagesRes = await (
-    await fetch(getStrapiURL("/api/carousel-images"))
-  ).json();
+  const { data: articles } = await response.json();
 
   return {
     props: {
-      articles: articlesRes.data,
-      images: imagesRes.data,
+      articles,
       messages: pick(
         (await import(`@/messages/${locale}.json`)).default,
         Index.messages

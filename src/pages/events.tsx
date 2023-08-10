@@ -1,6 +1,5 @@
-import { EventItem } from "@/events/EventItem";
 import { Page } from "@/components/page";
-import React from "react";
+import { EventItem } from "@/components/events/EventItem";
 
 const Events = () => {
   return (
