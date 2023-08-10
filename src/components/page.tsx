@@ -1,11 +1,10 @@
-import { Montserrat } from "@next/font/google";
-import { useTranslations } from "next-intl";
 import Head from "next/head";
+import { useTranslations } from "next-intl";
 import { PropsWithChildren } from "react";
 import { Footer } from "./footer";
 import { Nav } from "./nav";
+import { fontSans } from "@/lib/fonts";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 type PageProps = PropsWithChildren & {
   title: string;
@@ -39,7 +38,7 @@ export const Page = ({ children, title }: PageProps) => {
         <title>{fullTitle}</title>
       </Head>
       <Nav />
-      <main className={montserrat.className}>{children}</main>
+      <main className={fontSans.className}>{children}</main>
       <Footer />
     </>
   );

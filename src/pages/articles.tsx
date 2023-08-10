@@ -10,7 +10,7 @@ const ArticlesPage = ({ articles }: any) => {
 
   return (
     <Page title={t("title")}>
-      <Articles articles={articles}>{t("all")}</Articles>
+      <Articles title={t("all")} articles={articles} />
     </Page>
   );
 };
@@ -19,7 +19,9 @@ ArticlesPage.messages = ["Articles", ...Page.messages];
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const res = await fetch(
-    getStrapiURL(`/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`)
+    getStrapiURL(
+      `/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`
+    )
   );
   const articlesRes = await res.json();
 
