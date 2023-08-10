@@ -1,5 +1,5 @@
 import { EventItem } from "@/events/EventItem";
-import { Page } from "@/layouts/Page";
+import { Page } from "@/components/page";
 import React from "react";
 
 const Events = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../lib/assets/logo.png";
+import logo from "@/lib/assets/logo.png";
 
 export const Logo = () => (
   <Link href="/">

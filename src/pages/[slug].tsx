@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import { getStrapiURL } from "@/lib/api";
-import { Page } from "@/layouts/Page";
+import { Page } from "@/components/page";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import { getStrapiMedia } from "@/lib/media";

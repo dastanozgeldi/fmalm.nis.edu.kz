@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
-import { Page } from "@/layouts/Page";
+import { Page } from "@/components/page";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
