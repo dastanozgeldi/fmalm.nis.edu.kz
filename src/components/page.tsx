@@ -2,8 +2,8 @@ import { Montserrat } from "@next/font/google";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
-import { Footer } from "./Footer";
-import { Nav } from "./Nav";
+import { Footer } from "./footer";
+import { Nav } from "./nav";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 

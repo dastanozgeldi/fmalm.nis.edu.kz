@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Articles } from "@/components/home/Articles";
-import { Page } from "@/layouts/Page";
+import { Page } from "@/components/page";
 import { getStrapiURL } from "@/lib/api";
 import { pick } from "lodash";
 
