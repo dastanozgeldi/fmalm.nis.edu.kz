@@ -6,8 +6,8 @@ import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
 
-const GeneralPage = ({ page }: any) => {
-  const { title, image, content } = page.attributes;
+export default function GeneralPage({ page }: any) {
+  const { title, image, content } = page;
 
   return (
     <Page title={title}>
@@ -29,7 +29,7 @@ const GeneralPage = ({ page }: any) => {
       </div>
     </Page>
   );
-};
+}
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   let paths: any[] = [];
@@ -68,7 +68,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      page: pageRes.data[0],
+      page: pageRes.data[0].attributes,
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),
@@ -76,5 +76,3 @@ export async function getStaticProps({
     revalidate: 1,
   };
 }
-
-export default GeneralPage;

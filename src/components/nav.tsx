@@ -6,7 +6,7 @@ import { Menu } from "@/components/menu/Menu";
 import { Logo } from "@/components/common/Logo";
 import { MenuIcons } from "@/components/menu/MenuIcons";
 import { MenuUpperLinks } from "@/components/menu/MenuUpperLinks";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 const Mobile = ({ t }: { t: any }) => {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Mobile = ({ t }: { t: any }) => {
           <button
             aria-label="Menu"
             type="button"
-            className={clsx(
+            className={cn(
               "p-2 rounded-lg items-center justify-center xl:hidden flex",
               open && "bg-gray-200"
             )}

@@ -2,7 +2,7 @@ import { getStrapiURL } from "@/lib/api";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { MenuItem } from "./MenuItem";
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 
 export const Menu = () => {
   const [categories, setCategories] = useState<any>();
@@ -22,7 +22,7 @@ export const Menu = () => {
 
   return (
     <div
-      className={clsx(
+      className={cn(
         "w-full absolute right-0 top-12",
         "z-40 flex flex-col gap-4 rounded bg-white",
         "lg:static lg:flex-row lg:items-center lg:justify-end"

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaCalendar, FaUser } from "react-icons/fa";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 export const ArticleItem = ({ article }: any) => {
   const { slug, image, title, description, createdAt, author, topic } =
@@ -12,7 +12,7 @@ export const ArticleItem = ({ article }: any) => {
 
   return (
     <div
-      className={clsx(
+      className={cn(
         "relative hover:duration-500 border border-gray-200 rounded-lg min-w-[300px] max-w-[300px]",
         captionExists ? "min-h-[400px]" : "min-h-[175px]"
       )}
@@ -27,7 +27,7 @@ export const ArticleItem = ({ article }: any) => {
             alt="Banner Image"
           />
           {topic?.data && (
-            <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-secondary rounded-full">
+            <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-foreground rounded-full">
               #{topic.data.attributes.name}
             </span>
           )}

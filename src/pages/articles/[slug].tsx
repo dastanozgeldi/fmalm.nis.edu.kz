@@ -7,9 +7,8 @@ import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import Image from "next/image";
 
-const Article = ({ article }: any) => {
-  const { title, createdAt, author, content, image, topic } =
-    article.attributes;
+export default function Article({ article }: any) {
+  const { title, createdAt, author, content, image, topic } = article;
 
   return (
     <Page title={title}>
@@ -53,28 +52,9 @@ const Article = ({ article }: any) => {
       </div>
     </Page>
   );
-};
+}
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
-  // const paths = locales.map(async (locale) => {
-  //   const res = await fetch(
-  //     getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
-  //   );
-  //   const articlesRes = await res.json();
-
-  //   // Error: A required parameter (slug) was not provided as a string in getStaticPaths for /article/[slug]
-
-  //   return articlesRes?.data?.map((article: any) => {
-  //     console.log(article.attributes.slug);
-  //     return {
-  //       params: {
-  //         slug: article.attributes.slug,
-  //       },
-  //       locale,
-  //     };
-  //   });
-  // });
-
   let paths: any[] = [];
   for (const locale of locales) {
     const res = await fetch(
@@ -111,7 +91,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      article: articleRes.data[0],
+      article: articleRes.data[0].attributes,
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),
@@ -119,5 +99,3 @@ export async function getStaticProps({
     revalidate: 1,
   };
 }
-
-export default Article;

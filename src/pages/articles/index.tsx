@@ -5,7 +5,7 @@ import { Page } from "@/components/page";
 import { getStrapiURL } from "@/lib/api";
 import { pick } from "lodash";
 
-const ArticlesPage = ({ articles }: any) => {
+export default function ArticlesPage({ articles }: any) {
   const t = useTranslations("Articles");
 
   return (
@@ -13,7 +13,7 @@ const ArticlesPage = ({ articles }: any) => {
       <Articles title={t("all")} articles={articles} />
     </Page>
   );
-};
+}
 
 ArticlesPage.messages = ["Articles", ...Page.messages];
 
@@ -36,5 +36,3 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     revalidate: 1,
   };
 }
-
-export default ArticlesPage;

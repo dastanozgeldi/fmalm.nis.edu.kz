@@ -1,12 +1,12 @@
+import { cn } from "@/lib/utils";
 import { styles } from "@/styles";
-import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
 export const Advantages = () => {
   const t = useTranslations("Advantages");
   return (
     <section className="lg:flex lg:flex-col lg:items-center lg:justify-between bg-[#111] space-y-8 pt-8">
-      <h1 className={clsx(styles.sectionHeadText, "text-white")}>
+      <h1 className={cn(styles.sectionHeadText, "text-white")}>
         {t("our_advantages")}
       </h1>
       <div className="mx-4 flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">

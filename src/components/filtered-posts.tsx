@@ -12,7 +12,7 @@ type FilteredPostsProps = {
   };
 };
 
-const FilteredPosts = ({ posts }: FilteredPostsProps) => {
+export const FilteredPosts = ({ posts }: FilteredPostsProps) => {
   const [searchValue, setSearchValue] = useState("");
 
   const filteredPosts = posts.data.filter((post) =>
@@ -49,5 +49,3 @@ const FilteredPosts = ({ posts }: FilteredPostsProps) => {
     </>
   );
 };
-
-export default FilteredPosts;

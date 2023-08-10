@@ -1,6 +1,6 @@
 const styles = {
   secondaryButton:
-    "px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/90 focus:bg-secondary/80 hover:duration-500 text-white",
+    "px-4 py-2 rounded-lg bg-foreground hover:bg-foreground/90 focus:bg-foreground/80 hover:duration-500 text-white",
 
   heroSocialMedia:
     "hover:bg-opacity-80 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white",
