@@ -1,12 +1,11 @@
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { FaSearch } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Menu } from "@/components/menu/Menu";
-import { Logo } from "@/components/common/Logo";
+import { Logo } from "@/components/logo";
 import { MenuIcons } from "@/components/menu/MenuIcons";
 import { MenuUpperLinks } from "@/components/menu/MenuUpperLinks";
 import { cn } from "@/lib/utils";
+import { Icons } from "./icons";
 
 const Mobile = ({ t }: { t: any }) => {
   const [open, setOpen] = useState(false);
@@ -27,7 +26,7 @@ const Mobile = ({ t }: { t: any }) => {
             )}
             onClick={() => setOpen(!open)}
           >
-            <GiHamburgerMenu className="w-5 h-5" />
+            <Icons.menu className="w-5 h-5" />
           </button>
         </div>
       </div>
@@ -48,7 +47,7 @@ const Desktop = ({ t }: { t: any }) => {
               placeholder="Іздеу"
               className="w-full outline-none bg-transparent text-lg"
             />
-            <FaSearch className="text-primary" />
+            <Icons.search className="text-primary" />
           </div>
         </div>
         <Menu />

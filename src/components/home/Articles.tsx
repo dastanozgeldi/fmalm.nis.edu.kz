@@ -21,7 +21,7 @@ export const Articles = ({
       <h1 className={styles.sectionHeadText}>{title}</h1>
       <div className="mx-4 flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-4 gap-4 items-center justify-items-center">
         {articles.slice(0, 4).map((article: any) => (
-          <ArticleItem key={article.id} article={article} />
+          <ArticleItem key={article.id} article={article.attributes} />
         ))}
       </div>
       <div className="flex items-center justify-center">

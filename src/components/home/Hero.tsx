@@ -1,6 +1,6 @@
 import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Icons } from "../icons";
 
 export const Hero = () => {
   const t = useTranslations("Hero");
@@ -27,21 +27,21 @@ export const Hero = () => {
             href="https://instagram.com/nis_pm_almaty"
             className={styles.heroSocialMedia}
           >
-            <FaInstagram className="w-5 h-5" />
+            <Icons.instagram className="w-5 h-5" />
             Instagram
           </a>
           <a
             href="https://www.facebook.com/fmalm.nis.edu.kz/"
             className={styles.heroSocialMedia}
           >
-            <FaFacebook className="w-5 h-5" />
+            <Icons.facebook className="w-5 h-5" />
             Facebook
           </a>
           <a
             href="https://www.youtube.com/@nis_pm_almaty"
             className={styles.heroSocialMedia}
           >
-            <FaYoutube className="w-5 h-5" />
+            <Icons.youtube className="w-5 h-5" />
             Youtube
           </a>
         </div>

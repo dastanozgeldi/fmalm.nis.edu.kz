@@ -1,11 +1,11 @@
 import ReactMarkdown from "react-markdown";
-import { getStrapiURL } from "@/lib/api";
-import { getStrapiMedia } from "@/lib/media";
-import { Page } from "@/components/page";
-import { FaCalendar, FaUser } from "react-icons/fa";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import Image from "next/image";
+import { getStrapiURL } from "@/lib/api";
+import { getStrapiMedia } from "@/lib/media";
+import { Page } from "@/components/page";
+import { Icons } from "@/components/icons";
 
 export default function Article({ article }: any) {
   const { title, createdAt, author, content, image, topic } = article;
@@ -28,12 +28,12 @@ export default function Article({ article }: any) {
           </div>
           <div className="flex items-center justify-between space-x-4 my-2">
             <p className="text-gray-500 flex items-center gap-2">
-              <FaCalendar />
+              <Icons.calendar />
               {new Date(createdAt).toLocaleDateString()}
             </p>
             {author?.data && (
               <p className="text-gray-500 flex items-center gap-2">
-                <FaUser />
+                <Icons.user />
                 {author.data.attributes.name}
               </p>
             )}

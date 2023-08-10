@@ -1,7 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
 import { Fragment } from "react";
-import { IoGlobe } from "react-icons/io5";
+import { Icons } from "../icons";
 
 interface Languages {
   kk: string;
@@ -33,7 +33,7 @@ export const MenuLocaleButton = () => {
                 open && "bg-gray-300 rounded-lg"
               } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <IoGlobe className="w-5 h-5" />
+              <Icons.globe className="w-5 h-5" />
             </Menu.Button>
           </div>
           <Transition

@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { FaCalendar, FaUser } from "react-icons/fa";
 import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Icons } from "../icons";
 
 export const ArticleItem = ({ article }: any) => {
-  const { slug, image, title, description, createdAt, author, topic } =
-    article.attributes;
-
+  const { slug, image, title, description, createdAt, author, topic } = article;
   const captionExists = image.data ? true : false;
 
   return (
@@ -35,12 +33,12 @@ export const ArticleItem = ({ article }: any) => {
       )}
       <div className="pt-2 px-4 flex items-center justify-between space-x-4 my-2">
         <p className="text-sm text-gray-500 flex items-center gap-2">
-          <FaCalendar />
+          <Icons.calendar />
           {new Date(createdAt).toLocaleDateString()}
         </p>
         {author?.data && (
           <p className="text-sm text-gray-500 flex items-center gap-2">
-            <FaUser />
+            <Icons.user />
             {author.data.attributes.name}
           </p>
         )}

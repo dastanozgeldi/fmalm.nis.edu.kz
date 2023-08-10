@@ -1,15 +1,7 @@
 import { useTranslations } from "next-intl";
-import {
-  FaBook,
-  FaCalendar,
-  FaCircleNotch,
-  FaFacebook,
-  FaInstagram,
-  FaLaptop,
-  FaYoutube,
-} from "react-icons/fa";
-import { Logo } from "@/components/common/Logo";
+import { Logo } from "@/components/logo";
 import { styles } from "@/styles";
+import { Icons } from "./icons";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -30,13 +22,13 @@ export const Footer = () => {
               {/* Social Media */}
               <div className="flex gap-2">
                 <a href="https://www.facebook.com/fmalm.nis.edu.kz">
-                  <FaFacebook className="w-5 h-5" />
+                  <Icons.facebook className="w-5 h-5" />
                 </a>
                 <a href="https://www.instagram.com/nis_pm_almaty/">
-                  <FaInstagram className="w-5 h-5" />
+                  <Icons.instagram className="w-5 h-5" />
                 </a>
                 <a href="https://www.youtube.com/@nis_pm_almaty">
-                  <FaYoutube className="w-5 h-5" />
+                  <Icons.youtube className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -49,25 +41,25 @@ export const Footer = () => {
                   href="https://fmalmnis.edupage.org/timetable"
                   className="max-w-max flex items-center gap-2"
                 >
-                  <FaCalendar /> {t("timetable")}
+                  <Icons.calendar /> {t("timetable")}
                 </a>
                 <a
                   href="https://sms.fmalm.nis.edu.kz/"
                   className="max-w-max flex items-center gap-2"
                 >
-                  <FaBook /> {t("sms")}
+                  <Icons.book /> {t("sms")}
                 </a>
                 <a
                   href="https://app.online.nis.edu.kz:8800/"
                   className="max-w-max flex items-center gap-2"
                 >
-                  <FaCircleNotch /> NIS Online
+                  <Icons.spinner /> NIS Online
                 </a>
                 <a
                   href="https://vs.nis.edu.kz/"
                   className="max-w-max flex items-center gap-2"
                 >
-                  <FaLaptop /> {t("virtual_school")}
+                  <Icons.laptop /> {t("virtual_school")}
                 </a>
               </div>
             </div>
