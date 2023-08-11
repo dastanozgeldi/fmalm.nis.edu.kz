@@ -16,7 +16,7 @@ export const Hero = () => {
         />
         <div className="h-[80%] absolute top-0 bottom-0 m-auto lg:left-20 flex items-center px-4 lg:w-1/2">
           <div className="space-y-3 p-6 lg:p-0">
-            <h1 className="text-white text-3xl lg:text-5xl font-extrabold">
+            <h1 className="text-white text-3xl lg:text-5xl font-bold">
               {t("title")}
             </h1>
             <p className="text-white text-lg lg:text-xl">{t("description")}</p>

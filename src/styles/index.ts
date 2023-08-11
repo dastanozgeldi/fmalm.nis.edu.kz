@@ -1,4 +1,4 @@
-const styles = {
+export const styles = {
   secondaryButton:
     "px-4 py-2 rounded-lg bg-foreground hover:bg-foreground/90 focus:bg-foreground/80 hover:duration-500 text-white",
 
@@ -6,7 +6,7 @@ const styles = {
     "hover:bg-opacity-80 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white",
 
   sectionHeadText:
-    "leading-10 text-center text-2xl xl:my-6 xl:text-[2rem] font-extrabold underline decoration-primary decoration-[2px] underline-offset-[10px]",
+    "leading-10 text-center text-3xl xl:my-6 md:text-6xl font-bold",
 
   advantageBanner:
     "object-cover object-center h-[400px] min-w-[300px] rounded-lg brightness-75 hover:brightness-[65%] hover:duration-300",
@@ -18,9 +18,6 @@ const styles = {
   statisticsContainerText:
     "leading-6 text-3xl font-bold underline decoration-primary decoration-[2px] underline-offset-[6px] my-3",
 
-  footerHeadText:
-    "text-xl font-bold my-4 underline decoration-primary decoration-[2px] underline-offset-[10px]",
+  footerHeadText: "text-xl font-bold my-4",
   footerColumn: "w-[80%] lg:w-full space-y-4 flex lg:justify-center",
 };
-
-export { styles };

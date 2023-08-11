@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Logo } from "@/components/logo";
 import { styles } from "@/styles";
 import { Icons } from "./icons";
+import Link from "next/link";
 
 export const Footer = () => {
   const t = useTranslations("Footer");
@@ -68,21 +69,15 @@ export const Footer = () => {
             <div>
               <h2 className={styles.footerHeadText}>{t("announcements")}</h2>
               <div className="space-y-2 flex flex-col">
-                <a
-                  className="max-w-max"
-                  href="https://play.google.com/store/apps/details?id=com.nissenger.nissengermobile"
-                >
+                <Link className="max-w-max" href="/announcements">
+                  Хабарламалар
+                </Link>
+                <Link className="max-w-max" href="/news">
                   Жаңалықтар
-                </a>
-                <a
-                  className="max-w-max"
-                  href="https://play.google.com/store/apps/details?id=com.nissenger.nissengermobile"
-                >
-                  Жарыстар
-                </a>
-                <a className="max-w-max" href="https://enis2.space/">
+                </Link>
+                <Link className="max-w-max" href="/mass-media">
                   БАҚ біз жайлы
-                </a>
+                </Link>
               </div>
             </div>
           </div>

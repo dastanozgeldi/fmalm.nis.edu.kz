@@ -3,6 +3,7 @@ import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Icons } from "../icons";
+import { Badge } from "../ui/badge";
 
 export const ArticleItem = ({ article }: any) => {
   const { slug, image, title, description, createdAt, author, topic } = article;
@@ -25,9 +26,9 @@ export const ArticleItem = ({ article }: any) => {
             alt="Banner Image"
           />
           {topic?.data && (
-            <span className="absolute top-2 right-2 text-sm py-2 px-4 text-white bg-foreground rounded-full">
+            <Badge className="absolute top-2 right-2">
               #{topic.data.attributes.name}
-            </span>
+            </Badge>
           )}
         </>
       )}
