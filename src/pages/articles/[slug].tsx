@@ -63,14 +63,15 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
     );
     const { data } = await response.json();
 
-    data.forEach((article: any) => {
-      paths.push({
-        params: {
-          slug: article.attributes.slug,
-        },
-        locale,
+    data &&
+      data.forEach((article: any) => {
+        paths.push({
+          params: {
+            slug: article.attributes.slug,
+          },
+          locale,
+        });
       });
-    });
   }
 
   return {

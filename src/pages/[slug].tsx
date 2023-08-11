@@ -39,14 +39,15 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
     );
     const { data } = await response.json();
 
-    data.forEach((page: any) => {
-      paths.push({
-        params: {
-          slug: page.attributes.slug,
-        },
-        locale,
+    data &&
+      data.forEach((page: any) => {
+        paths.push({
+          params: {
+            slug: page.attributes.slug,
+          },
+          locale,
+        });
       });
-    });
   }
 
   return {
