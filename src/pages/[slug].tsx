@@ -13,7 +13,7 @@ export default function GeneralPage({ page }: any) {
     <Page title={title}>
       <div
         id="page"
-        className="relative max-w-[60ch] mx-auto border rounded-md p-8 m-4 space-y-4"
+        className="relative max-w-4xl mx-auto rounded-md p-8 m-4 space-y-4 prose"
       >
         {/* Details */}
         {image?.data && (
@@ -24,7 +24,6 @@ export default function GeneralPage({ page }: any) {
             alt="Banner Image"
           />
         )}
-        <h1 className="text-2xl">{title}</h1>
         <ReactMarkdown skipHtml>{content}</ReactMarkdown>
       </div>
     </Page>

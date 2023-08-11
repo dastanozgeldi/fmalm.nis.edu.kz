@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { pick } from "lodash";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
@@ -12,19 +13,15 @@ export default function Custom404() {
       <h1 className="text-2xl flex gap-2 items-center">
         <span className="text-3xl font-bold">404</span> - {t("not_found")}
       </h1>
-      <h2 className="text-2xl"></h2>
-      <div className="flex gap-3">
+      <div className="flex items-center gap-3">
         <a
-          className="text-white bg-secondary p-3 rounded text-lg cursor-pointer"
+          className="text-white rounded cursor-pointer"
           onClick={() => router.back()}
         >
-          🤚 {t("go_back")}
+          <Button size="lg">🤚 {t("go_back")}</Button>
         </a>
-        <a
-          className="text-white bg-secondary p-3 rounded text-lg"
-          href="tel:87273310104"
-        >
-          ⛪️ {t("contact_school")}
+        <a className="text-white rounded" href="tel:87273310104">
+          <Button size="lg">⛪️ {t("contact_school")}</Button>
         </a>
       </div>
     </div>
