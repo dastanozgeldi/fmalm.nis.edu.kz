@@ -56,13 +56,14 @@ export default function Article({ article }: any) {
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   let paths: any[] = [];
+
   for (const locale of locales) {
-    const res = await fetch(
+    const response = await fetch(
       getStrapiURL(`/api/articles?locale=${locale}&populate=*`)
     );
-    const articlesRes = await res.json();
+    const { data } = await response.json();
 
-    articlesRes?.data?.forEach((article: any) => {
+    data.forEach((article: any) => {
       paths.push({
         params: {
           slug: article.attributes.slug,

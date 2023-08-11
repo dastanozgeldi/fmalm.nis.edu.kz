@@ -10,11 +10,11 @@ export const Menu = () => {
 
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch(
+      const response = await fetch(
         getStrapiURL(`/api/categories?locale=${locale}&populate=*`)
       );
-      const categoriesRes = await res.json();
-      setCategories(categoriesRes.data);
+      const { data } = await response.json();
+      setCategories(data);
     }
 
     fetchCategories();

@@ -32,13 +32,14 @@ export default function GeneralPage({ page }: any) {
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   let paths: any[] = [];
+
   for (const locale of locales) {
-    const res = await fetch(
+    const response = await fetch(
       getStrapiURL(`/api/pages?locale=${locale}&populate=*`)
     );
-    const pagesRes = await res.json();
+    const { data } = await response.json();
 
-    pagesRes?.data?.forEach((page: any) => {
+    data.forEach((page: any) => {
       paths.push({
         params: {
           slug: page.attributes.slug,
