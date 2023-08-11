@@ -41,7 +41,10 @@
     "sms": "SMS",
     "virtual_school": "Virtual School",
     "copyright": "© NIS PM Almaty. 2023. All rights reserved.",
-    "announcements": "Posts"
+    "articles": "Articles",
+    "announcements": "Announcements",
+    "news": "News",
+    "mass-media": "Mass Media"
   },
   "404": {
     "not_found": "Page not found",

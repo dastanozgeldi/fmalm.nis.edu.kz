@@ -67,16 +67,16 @@ export const Footer = () => {
           </div>
           <div className={styles.footerColumn}>
             <div>
-              <h2 className={styles.footerHeadText}>{t("announcements")}</h2>
+              <h2 className={styles.footerHeadText}>{t("articles")}</h2>
               <div className="space-y-2 flex flex-col">
-                <Link className="max-w-max" href="/announcements">
-                  Хабарламалар
+                <Link className="max-w-max" href="/articles">
+                  {t("announcements")}
                 </Link>
-                <Link className="max-w-max" href="/news">
-                  Жаңалықтар
+                <Link className="max-w-max" href="/articles">
+                  {t("news")}
                 </Link>
-                <Link className="max-w-max" href="/mass-media">
-                  БАҚ біз жайлы
+                <Link className="max-w-max" href="/articles">
+                  {t("mass-media")}
                 </Link>
               </div>
             </div>
