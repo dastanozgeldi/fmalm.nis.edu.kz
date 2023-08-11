@@ -5,7 +5,6 @@ import { Footer } from "./footer";
 import { Nav } from "./nav";
 import { fontSans } from "@/lib/fonts";
 
-
 type PageProps = PropsWithChildren & {
   title: string;
 };

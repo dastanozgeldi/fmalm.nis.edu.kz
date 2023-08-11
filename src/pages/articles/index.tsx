@@ -57,7 +57,7 @@ export default function Articles({ articles }: { articles: any }) {
             <TabsTrigger value="mass-media">{t("mass-media")}</TabsTrigger>
           </TabsList>
           {tabs.map(({ value, data }) => (
-            <TabsContent value={value}>
+            <TabsContent key={value} value={value}>
               <FilteredPosts posts={{ data }} />
             </TabsContent>
           ))}
