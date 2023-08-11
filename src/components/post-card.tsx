@@ -14,11 +14,11 @@ export const PostCard = (post: BlogPostCore) => {
   const {
     title,
     description,
-    cover,
+    image,
     slug,
     publishedAt: date,
   } = post.attributes;
-  const image = getStrapiMedia(cover);
+  const preview = getStrapiMedia(image);
 
   const formattedDate = useFormattedDate(date, "YYYY-MM-DD");
 
@@ -28,7 +28,7 @@ export const PostCard = (post: BlogPostCore) => {
   return (
     <Link
       key={post.id}
-      href={`/blog/${slug}`}
+      href={`/articles/${slug}`}
       className="group relative flex flex-col space-y-3 rounded-2xl border border-accent-2 p-6"
       onMouseMove={(e) => {
         const { left, top } = e.currentTarget.getBoundingClientRect();
@@ -51,10 +51,8 @@ export const PostCard = (post: BlogPostCore) => {
       />
       {/* eslint-disable @next/next/no-img-element */}
       <img
-        className="rounded-lg"
-        width={1280}
-        height={720}
-        src={image}
+        className="rounded-lg h-[200px] object-cover"
+        src={preview}
         alt={title}
       />
       <div className="flex-grow space-y-4">

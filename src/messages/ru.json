@@ -29,9 +29,10 @@
     "alumni": "Выпускников"
   },
   "Articles": {
-    "title": "Объявления",
-    "all": "Все Объявления",
-    "show_more": "Показать больше"
+    "title": "Статьи",
+    "announcements": "Объявления",
+    "news": "Новости",
+    "mass-media": "СМИ о нас"
   },
   "Footer": {
     "address": "улица Жамакаева 145, Алматы, Казахстан",
@@ -40,20 +41,11 @@
     "sms": "СУШ",
     "virtual_school": "Виртуальная школа",
     "copyright": "© НИШ ФМН г. Алматы. 2023. Все права защищены.",
-    "announcements": "Посты"
+    "announcements": "Новости"
   },
   "404": {
     "not_found": "Страница не найдена",
     "go_back": "Назад",
     "contact_school": "Сообщить Школе"
-  },
-  "Announcements": {
-    "title": "Объявления"
-  },
-  "News": {
-    "title": "Новости"
-  },
-  "Mass Media": {
-    "title": "СМИ о нас"
   }
 }

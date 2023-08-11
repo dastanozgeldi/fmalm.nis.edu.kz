@@ -4,11 +4,12 @@ export type BlogPostCore = {
     title: string;
     description: string;
     content: string;
-    cover: object;
+    image: object;
     slug: string;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
     locale: string;
+    type: string;
   };
 };
