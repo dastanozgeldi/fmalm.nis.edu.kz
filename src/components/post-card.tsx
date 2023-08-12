@@ -4,9 +4,6 @@ import Link from "next/link";
 
 import { useFormattedDate } from "@/hooks";
 
-// import LikeCounter from "./like-counter";
-// import ViewCounter from "./view-counter";
-
 import { BlogPostCore } from "@/types";
 import { getStrapiMedia } from "@/lib/media";
 
@@ -18,7 +15,12 @@ export const PostCard = (post: BlogPostCore) => {
     slug,
     publishedAt: date,
   } = post.attributes;
-  const preview = getStrapiMedia(image);
+
+  let preview = null;
+
+  if (image.data) {
+    preview = getStrapiMedia(image);
+  }
 
   const formattedDate = useFormattedDate(date, "YYYY-MM-DD");
 
@@ -49,12 +51,15 @@ export const PostCard = (post: BlogPostCore) => {
           `,
         }}
       />
-      {/* eslint-disable @next/next/no-img-element */}
-      <img
-        className="rounded-lg h-[200px] object-cover"
-        src={preview}
-        alt={title}
-      />
+      {preview ? (
+        <img
+          className="rounded-lg h-[200px] object-cover"
+          src={preview}
+          alt={title}
+        />
+      ) : (
+        <Skeleton className="h-[200px] w-full rounded-lg" />
+      )}
       <div className="flex-grow space-y-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <div className="text-accent-5">{description}</div>

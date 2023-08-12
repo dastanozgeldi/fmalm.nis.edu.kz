@@ -60,16 +60,16 @@ export async function getStaticProps({
   locale,
   params,
 }: GetStaticPropsContext) {
-  const res = await fetch(
+  const response = await fetch(
     getStrapiURL(
       `/api/pages?locale=${locale}&filters[slug][$eq]=${params?.slug}`
     )
   );
-  const pageRes = await res.json();
+  const { data } = await response.json();
 
   return {
     props: {
-      page: pageRes.data[0].attributes,
+      page: data[0].attributes,
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),

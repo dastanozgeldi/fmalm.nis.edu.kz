@@ -6,9 +6,11 @@ import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/components/page";
 import { Icons } from "@/components/icons";
+import { BlogPostCore } from "@/types";
 
-export default function Article({ article }: any) {
-  const { title, createdAt, author, content, image, topic } = article;
+export default function Article({ article }: { article: BlogPostCore }) {
+  const { title, content, createdAt, author, image, topic } =
+    article.attributes;
 
   return (
     <Page title={title}>
@@ -63,15 +65,14 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
     );
     const { data } = await response.json();
 
-    data &&
-      data.forEach((article: any) => {
-        paths.push({
-          params: {
-            slug: article.attributes.slug,
-          },
-          locale,
-        });
+    data.forEach((article: any) => {
+      paths.push({
+        params: {
+          slug: article.attributes.slug,
+        },
+        locale,
       });
+    });
   }
 
   return {
@@ -84,16 +85,16 @@ export async function getStaticProps({
   locale,
   params,
 }: GetStaticPropsContext) {
-  const res = await fetch(
+  const response = await fetch(
     getStrapiURL(
       `/api/articles?locale=${locale}&filters[slug][$eq]=${params?.slug}`
     )
   );
-  const articleRes = await res.json();
+  const { data } = await response.json();
 
   return {
     props: {
-      article: articleRes.data[0].attributes,
+      article: data[0],
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),
