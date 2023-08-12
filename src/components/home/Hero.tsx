@@ -1,6 +1,5 @@
-import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
-import { Icons } from "../icons";
+import { config } from "@/config";
 
 export const Hero = () => {
   const t = useTranslations("Hero");
@@ -23,27 +22,15 @@ export const Hero = () => {
           </div>
         </div>
         <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg divide-x-[1px]">
-          <a
-            href="https://instagram.com/nis_pm_almaty"
-            className={styles.heroSocialMedia}
-          >
-            <Icons.instagram className="w-5 h-5" />
-            Instagram
-          </a>
-          <a
-            href="https://www.facebook.com/fmalm.nis.edu.kz/"
-            className={styles.heroSocialMedia}
-          >
-            <Icons.facebook className="w-5 h-5" />
-            Facebook
-          </a>
-          <a
-            href="https://www.youtube.com/@nis_pm_almaty"
-            className={styles.heroSocialMedia}
-          >
-            <Icons.youtube className="w-5 h-5" />
-            Youtube
-          </a>
+          {config.socials.map(({ href, icon, label }) => (
+            <a
+              href={href}
+              className="hover:bg-opacity-80 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
+            >
+              {icon}
+              {label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
