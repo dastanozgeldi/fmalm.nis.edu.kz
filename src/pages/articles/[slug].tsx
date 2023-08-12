@@ -43,7 +43,7 @@ export default function Article({ article }: { article: BlogPostCore }) {
           {title}
         </h1>
         <div className="mt-4 flex space-x-4">
-          {author && <PostAuthor author={author} />}
+          {author?.data && <PostAuthor author={author} />}
         </div>
         {image?.data && (
           <Image
