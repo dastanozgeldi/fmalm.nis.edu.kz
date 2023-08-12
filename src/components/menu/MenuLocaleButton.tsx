@@ -26,16 +26,14 @@ export const MenuLocaleButton = () => {
     <Menu as="div" className="relative inline-block text-left">
       {({ open }) => (
         <>
-          <div>
-            <Menu.Button
-              aria-label="Change Language"
-              className={`${
-                open && "bg-gray-300 rounded-lg"
-              } inline-flex w-full justify-center rounded-md p-2 text-sm font-medium hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-            >
-              <Icons.globe className="w-5 h-5" />
-            </Menu.Button>
-          </div>
+          <Menu.Button
+            aria-label="Change Language"
+            className={`${
+              open && "bg-gray-300 rounded-lg"
+            } inline-flex w-full justify-center rounded-md p-2 text-xs sm:text-sm font-medium hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            {LANGUAGES[locale as keyof Languages]}
+          </Menu.Button>
           <Transition
             as={Fragment}
             enter="transition ease-out duration-100"

@@ -1,9 +1,31 @@
-import { styles } from "@/styles";
 import { useTranslations } from "next-intl";
-import { Icons } from "../icons";
+import { Icons } from "@/components/icons";
 
 export const Statistics = () => {
   const t = useTranslations("Statistics");
+
+  const stats = [
+    {
+      icon: <Icons.users size={48} />,
+      number: 1023,
+      label: t("students"),
+    },
+    {
+      icon: <Icons.school size={48} />,
+      number: 23,
+      label: t("schools"),
+    },
+    {
+      icon: <Icons.contact size={48} />,
+      number: 165,
+      label: t("teachers"),
+    },
+    {
+      icon: <Icons.graduate size={48} />,
+      number: 1020,
+      label: t("alumni"),
+    },
+  ];
 
   return (
     <section
@@ -21,42 +43,17 @@ export const Statistics = () => {
         </p>
       </div>
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem]">
-        <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <Icons.users className="w-12 h-12" />
-            <div className="space-y-2">
-              <h3 className="font-bold">1023</h3>
-              <p className="text-sm text-muted-foreground">{t("students")}</p>
+        {stats.map((stat) => (
+          <div className="relative overflow-hidden rounded-lg border bg-background p-2">
+            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              {stat.icon}
+              <div className="space-y-2">
+                <h3 className="font-bold">{stat.number}</h3>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <Icons.school size={48} />
-            <div className="space-y-2">
-              <h3 className="font-bold">23</h3>
-              <p className="text-sm">{t("schools")}</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <Icons.contact size={48} />
-            <div className="space-y-2">
-              <h3 className="font-bold">165</h3>
-              <p className="text-sm text-muted-foreground">{t("teachers")}</p>
-            </div>
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-          <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-            <Icons.graduate size={48} />
-            <div className="space-y-2">
-              <h3 className="font-bold">1020</h3>
-              <p className="text-sm text-muted-foreground">{t("alumni")}</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="mx-auto text-center md:max-w-[58rem]">
         <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
