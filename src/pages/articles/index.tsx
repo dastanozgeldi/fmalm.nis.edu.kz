@@ -1,11 +1,11 @@
-import { FilteredPosts } from "@/components/filtered-posts";
-import { Page } from "@/components/page";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getStrapiURL } from "@/lib/api";
-import { BlogPostCore } from "@/types";
 import { pick } from "lodash";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
+import { Page } from "@/components/page";
+import { FilteredPosts } from "@/components/filtered-posts";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { getStrapiURL } from "@/lib/api";
+import { BlogPostCore } from "@/types";
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
   const response = await fetch(
@@ -48,7 +48,7 @@ export default function Articles({ articles }: { articles: BlogPostCore[] }) {
 
   return (
     <Page title={t("title")}>
-      <div className="max-w-4xl mx-auto my-12 p-6">
+      <div className="max-w-4xl mx-auto p-6">
         <Tabs defaultValue="announcements" className="space-y-6">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="announcements">

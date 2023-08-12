@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   Check,
   Code2,
   Command,
@@ -28,14 +27,17 @@ import {
   Contact2,
   Users,
   Phone,
-  Locate,
   Mail,
   ChevronDown,
   Globe,
   MapPin,
+  ChevronLeft,
+  UserCircle,
 } from "lucide-react";
 
 export const Icons = {
+  user: UserCircle,
+  chevronLeft: ChevronLeft,
   globe: Globe,
   down: ChevronDown,
   mail: Mail,
@@ -45,7 +47,6 @@ export const Icons = {
   contact: Contact2,
   school: School,
   graduate: GraduationCap,
-  user: User,
   menu: Menu,
   calendar: Calendar,
   book: Book,

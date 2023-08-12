@@ -1,57 +1,73 @@
 import ReactMarkdown from "react-markdown";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
+import Link from "next/link";
 import Image from "next/image";
+
 import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/components/page";
 import { Icons } from "@/components/icons";
 import { BlogPostCore } from "@/types";
+import { useFormattedDate } from "@/hooks";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { PostAuthor } from "@/components/post-author";
 
 export default function Article({ article }: { article: BlogPostCore }) {
   const { title, content, createdAt, author, image, topic } =
     article.attributes;
+  const formattedDate = useFormattedDate(createdAt, "DD.MM.YYYY");
 
   return (
     <Page title={title}>
-      <div
+      <article
         id="article"
-        className="relative max-w-4xl mx-auto border rounded-md p-8 my-12 space-y-4"
+        className="relative container max-w-3xl mx-auto rounded-md p-8 space-y-4"
       >
-        {/* Details */}
-        <div>
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl">{title}</h1>
-            {topic?.data && (
-              <p className="text-sm p-2 text-white bg-secondary rounded-lg">
-                {topic.data.attributes.name}
-              </p>
-            )}
-          </div>
-          <div className="flex items-center justify-between space-x-4 my-2">
-            <p className="text-gray-500 flex items-center gap-2">
-              <Icons.calendar />
-              {new Date(createdAt).toLocaleDateString()}
-            </p>
-            {author?.data && (
-              <p className="text-gray-500 flex items-center gap-2">
-                <Icons.user />
-                {author.data.attributes.name}
-              </p>
-            )}
-          </div>
+        <div className="flex items-center justify-between">
+          {createdAt && (
+            <time
+              dateTime={createdAt}
+              className="block text-sm text-muted-foreground"
+            >
+              {formattedDate}
+            </time>
+          )}
+          {topic?.data && (
+            <Badge className="text-sm">{topic.data.attributes.name}</Badge>
+          )}
+        </div>
+        <h1 className="mt-2 inline-block font-bold text-4xl leading-tight lg:text-5xl">
+          {title}
+        </h1>
+        <div className="mt-4 flex space-x-4">
+          {author && <PostAuthor author={author} />}
         </div>
         {image?.data && (
           <Image
-            className="object-cover w-[60ch] h-[36ch] rounded-t-lg"
+            className="object-cover w-full h-[36ch] rounded-t-lg"
             width={400}
             height={240}
             src={getStrapiMedia(image)}
             alt="Banner Image"
           />
         )}
-        <ReactMarkdown skipHtml>{content}</ReactMarkdown>
-      </div>
+        <ReactMarkdown skipHtml className="prose">
+          {content}
+        </ReactMarkdown>
+        <hr className="mt-12" />
+        <div className="flex justify-center py-6 lg:py-10">
+          <Link
+            href="/articles"
+            className={cn(buttonVariants({ variant: "ghost" }))}
+          >
+            <Icons.chevronLeft className="mr-2 h-4 w-4" />
+            See all posts
+          </Link>
+        </div>
+      </article>
     </Page>
   );
 }
@@ -87,7 +103,7 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const response = await fetch(
     getStrapiURL(
-      `/api/articles?locale=${locale}&filters[slug][$eq]=${params?.slug}`
+      `/api/articles?locale=${locale}&filters[slug][$eq]=${params?.slug}&populate=*`
     )
   );
   const { data } = await response.json();
