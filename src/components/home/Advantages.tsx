@@ -5,24 +5,24 @@ export const Advantages = () => {
 
   const advantages = [
     {
-      image:
-        "https://resources.finalsite.net/images/v1636512047/isbeijing/vhsq5cxdn1ul2mwuompd/20211111Reaccreditationkick-off-CISlogothumb.jpg",
-      title: t("cis_accreditation"),
+      image: "cis-accreditation.jpg",
+      title: t("cis_accreditation.label"),
+      text: t("cis_accreditation.text"),
     },
     {
-      image:
-        "https://isoglobal.com.au/wp-content/uploads/2022/03/ISO-image-300x176-1200x675.png",
-      title: t("compliance"),
+      image: "international-standards.jpg",
+      title: t("compliance.label"),
+      text: t("compliance.text"),
     },
     {
-      image:
-        "https://static.wixstatic.com/media/42fb34_e3bf748312e3480bb1e8a8d12fa7161d~mv2.jpeg/v1/fill/w_596,h_336,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/42fb34_e3bf748312e3480bb1e8a8d12fa7161d~mv2.jpeg",
-      title: t("multilingualism"),
+      image: "multilingualism.jpg",
+      title: t("multilingualism.label"),
+      text: t("multilingualism.text"),
     },
     {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGFD2qOqCkDuEV-2YyoIW7BNge2roXeCtW1zUA0Yuq466pTrezPvAcL5oywj3s0eS5cnQ&usqp=CAU",
-      title: t("additional_education"),
+      image: "additional-education.jpg",
+      title: t("additional_education.label"),
+      text: t("additional_education.text"),
     },
   ];
 
@@ -34,22 +34,21 @@ export const Advantages = () => {
             {t("our_advantages")}
           </h1>
           <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            This project is an experiment to see how a modern app, with features
-            like auth, subscriptions, API routes, and static pages would work in
-            Next.js 13 app dir.
+            {t("description")}
           </p>
         </div>
-        <div className="flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-2 items-center justify-items-center gap-8">
-          {advantages.map(({ title, image }) => (
-            <div className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-8">
+          {advantages.map(({ title, image, text }) => (
+            <div className="group relative space-y-4 bg-[#222] md:bg-transparent pb-4 md:pb-0 rounded-b-lg">
               <img
                 alt={title}
-                src={image}
-                className="object-cover object-center h-[400px] min-w-[300px] rounded-lg brightness-75 hover:brightness-[65%] hover:duration-300"
+                src={`/advantages/${image}`}
+                className="object-cover object-center h-[200px] md:h-[400px] w-full min-w-[300px] rounded-lg brightness-[70%] group-hover:brightness-[50%] group-hover:duration-200"
               />
-              <h3 className="text-gray-100 absolute max-w-[200px] text-xl font-bold bottom-4 left-0 mx-4">
-                {title}
-              </h3>
+              <div className="md:absolute md:bottom-4 md:left-0 mx-4 text-gray-100 space-y-3">
+                <h3 className="text-xl font-bold">{title}</h3>
+                <p className="md:hidden md:group-hover:block">{text}</p>
+              </div>
             </div>
           ))}
         </div>

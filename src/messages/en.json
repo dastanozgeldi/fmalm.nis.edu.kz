@@ -17,17 +17,32 @@
   },
   "Advantages": {
     "our_advantages": "Our Advantages",
-    "cis_accreditation": "CIS Accreditation",
-    "compliance": "Compliance with international standards",
-    "multilingualism": "Multilingualism",
-    "additional_education": "Additional Education"
+    "description": "Nazarbayev Intellectual Schools are known for international recognition and high quality of education. Here are some of the advantages of our school.",
+    "cis_accreditation": {
+      "label": "CIS Accreditation",
+      "text": "NIS is officially recognised by the Council of International Schools thus meaning that the school has achieved high standards of professional performance in international education and has a commitment to continuous improvement."
+    },
+    "compliance": {
+      "label": "Compliance with international standards",
+      "text": "NIS has gained international recognition for its commitment to excellence in education. Through partnerships with renowned educational institutions and participation in global education programs, we ensure that our students receive a world-class education that prepares them to thrive in an interconnected world."
+    },
+    "multilingualism": {
+      "label": "Multilingualism",
+      "text": "NIS offers students a number of foreign languages to study, including German, Korean, Japanese and Chinese. In addition, all students study English and Kazakh or Russian as part of the national curriculum. This allows students to develop their language skills and become fluent in several languages."
+    },
+    "additional_education": {
+      "label": "Additional Education",
+      "text": "NIS offers a wide range of extracurricular activities, including sports, art, music and other clubs. These activities complement the academic curriculum and allow students to discover and develop their passions, promoting well-rounded education and personal growth."
+    }
   },
   "Statistics": {
     "title": "Statistics",
-    "students": "Students",
-    "schools": "NIS schools",
-    "teachers": "Teachers",
-    "alumni": "Alumni"
+    "description": "Here are some important statistics of Nazarbayev Intellectual Schools including number of students, teachers, branches and alumni.",
+    "students": "Students currently studying at school",
+    "schools": "Nazarbayev Intellectual Schools in Kazakhstan",
+    "teachers": "Teachers across all spheres",
+    "alumni": "Alumni of Nazarbayev Intellectual Schools",
+    "bottom_text": "Get to know more about our school by reading some of the latest articles."
   },
   "Articles": {
     "title": "Articles",
