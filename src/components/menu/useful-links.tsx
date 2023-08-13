@@ -21,9 +21,9 @@ export const UsefulLinks = ({ t }: { t: any }) => {
   ];
 
   return (
-    <div className="bg-gray-200 text-xs sm:text-sm w-full py-1 px-4 flex items-center justify-end gap-2 lg:gap-4">
+    <div className="bg-[#8abf3b] text-xs sm:text-sm w-full py-2 px-4 flex items-center justify-end gap-2 lg:gap-4">
       {links.map(({ href, label }) => (
-        <a href={href}>{label}</a>
+        <a href={href} className="text-white">{label}</a>
       ))}
       <ChangeLanguageButton label={t("label")} />
     </div>

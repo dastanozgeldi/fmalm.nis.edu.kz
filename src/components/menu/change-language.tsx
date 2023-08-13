@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Icons } from "../icons";
 
 interface Languages {
   kk: string;
@@ -22,7 +23,7 @@ const LANGUAGES = {
 };
 
 export const ChangeLanguageButton = ({ label }: { label: string }) => {
-  const { pathname, query, push, locale, locales } = useRouter();
+  const { pathname, query, push, locales } = useRouter();
 
   const setCookie = (locale: string) => {
     document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`;
@@ -31,7 +32,7 @@ export const ChangeLanguageButton = ({ label }: { label: string }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        {LANGUAGES[locale as keyof Languages]}
+        <Icons.globe className="text-white w-5 h-5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>{label}</DropdownMenuLabel>

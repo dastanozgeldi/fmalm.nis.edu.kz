@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { useTranslations } from "next-intl";
 import { PropsWithChildren } from "react";
+
+import { fontSans } from "@/lib/fonts";
+
 import { Footer } from "./footer";
 import { Nav } from "./nav";
-import { fontSans } from "@/lib/fonts";
 
 type PageProps = PropsWithChildren & {
   title: string;
