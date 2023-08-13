@@ -2,9 +2,9 @@ import pick from "lodash/pick";
 import { GetStaticPropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Page } from "@/components/page";
-import { Hero } from "@/components/home/hero";
-import { Advantages } from "@/components/home/advantages";
-import { Statistics } from "@/components/home/statistics";
+import { Hero } from "@/components/home/hero-old";
+import { Advantages } from "@/components/home/advantages-old";
+import { Statistics } from "@/components/home/statistics-old";
 
 export default function Index() {
   const t = useTranslations("Index");
