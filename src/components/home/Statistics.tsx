@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+
 import { Icons } from "@/components/icons";
 
 export const Statistics = () => {
@@ -43,14 +44,12 @@ export const Statistics = () => {
         </p>
       </div>
       <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem]">
-        {stats.map((stat) => (
+        {stats.map(({ icon, number, label }) => (
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
-            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-              {stat.icon}
-              <div className="space-y-2">
-                <h3 className="font-bold">{stat.number}</h3>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
+            <div className="flex min-w-[300px] h-[180px] flex-col justify-between rounded-md p-6">
+              {icon}
+              <h3 className="font-bold text-2xl">{number}</h3>
+              <p className="text-sm text-muted-foreground">{label}</p>
             </div>
           </div>
         ))}

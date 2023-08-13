@@ -8,7 +8,8 @@
     "timetable": "School timetable",
     "nis_online": "NIS Online",
     "sms": "SMS",
-    "virtual_school": "Virtual School"
+    "virtual_school": "Virtual School",
+    "label": "Language"
   },
   "Hero": {
     "title": "NIS PM Almaty",

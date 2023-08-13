@@ -1,10 +1,12 @@
-import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { Menu } from "@/components/menu/Menu";
-import { Logo } from "@/components/logo";
-import { MenuIcons } from "@/components/menu/MenuIcons";
-import { MenuUpperLinks } from "@/components/menu/MenuUpperLinks";
+import { useTranslations } from "next-intl";
+
+import { Menu } from "@/components/menu";
+import { MenuIcons } from "@/components/menu/menu-icons";
+import { UsefulLinks } from "@/components/menu/useful-links";
 import { cn } from "@/lib/utils";
+
+import { Logo } from "./logo";
 import { Icons } from "./icons";
 
 const Mobile = ({ t }: { t: any }) => {
@@ -51,7 +53,7 @@ export const Nav = () => {
 
   return (
     <nav className="space-y-3">
-      <MenuUpperLinks t={t} />
+      <UsefulLinks t={t} />
       <div className="space-x-4 px-4 pb-4">
         <Mobile t={t} />
         <Desktop t={t} />

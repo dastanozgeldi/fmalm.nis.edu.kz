@@ -40,15 +40,15 @@ export const Advantages = () => {
           </p>
         </div>
         <div className="flex hide-scrollbar overflow-auto lg:grid lg:grid-cols-2 items-center justify-items-center gap-8">
-          {advantages.map((advantage) => (
+          {advantages.map(({ title, image }) => (
             <div className="relative">
               <img
-                alt={advantage.title}
-                src={advantage.image}
+                alt={title}
+                src={image}
                 className="object-cover object-center h-[400px] min-w-[300px] rounded-lg brightness-75 hover:brightness-[65%] hover:duration-300"
               />
               <h3 className="text-gray-100 absolute max-w-[200px] text-xl font-bold bottom-4 left-0 mx-4">
-                {advantage.title}
+                {title}
               </h3>
             </div>
           ))}
