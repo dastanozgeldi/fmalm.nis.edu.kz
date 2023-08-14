@@ -46,7 +46,7 @@ export const Advantages = () => {
               <img
                 alt={title}
                 src={`/advantages/${image}`}
-                className="object-cover object-center h-[200px] md:h-[400px] w-full min-w-[300px] rounded-lg brightness-[70%] group-hover:brightness-[50%] group-hover:duration-200"
+                className="object-cover object-center h-[200px] md:h-[400px] w-full min-w-[300px] rounded-lg brightness-[70%] md:group-hover:brightness-[50%] md:group-hover:duration-200"
               />
               <div className="md:absolute md:bottom-4 md:left-0 mx-4 text-gray-100 space-y-3">
                 <h3 className="text-xl font-bold">{title}</h3>
