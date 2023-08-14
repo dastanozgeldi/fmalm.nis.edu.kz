@@ -33,9 +33,11 @@ import {
   MapPin,
   ChevronLeft,
   UserCircle,
+  X,
 } from "lucide-react";
 
 export const Icons = {
+  x: X,
   user: UserCircle,
   chevronLeft: ChevronLeft,
   globe: Globe,

@@ -7,7 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
 
 import { Logo } from "../logo";
 import { Icons } from "../icons";
@@ -65,17 +64,18 @@ export const Mobile = ({ t, categories }: { t: any; categories: any[] }) => {
     <div className="lg:hidden w-full space-y-2 relative">
       <div className="flex items-center justify-between">
         <Logo />
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <MenuIcons address={t("address")} />
           <button
             aria-label="Menu"
-            className={cn(
-              "p-2 rounded-lg items-center justify-center xl:hidden flex",
-              open && "bg-gray-200"
-            )}
+            className="rounded-lg items-center justify-center xl:hidden flex"
             onClick={() => setOpen(!open)}
           >
-            <Icons.menu className="w-5 h-5" />
+            {open ? (
+              <Icons.x className="w-5 h-5" />
+            ) : (
+              <Icons.menu className="w-5 h-5" />
+            )}
           </button>
           {open && <Menu categories={categories} />}
         </div>
