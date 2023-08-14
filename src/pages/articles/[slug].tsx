@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import { useTranslations } from "next-intl";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
 import Link from "next/link";
@@ -16,9 +17,10 @@ import { Badge } from "@/components/ui/badge";
 import { PostAuthor } from "@/components/post-author";
 
 export default function Article({ article }: { article: BlogPostCore }) {
+  const t = useTranslations("Articles");
   const { title, content, createdAt, author, image, topic } =
     article.attributes;
-  const formattedDate = useFormattedDate(createdAt, "DD.MM.YYYY");
+  const formattedDate = useFormattedDate(createdAt);
 
   return (
     <Page title={title}>
@@ -64,13 +66,15 @@ export default function Article({ article }: { article: BlogPostCore }) {
             className={cn(buttonVariants({ variant: "ghost" }))}
           >
             <Icons.chevronLeft className="mr-2 h-4 w-4" />
-            See all posts
+            {t("see_all")}
           </Link>
         </div>
       </article>
     </Page>
   );
 }
+
+Article.messages = ["Articles", ...Page.messages];
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   let paths: any[] = [];
@@ -111,9 +115,10 @@ export async function getStaticProps({
   return {
     props: {
       article: data[0],
-      messages: pick((await import(`@/messages/${locale}.json`)).default, [
-        ...Page.messages,
-      ]),
+      messages: pick(
+        (await import(`@/messages/${locale}.json`)).default,
+        Article.messages
+      ),
     },
     revalidate: 1,
   };

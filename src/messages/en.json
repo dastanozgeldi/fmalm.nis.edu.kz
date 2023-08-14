@@ -48,7 +48,10 @@
     "title": "Articles",
     "announcements": "Announcements",
     "news": "News",
-    "mass-media": "Mass Media"
+    "mass-media": "Mass Media",
+    "no_posts": "No articles found.",
+    "search": "Search articles...",
+    "see_all": "See all articles"
   },
   "Footer": {
     "address": "Zhamakayev st. 145, Almaty, Kazakhstan",

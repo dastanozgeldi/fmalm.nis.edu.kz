@@ -1,11 +1,11 @@
-import { Skeleton } from "./ui/skeleton";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import Link from "next/link";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
 import { useFormattedDate } from "@/hooks";
-
 import { BlogPostCore } from "@/types";
 import { getStrapiMedia } from "@/lib/media";
+
+import { Skeleton } from "./ui/skeleton";
 
 export const PostCard = (post: BlogPostCore) => {
   const {
@@ -22,7 +22,7 @@ export const PostCard = (post: BlogPostCore) => {
     preview = getStrapiMedia(image);
   }
 
-  const formattedDate = useFormattedDate(date, "YYYY-MM-DD");
+  const formattedDate = useFormattedDate(date);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);

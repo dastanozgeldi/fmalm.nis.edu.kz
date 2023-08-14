@@ -7,12 +7,13 @@ import { BlogPostCore } from "@/types";
 import { Icons } from "./icons";
 
 type FilteredPostsProps = {
+  t: any;
   posts: {
     data: BlogPostCore[];
   };
 };
 
-export const FilteredPosts = ({ posts }: FilteredPostsProps) => {
+export const FilteredPosts = ({ t, posts }: FilteredPostsProps) => {
   const [searchValue, setSearchValue] = useState("");
 
   const filteredPosts = posts.data.filter((post) =>
@@ -23,13 +24,12 @@ export const FilteredPosts = ({ posts }: FilteredPostsProps) => {
     <>
       <div className="relative mb-8">
         <Input
+          id="search"
           type="text"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search articles"
-          aria-label="Search articles"
+          placeholder={t("search")}
           className="w-full pl-12"
-          id="search"
         />
         <Label htmlFor="search">
           <Icons.search
@@ -39,7 +39,7 @@ export const FilteredPosts = ({ posts }: FilteredPostsProps) => {
         </Label>
       </div>
       {!filteredPosts.length && (
-        <div className="text-center text-xl">No posts found</div>
+        <div className="text-center text-xl">{t("no_posts")}</div>
       )}
       <div className="grid gap-4 sm:grid-cols-2">
         {filteredPosts.map((post) => (

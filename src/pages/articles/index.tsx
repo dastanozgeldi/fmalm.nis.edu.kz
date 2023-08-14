@@ -59,7 +59,7 @@ export default function Articles({ articles }: { articles: BlogPostCore[] }) {
           </TabsList>
           {tabs.map(({ value, data }) => (
             <TabsContent key={value} value={value}>
-              <FilteredPosts posts={{ data }} />
+              <FilteredPosts t={t} posts={{ data }} />
             </TabsContent>
           ))}
         </Tabs>
