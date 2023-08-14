@@ -47,8 +47,10 @@ export const Footer = () => {
               </div>
               {/* Social Media */}
               <div className="flex gap-2">
-                {config.socials.map(({ href, icon }) => (
-                  <a href={href}>{icon}</a>
+                {config.socials.map(({ label, href, icon }) => (
+                  <a key={label} href={href}>
+                    {icon}
+                  </a>
                 ))}
               </div>
             </div>
@@ -58,7 +60,11 @@ export const Footer = () => {
               <h2 className="text-xl font-bold my-4">{t("useful_links")}</h2>
               <div className="space-y-2">
                 {usefuls.map(({ href, icon, label }) => (
-                  <a href={href} className="max-w-max flex items-center gap-2">
+                  <a
+                    key={label}
+                    href={href}
+                    className="max-w-max flex items-center gap-2"
+                  >
                     {icon} {label}
                   </a>
                 ))}

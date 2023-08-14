@@ -19,6 +19,7 @@ export const Hero = () => {
         <div className="absolute bottom-0 right-4 flex text-sm lg:text-lg divide-x-[1px]">
           {config.socials.map(({ href, icon, label }) => (
             <a
+              key={label}
               href={href}
               className="hover:bg-opacity-80 hover:duration-300 flex items-center gap-2 p-3 bg-primary text-white"
             >

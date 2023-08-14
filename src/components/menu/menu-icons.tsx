@@ -26,6 +26,7 @@ export const MenuIcons = ({ address }: { address: string }) => {
     <div className="flex items-center justify-end gap-3 lg:gap-6">
       {links.map(({ aria, href, icon, label }) => (
         <a
+          key={label}
           aria-label={aria}
           className="flex items-center gap-2 text-dark text-lg"
           href={href}

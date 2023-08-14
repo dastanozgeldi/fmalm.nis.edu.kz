@@ -39,7 +39,10 @@ export const Advantages = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-8">
           {advantages.map(({ title, image, text }) => (
-            <div className="group relative space-y-4 bg-[#222] md:bg-transparent pb-4 md:pb-0 rounded-b-lg">
+            <div
+              key={image}
+              className="group relative space-y-4 bg-[#222] md:bg-transparent pb-4 md:pb-0 rounded-b-lg"
+            >
               <img
                 alt={title}
                 src={`/advantages/${image}`}
