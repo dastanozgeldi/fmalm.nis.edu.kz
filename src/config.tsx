@@ -14,7 +14,7 @@ export const config = {
     },
     {
       href: "https://www.youtube.com/@nis_pm_almaty",
-      icon: <Icons.facebook className="w-5 h-5" />,
+      icon: <Icons.youtube className="w-5 h-5" />,
       label: "YouTube",
     },
   ],
