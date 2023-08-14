@@ -1,4 +1,4 @@
-import { Icons } from "../icons";
+import { Icons } from "@/components/icons";
 
 export const MenuIcons = ({ address }: { address: string }) => {
   const links = [
