@@ -8,7 +8,7 @@ export const Hero = () => {
     <Carousel loop>
       {numbers.map((number) => {
         return (
-          <div key={number} className="relative h-[600px] flex-[0_0_100%]">
+          <div key={number} className="relative h-screen flex-[0_0_100%]">
             <Image
               src={`/carousel/${number}.JPG`}
               fill
