@@ -22,7 +22,6 @@ export default function Index() {
 
 Index.messages = [
   "Index",
-  ...Hero.messages,
   ...Advantages.messages,
   ...Statistics.messages,
   ...Page.messages,

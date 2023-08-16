@@ -1,7 +1,7 @@
 import React from "react";
 import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
 import { Dots } from "./dots";
-import { CarouselControls } from "./carousel-controls";
+import { CarouselControls } from "./controls";
 import Autoplay from "embla-carousel-autoplay";
 
 type Props = React.PropsWithChildren & EmblaOptionsType;
@@ -29,7 +29,7 @@ export const Carousel = ({ children, ...options }: Props) => {
   }, [emblaApi]);
 
   return (
-    <>
+    <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">{children}</div>
       </div>
@@ -40,6 +40,6 @@ export const Carousel = ({ children, ...options }: Props) => {
         onNext={() => emblaApi?.scrollNext()}
         onPrev={() => emblaApi?.scrollPrev()}
       />
-    </>
+    </div>
   );
 };

@@ -34,12 +34,14 @@ import {
   ChevronLeft,
   UserCircle,
   X,
+  ChevronRight,
 } from "lucide-react";
 
 export const Icons = {
   x: X,
   user: UserCircle,
   chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
   globe: Globe,
   down: ChevronDown,
   mail: Mail,
