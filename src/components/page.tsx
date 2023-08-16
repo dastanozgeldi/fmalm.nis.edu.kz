@@ -12,7 +12,7 @@ type PageProps = PropsWithChildren & {
 };
 
 export const Page = ({ children, title }: PageProps) => {
-  const t = useTranslations("Hero");
+  const t = useTranslations("Page");
   const fullTitle = `${title} | ${t("title")}`;
 
   return (
@@ -45,4 +45,4 @@ export const Page = ({ children, title }: PageProps) => {
   );
 };
 
-Page.messages = ["Hero", Nav.messages, Footer.messages];
+Page.messages = ["Page", Nav.messages, Footer.messages];
