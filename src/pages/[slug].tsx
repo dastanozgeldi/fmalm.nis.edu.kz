@@ -1,10 +1,12 @@
-import ReactMarkdown from "react-markdown";
-import { getStrapiURL } from "@/lib/api";
-import { Page } from "@/components/page";
 import { pick } from "lodash";
 import { GetStaticPathsContext, GetStaticPropsContext } from "next";
-import { getStrapiMedia } from "@/lib/media";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
+import { Page } from "@/components/page";
+import { getStrapiURL } from "@/lib/api";
+import { getStrapiMedia } from "@/lib/media";
 
 export default function GeneralPage({ page }: any) {
   const { title, image, content } = page;
@@ -24,7 +26,7 @@ export default function GeneralPage({ page }: any) {
             alt="Banner Image"
           />
         )}
-        <ReactMarkdown skipHtml>{content}</ReactMarkdown>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
       </div>
     </Page>
   );
