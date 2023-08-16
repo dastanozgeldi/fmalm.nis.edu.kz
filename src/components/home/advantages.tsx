@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export const Advantages = () => {
@@ -43,7 +44,9 @@ export const Advantages = () => {
               key={image}
               className="group relative space-y-4 bg-[#222] md:bg-transparent pb-4 md:pb-0 rounded-b-lg"
             >
-              <img
+              <Image
+                width={300}
+                height={200}
                 alt={title}
                 src={`/advantages/${image}`}
                 className="object-cover object-center h-[200px] md:h-[400px] w-full min-w-[300px] rounded-lg brightness-[70%] md:group-hover:brightness-[50%] md:group-hover:duration-200"
