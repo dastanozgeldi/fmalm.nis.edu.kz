@@ -1,11 +1,30 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { config } from "@/config";
+import { Carousel } from "../carousel";
 
 export const Hero = () => {
   const t = useTranslations("Hero");
 
+  const images = [
+    "/advantages/additional-education.jpg",
+    "/card.png",
+    "/card.png",
+    "/card.png",
+  ];
+
   return (
-    <div className="relative pb-8">
+    <div className="relative pb-8 container m-auto">
+      <Carousel loop>
+        {images.map((src, i) => {
+          return (
+            <div className="relative h-[600px] flex-[0_0_100%]" key={i}>
+              {/* use object-cover + fill since we don't know the height and width of the parent */}
+              <Image src={src} fill className="object-cover" alt="alt" />
+            </div>
+          );
+        })}
+      </Carousel>
       <div className="max-w-full aspect-[9/14] md:aspect-[16/9] w-full m-auto px-4 relative group">
         <div className="brightness-50 w-full h-full rounded-2xl bg-center bg-cover duration-500 bg-[url(https://i.imgur.com/0TudJAN.jpg)]" />
         <div className="h-[80%] absolute top-0 bottom-0 m-auto lg:left-20 flex items-center px-4 lg:w-1/2">
