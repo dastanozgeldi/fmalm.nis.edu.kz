@@ -42,11 +42,12 @@ export const FAQ = () => {
   return (
     <section
       id="faq"
-      className="container max-w-4xl space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24"
+      className="container max-w-7xl space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24"
     >
-      <h1 className="leading-10 text-center text-3xl xl:my-6 md:text-6xl font-bold">
-        {t("title")}
-      </h1>
+      <div className="mb-6">
+        <h1 className="text-3xl my-2 md:text-4xl font-bold">{t("title")}</h1>
+        <hr className="border-0 max-w-[36px] h-[6px] bg-green-500" />
+      </div>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map(({ question, answer }) => (
           <AccordionItem key={question} value={question}>

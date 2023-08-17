@@ -28,15 +28,13 @@ export const Advantages = () => {
   ];
 
   return (
-    <section className="bg-[#111] py-24 px-6">
-      <div className="mx-auto max-w-4xl lg:flex lg:flex-col lg:items-center lg:justify-between">
-        <div className="text-center my-6 space-y-4">
-          <h1 className="leading-10 text-center text-3xl xl:my-6 md:text-6xl font-bold text-white">
+    <section className="bg-[#111] py-24">
+      <div className="mx-auto container max-w-7xl lg:flex lg:flex-col lg:justify-between">
+        <div className="mb-6">
+          <h1 className="text-white text-3xl my-2 md:text-4xl font-bold">
             {t("our_advantages")}
           </h1>
-          <p className="leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            {t("description")}
-          </p>
+          <hr className="border-0 max-w-[36px] h-[6px] bg-green-500" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-8">
           {advantages.map(({ title, image, text }) => (
