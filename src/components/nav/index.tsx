@@ -26,7 +26,7 @@ export const Nav = () => {
 
   return (
     <nav className="space-y-3">
-      <div className="container md:max-w-7xl md:pb-6">
+      <div className="container md:max-w-7xl lg:pb-6">
         <Mobile t={t} categories={categories} />
         <Desktop t={t} categories={categories} />
       </div>
