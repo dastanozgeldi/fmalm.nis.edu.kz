@@ -44,6 +44,37 @@
     "alumni": "Alumni of Nazarbayev Intellectual Schools",
     "bottom_text": "Get to know more about our school by reading some of the latest articles."
   },
+  "FAQ": {
+    "title": "FAQ",
+    "1": {
+      "question": "How can I apply to you?",
+      "answer": "All information about admission is available at www.nis.edu.kz in the \"Admission\" section."
+    },
+    "2": {
+      "question": "Do you have courses to prepare for exams?",
+      "answer": "The Center for Pedagogical Measurements of AEO \"Nazarbayev Intellectual Schools\" together with ACADEMIA.kz Virtual Laboratory of Pedagogical Mastery launched a paid online course \"How to prepare for admission to Nazarbayev Intellectual School and assess your capabilities\". This course is available on ACADEMIA.kz online platform in Kazakh and Russian languages. Users can listen to the online course anytime and anywhere."
+    },
+    "3": {
+      "question": "How do I sign up for a practice test? How does the practice test work? Where can I see the results of the trial?",
+      "answer": "AEO NIS, conducts trial testing of the competitive selection of students in the 7th grade of Nazarbayev Intellectual Schools. Pilot testing is conducted in the format of a computer test on the basis of Nazarbayev Intellectual Schools and the International School of Astana with a limited number of places for each school. The mock test includes all sections of the testing of the competitive selection of students in grades 7. Information about available mock test dates is published on the website at www.nis.edu.kz in the \"Admission\" section."
+    },
+    "4": {
+      "question": "What is a virtual school?",
+      "answer": "In order to prepare the students of the 5th grade to pass the competitive selection for studying in the 7th grade of Nazarbayev Intellectual Schools the information system \"Virtual School\" functions. A virtual school is a form of organization of additional education with the use of distance learning technologies, allowing students to take online courses in the specialized subjects of the Intellectual Schools. The site of the Virtual school vs.nis.edu.kz. The schedule of classes of the Virtual School is posted on the site www.nis.edu.kz in the section \"Admissions\"."
+    },
+    "5": {
+      "question": "What is a vacational school?",
+      "answer": "\"Vocational School\" was created to support applicants for admission to the Intellectual Schools. The main goal of this project is to prepare students in grades 5 and 6 of secondary education organizations of the Republic of Kazakhstan for competitive selection to Intellectual Schools. Students who scored 50 percent of the total score on the final test of the \"Virtual school\" are invited to attend the summer and winter vacations at the Intellectual schools for short-term training in the Vocational school. More information about Vocational School is available at www.nis.edu.kz in the Admission section."
+    },
+    "6": {
+      "question": "How do I find out where my child is in the queue now?",
+      "answer": "Please call the phone number 8-7172-23-57-38"
+    },
+    "7": {
+      "question": "Advanced training courses for teachers",
+      "answer": "Information on advanced training courses is available on the website online.cpm.kz, and also by phone +7(7172) 23-57-50"
+    }
+  },
   "Articles": {
     "title": "Articles",
     "announcements": "Announcements",
