@@ -10,7 +10,7 @@ import {
 
 import { Logo } from "../logo";
 import { Icons } from "../icons";
-import { MenuIcons } from "./menu-icons";
+import { ChangeLanguageButton } from "./change-language";
 
 const MenuItem = ({ category }: { category: any }) => {
   const { name, url, pages } = category.attributes;
@@ -65,16 +65,16 @@ export const Mobile = ({ t, categories }: { t: any; categories: any[] }) => {
       <div className="flex items-center justify-between">
         <Logo />
         <div className="flex items-center space-x-3">
-          <MenuIcons address={t("address")} />
+          <ChangeLanguageButton />
           <button
             aria-label="Menu"
             className="rounded-lg items-center justify-center xl:hidden flex"
             onClick={() => setOpen(!open)}
           >
             {open ? (
-              <Icons.x className="w-5 h-5" />
+              <Icons.x className="w-6 h-6" />
             ) : (
-              <Icons.menu className="w-5 h-5" />
+              <Icons.menu className="w-6 h-6" />
             )}
           </button>
           {open && <Menu categories={categories} />}

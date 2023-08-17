@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 
-import { UsefulLinks } from "@/components/nav/useful-links";
 import { getStrapiURL } from "@/lib/api";
 
 import { Mobile } from "./mobile";
@@ -27,8 +26,7 @@ export const Nav = () => {
 
   return (
     <nav className="space-y-3">
-      <UsefulLinks t={t} />
-      <div className="px-4 pb-4">
+      <div className="container md:max-w-7xl md:pb-6">
         <Mobile t={t} categories={categories} />
         <Desktop t={t} categories={categories} />
       </div>

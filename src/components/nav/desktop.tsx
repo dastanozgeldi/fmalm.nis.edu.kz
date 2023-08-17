@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "../logo";
 import { MenuIcons } from "./menu-icons";
 import { Icons } from "../icons";
+import { ChangeLanguageButton } from "./change-language";
 
 const MenuItem = ({ title, pages, href }: any) => (
   <Link href={href}>
@@ -45,7 +46,10 @@ export const Desktop = ({ t, categories }: { t: any; categories: any[] }) => {
     <div className="hidden lg:block">
       <div className="flex items-center justify-between">
         <Logo />
-        <MenuIcons address={t("address")} />
+        <div className="flex items-center gap-3 lg:gap-6">
+          <MenuIcons address={t("address")} />
+          <ChangeLanguageButton />
+        </div>
       </div>
       <Menu categories={categories} />
     </div>
