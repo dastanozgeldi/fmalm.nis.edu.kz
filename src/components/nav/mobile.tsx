@@ -20,10 +20,9 @@ const MenuItem = ({ category }: { category: any }) => {
       <AccordionTrigger className="px-4">{name}</AccordionTrigger>
       <AccordionContent>
         {pages.data.map((page: any) => (
-          <div className="w-full">
+          <div key={page.id} className="w-full">
             <Link
               className="inline-block p-3 w-full hover:bg-gray-100 focus:bg-gray-200"
-              key={page.attributes.id}
               href={`/${page.attributes.slug}`}
             >
               {page.attributes.title}
@@ -51,7 +50,7 @@ const Menu = ({ categories }: { categories: any[] }) => {
       className="w-full absolute right-0 top-12 z-40 flex flex-col rounded bg-white lg:static lg:flex-row lg:items-center lg:justify-end"
     >
       {categories.map((category) => (
-        <MenuItem category={category} />
+        <MenuItem key={category.id} category={category} />
       ))}
     </Accordion>
   );
