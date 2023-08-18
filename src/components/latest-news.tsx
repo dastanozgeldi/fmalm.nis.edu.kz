@@ -1,4 +1,3 @@
-import { useFormattedDate } from "@/hooks";
 import { getStrapiMedia } from "@/lib/media";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -24,13 +23,15 @@ export const LatestNews = ({ news }: { news: any[] }) => {
         <div className="mx-auto justify-center flex flex-col lg:flex-row">
           <div className="relative w-full flex-1 lg:w-2/3">
             <div className="flex min-w-[300px] justify-between text-white">
-              <img
-                className="object-cover brightness-75"
-                src={getStrapiMedia(first.attributes.image)}
-                alt={first.attributes.title}
-              />
+              {first.attributes.image.data && (
+                <img
+                  className="object-cover brightness-75"
+                  src={getStrapiMedia(first.attributes.image)}
+                  alt={first.attributes.title}
+                />
+              )}
               <time className="absolute text-sm text-white top-0 right-0 p-6">
-                {useFormattedDate(first.attributes.createdAt)}
+                {new Date(first.attributes.createdAt).toLocaleDateString()}
               </time>
               <div className="absolute bottom-0 p-6 space-y-3">
                 <h3 className="font-bold text-2xl">{first.attributes.title}</h3>
@@ -52,11 +53,13 @@ export const LatestNews = ({ news }: { news: any[] }) => {
                 className="relative overflow-hidden p-2 bg-gray-100"
               >
                 <div className="flex min-w-[300px] gap-3 p-3">
-                  <img
-                    className="w-[80px] h-[60px] object-cover"
-                    src={getStrapiMedia(item.attributes.image)}
-                    alt={item.attributes.title}
-                  />
+                  {item.attributes.image.data && (
+                    <img
+                      className="w-[80px] h-[60px] object-cover"
+                      src={getStrapiMedia(item.attributes.image)}
+                      alt={item.attributes.title}
+                    />
+                  )}
                   <div>
                     <h3 className="font-bold text-lg">
                       <Link href={`/articles/${item.attributes.slug}`}>
@@ -64,7 +67,7 @@ export const LatestNews = ({ news }: { news: any[] }) => {
                       </Link>
                     </h3>
                     <time className="text-sm text-gray-600">
-                      {useFormattedDate(item.attributes.createdAt)}
+                      {new Date(item.attributes.createdAt).toLocaleDateString()}
                     </time>
                   </div>
                 </div>
