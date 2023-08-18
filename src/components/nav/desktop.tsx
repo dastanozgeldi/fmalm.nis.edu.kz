@@ -26,7 +26,7 @@ const MenuItem = ({ title, pages, href }: any) =>
   ) : (
     <Link href={href}>
       <button className="uppercase w-full lg:text-lg text-dark lg:w-max flex items-center justify-between gap-2 peer p-2">
-        {title} {pages.length > 0 && <Icons.down className="w-4 h-4" />}
+        {title}
       </button>
     </Link>
   );
