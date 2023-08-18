@@ -6,8 +6,10 @@ import { Hero } from "@/components/home/hero";
 import { Advantages } from "@/components/home/advantages";
 import { Statistics } from "@/components/home/statistics";
 import { FAQ } from "@/components/home/faq";
+import { LatestNews } from "@/components/latest-news";
+import { getStrapiURL } from "@/lib/api";
 
-export default function Index() {
+export default function Index({ news }: { news: any[] }) {
   const t = useTranslations("Index");
 
   return (
@@ -15,6 +17,7 @@ export default function Index() {
       <div>
         <Hero />
         <Advantages />
+        <LatestNews news={news} />
         <Statistics />
         <FAQ />
       </div>
@@ -25,14 +28,23 @@ export default function Index() {
 Index.messages = [
   "Index",
   ...Advantages.messages,
+  ...LatestNews.messages,
   ...Statistics.messages,
   ...FAQ.messages,
   ...Page.messages,
 ];
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+  const response = await fetch(
+    getStrapiURL(
+      `/api/articles?locale=${locale}&filters[type][$eq]=news&sort=createdAt:DESC&populate=*`
+    )
+  );
+  const { data: news } = await response.json();
+
   return {
     props: {
+      news,
       messages: pick(
         (await import(`@/messages/${locale}.json`)).default,
         Index.messages

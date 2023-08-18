@@ -17,7 +17,6 @@ export default function GeneralPage({ page }: any) {
         id="page"
         className="relative max-w-4xl mx-auto rounded-md px-8 m-4 space-y-4 prose"
       >
-        {/* Details */}
         {image?.data && (
           <Image
             width={600}
