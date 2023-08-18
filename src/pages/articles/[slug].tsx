@@ -9,14 +9,14 @@ import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
 import { Page } from "@/components/page";
 import { Icons } from "@/components/icons";
-import { BlogPostCore } from "@/types";
+import { ArticleCore } from "@/types";
 import { useFormattedDate } from "@/hooks";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PostAuthor } from "@/components/post-author";
 
-export default function Article({ article }: { article: BlogPostCore }) {
+export default function Article({ article }: { article: ArticleCore }) {
   const t = useTranslations("Articles");
   const { title, content, createdAt, author, image, topic } =
     article.attributes;
@@ -85,7 +85,7 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
     );
     const { data } = await response.json();
 
-    data.forEach((article: any) => {
+    data.forEach((article: ArticleCore) => {
       paths.push({
         params: {
           slug: article.attributes.slug,

@@ -3,13 +3,13 @@ import { Label } from "./ui/label";
 import { useState } from "react";
 
 import { PostCard } from "./post-card";
-import { BlogPostCore } from "@/types";
+import { ArticleCore } from "@/types";
 import { Icons } from "./icons";
 
 type FilteredPostsProps = {
   t: any;
   posts: {
-    data: BlogPostCore[];
+    data: ArticleCore[];
   };
 };
 

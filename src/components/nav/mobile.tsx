@@ -11,15 +11,16 @@ import {
 import { Logo } from "../logo";
 import { Icons } from "../icons";
 import { ChangeLanguageButton } from "./change-language";
+import { Category, PageCore } from "@/types";
 
-const MenuItem = ({ category }: { category: any }) => {
+const MenuItem = ({ category }: { category: Category }) => {
   const { name, url, pages } = category.attributes;
 
-  return pages.data.length > 0 ? (
+  return pages && pages.data.length > 0 ? (
     <AccordionItem value={name}>
       <AccordionTrigger className="px-4">{name}</AccordionTrigger>
       <AccordionContent>
-        {pages.data.map((page: any) => (
+        {pages.data.map((page: PageCore) => (
           <div key={page.id} className="w-full">
             <Link
               className="inline-block p-3 w-full hover:bg-gray-100 focus:bg-gray-200"
@@ -42,7 +43,7 @@ const MenuItem = ({ category }: { category: any }) => {
   );
 };
 
-const Menu = ({ categories }: { categories: any[] }) => {
+const Menu = ({ categories }: { categories: Category[] }) => {
   return (
     <Accordion
       type="single"
@@ -56,7 +57,13 @@ const Menu = ({ categories }: { categories: any[] }) => {
   );
 };
 
-export const Mobile = ({ t, categories }: { t: any; categories: any[] }) => {
+export const Mobile = ({
+  t,
+  categories,
+}: {
+  t: any;
+  categories: Category[];
+}) => {
   const [open, setOpen] = useState(false);
 
   return (

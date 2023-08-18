@@ -6,10 +6,11 @@ import { getStrapiURL } from "@/lib/api";
 
 import { Mobile } from "./mobile";
 import { Desktop } from "./desktop";
+import { Category } from "@/types";
 
 export const Nav = () => {
   const t = useTranslations("Menu");
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const { locale } = useRouter();
 
   useEffect(() => {

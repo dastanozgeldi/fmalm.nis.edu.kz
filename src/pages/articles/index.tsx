@@ -5,7 +5,7 @@ import { Page } from "@/components/page";
 import { FilteredPosts } from "@/components/filtered-posts";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getStrapiURL } from "@/lib/api";
-import { BlogPostCore } from "@/types";
+import { ArticleCore } from "@/types";
 
 export async function getServerSideProps({
   locale,
@@ -28,23 +28,21 @@ export async function getServerSideProps({
   };
 }
 
-export default function Articles({ articles }: { articles: BlogPostCore[] }) {
+export default function Articles({ articles }: { articles: ArticleCore[] }) {
   const t = useTranslations("Articles");
 
   const tabs = [
     {
       value: "announcements",
-      data: articles.filter(
-        (obj: any) => obj.attributes.type === "announcements"
-      ),
+      data: articles.filter((obj) => obj.attributes.type === "announcements"),
     },
     {
       value: "news",
-      data: articles.filter((obj: any) => obj.attributes.type === "news"),
+      data: articles.filter((obj) => obj.attributes.type === "news"),
     },
     {
       value: "mass-media",
-      data: articles.filter((obj: any) => obj.attributes.type === "mass media"),
+      data: articles.filter((obj) => obj.attributes.type === "mass media"),
     },
   ];
 

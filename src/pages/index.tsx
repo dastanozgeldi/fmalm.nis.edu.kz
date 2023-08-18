@@ -8,8 +8,9 @@ import { Statistics } from "@/components/home/statistics";
 import { FAQ } from "@/components/home/faq";
 import { LatestNews } from "@/components/latest-news";
 import { getStrapiURL } from "@/lib/api";
+import { ArticleCore } from "@/types";
 
-export default function Index({ news }: { news: any[] }) {
+export default function Index({ news }: { news: ArticleCore[] }) {
   const t = useTranslations("Index");
 
   return (

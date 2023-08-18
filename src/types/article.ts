@@ -1,4 +1,4 @@
-export type BlogPostCore = {
+export type ArticleCore = {
   id: string;
   attributes: {
     title: string;

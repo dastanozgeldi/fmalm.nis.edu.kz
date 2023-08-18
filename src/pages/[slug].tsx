@@ -7,9 +7,10 @@ import rehypeRaw from "rehype-raw";
 import { Page } from "@/components/page";
 import { getStrapiURL } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/media";
+import { PageCore } from "@/types";
 
-export default function GeneralPage({ page }: any) {
-  const { title, image, content } = page;
+export default function GeneralPage({ page }: { page: PageCore }) {
+  const { title, image, content } = page.attributes;
 
   return (
     <Page title={title}>
@@ -41,7 +42,7 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
     const { data } = await response.json();
 
     data &&
-      data.forEach((page: any) => {
+      data.forEach((page: PageCore) => {
         paths.push({
           params: {
             slug: page.attributes.slug,
@@ -70,7 +71,7 @@ export async function getStaticProps({
 
   return {
     props: {
-      page: data[0].attributes,
+      page: data[0],
       messages: pick((await import(`@/messages/${locale}.json`)).default, [
         ...Page.messages,
       ]),

@@ -1,4 +1,4 @@
-export type Page = {
+export type PageCore = {
   id: string;
   attributes: {
     title: string;
@@ -7,6 +7,7 @@ export type Page = {
     createdAt: string;
     updatedAt: string;
     locale: string;
+    image: any;
   };
 };
 
@@ -19,7 +20,7 @@ export type Category = {
     updatedAt: string;
     locale: string;
     pages?: {
-      data: Page[];
+      data: PageCore[];
     };
   };
 };

@@ -2,12 +2,12 @@ import Link from "next/link";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
 import { useFormattedDate } from "@/hooks";
-import { BlogPostCore } from "@/types";
+import { ArticleCore } from "@/types";
 import { getStrapiMedia } from "@/lib/media";
 
 import { Skeleton } from "./ui/skeleton";
 
-export const PostCard = (post: BlogPostCore) => {
+export const PostCard = (post: ArticleCore) => {
   const {
     title,
     description,

@@ -3,6 +3,7 @@ import { Logo } from "../logo";
 import { MenuIcons } from "./menu-icons";
 import { Icons } from "../icons";
 import { ChangeLanguageButton } from "./change-language";
+import { Category, PageCore } from "@/types";
 
 const MenuItem = ({ title, pages, href }: any) =>
   pages.length > 0 ? (
@@ -11,7 +12,7 @@ const MenuItem = ({ title, pages, href }: any) =>
         {title} {pages.length > 0 && <Icons.down className="w-4 h-4" />}
       </button>
       <div className="w-full text-dark lg:w-max absolute z-50 hidden peer-hover:flex hover:flex flex-col bg-white drop-shadow-lg">
-        {pages.map((page: any) => (
+        {pages.map((page: PageCore) => (
           <Link
             key={page.id}
             className="px-5 py-3 bg-gray-50 hover:bg-gray-200"
@@ -30,10 +31,10 @@ const MenuItem = ({ title, pages, href }: any) =>
     </Link>
   );
 
-const Menu = ({ categories }: { categories: any[] }) => {
+const Menu = ({ categories }: { categories: Category[] }) => {
   return (
     <div className="flex rounded items-center justify-between">
-      {categories.map((c: any) => {
+      {categories.map((c) => {
         const { name, url, pages } = c.attributes;
         return (
           <MenuItem
@@ -48,7 +49,13 @@ const Menu = ({ categories }: { categories: any[] }) => {
   );
 };
 
-export const Desktop = ({ t, categories }: { t: any; categories: any[] }) => {
+export const Desktop = ({
+  t,
+  categories,
+}: {
+  t: any;
+  categories: Category[];
+}) => {
   return (
     <div className="hidden lg:block">
       <div className="flex items-center justify-between">
