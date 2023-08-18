@@ -34,8 +34,8 @@ export const LatestNews = ({ news }: { news: any[] }) => {
                 {new Date(first.attributes.createdAt).toLocaleDateString()}
               </time>
               <div className="absolute bottom-0 p-6 space-y-3">
-                <h3 className="font-bold text-2xl">{first.attributes.title}</h3>
-                <p>{first.attributes.description}</p>
+                <h3 className="font-bold text-lg md:text-2xl">{first.attributes.title}</h3>
+                <p className="hidden md:block">{first.attributes.description}</p>
                 <Link
                   className={cn(buttonVariants())}
                   href={`/articles/${first.attributes.slug}`}
