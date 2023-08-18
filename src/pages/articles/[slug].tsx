@@ -97,7 +97,7 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -120,6 +120,6 @@ export async function getStaticProps({
         Article.messages
       ),
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
