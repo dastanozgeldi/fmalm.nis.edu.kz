@@ -1,5 +1,5 @@
 import { pick } from "lodash";
-import { GetStaticPropsContext } from "next";
+import { type GetServerSidePropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Page } from "@/components/page";
 import { FilteredPosts } from "@/components/filtered-posts";
@@ -7,7 +7,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getStrapiURL } from "@/lib/api";
 import { BlogPostCore } from "@/types";
 
-export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+export async function getServerSideProps({
+  locale,
+}: GetServerSidePropsContext) {
   const response = await fetch(
     getStrapiURL(
       `/api/articles?locale=${locale}&sort=createdAt:DESC&populate=*`
@@ -24,7 +26,7 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
       ),
     },
   };
-};
+}
 
 export default function Articles({ articles }: { articles: BlogPostCore[] }) {
   const t = useTranslations("Articles");

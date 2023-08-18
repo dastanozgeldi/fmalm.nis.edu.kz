@@ -1,5 +1,5 @@
 import pick from "lodash/pick";
-import { GetStaticPropsContext } from "next";
+import { type GetServerSidePropsContext } from "next";
 import { useTranslations } from "next-intl";
 import { Page } from "@/components/page";
 import { Hero } from "@/components/home/hero";
@@ -34,7 +34,9 @@ Index.messages = [
   ...Page.messages,
 ];
 
-export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+export async function getServerSideProps({
+  locale,
+}: GetServerSidePropsContext) {
   const response = await fetch(
     getStrapiURL(
       `/api/articles?locale=${locale}&filters[type][$eq]=news&sort=createdAt:DESC&populate=*`
@@ -51,4 +53,4 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
       ),
     },
   };
-};
+}
