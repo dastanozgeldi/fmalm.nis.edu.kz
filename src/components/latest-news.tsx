@@ -23,7 +23,7 @@ export const LatestNews = ({ news }: { news: ArticleCore[] }) => {
         </div>
         <div className="mx-auto justify-center flex flex-col lg:flex-row">
           <div className="relative w-full flex-1 lg:w-2/3">
-            <div className="flex min-w-[300px] justify-between text-white">
+            <div className="flex min-w-[300px] h-full justify-between text-white">
               {first.attributes.image.data && (
                 <img
                   className="object-cover brightness-75"
