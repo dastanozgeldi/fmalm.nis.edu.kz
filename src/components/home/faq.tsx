@@ -33,10 +33,6 @@ export const FAQ = () => {
       question: t("6.question"),
       answer: t("6.answer"),
     },
-    {
-      question: t("7.question"),
-      answer: t("7.answer"),
-    },
   ];
 
   return (
