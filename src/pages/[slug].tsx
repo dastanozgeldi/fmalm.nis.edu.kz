@@ -18,15 +18,16 @@ export default function GeneralPage({ page }: { page: PageCore }) {
         id="page"
         className="relative max-w-4xl mx-auto rounded-md px-8 m-4 space-y-4 prose"
       >
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
         {image?.data && (
           <Image
             width={600}
             height={600}
             src={getStrapiMedia(image)}
             alt="Banner Image"
+            className="m-auto"
           />
         )}
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
       </div>
     </Page>
   );
@@ -64,7 +65,7 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const response = await fetch(
     getStrapiURL(
-      `/api/pages?locale=${locale}&filters[slug][$eq]=${params?.slug}`
+      `/api/pages?locale=${locale}&filters[slug][$eq]=${params?.slug}&populate=image`
     )
   );
   const { data } = await response.json();
