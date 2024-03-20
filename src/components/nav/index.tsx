@@ -16,7 +16,7 @@ export const Nav = () => {
   useEffect(() => {
     async function fetchCategories() {
       const response = await fetch(
-        getStrapiURL(`/api/categories?locale=${locale}&populate=*`)
+        getStrapiURL(`/api/categories?locale=${locale}&sort[0]=id&populate=*`)
       );
       const { data } = await response.json();
       setCategories(data);
